@@ -71,77 +71,79 @@
 
 \newpage
 \section{Requirements}
-It is important to establish all functional and non-functional requirements for \appname. This section contains all requirements designed before the start
+It is important to establish all functional and non-functional requirements for \appname. Section bellow contains all requirements designed before the start
 of the development
-
-\subsection{Non-functional requirements}
-
-\begin{itemize}
-  \item \textbf{N1: Native Android application}  Application will be written using native Android Sdk
-  \item \textbf{N2: API 21 support} Application minimal SDK version will be 21 (a.k.a Android Lollipop)
-  \item \textbf{N3: Material Design} Application user interface will follow latest Material design guidelines and best practises
-  \item \textbf{N4: Scalable app architecture} Application's architecture must be scalable and easy testable
-  \item \textbf{N5: Tablet \& Phone support} Application's GUI must be well suited for multiple screen sizes
-  \item \textbf{N6: Multiple language support} Application will support multiple languages
-\end{itemize}
 
 \subsection{Functional requirements}
 \bigskip
 \textbf{User Authentication}
 \begin{itemize}
-	\item \textbf{F1: Registration/Login using email} Access to \appname is possible by creating an account using email address/password combination
-	\item \textbf{F2: Registration/Login using Facebook} Users will be able to use their Facebook account to access \appname
-	\item \textbf{F3: Registration/Login using Google} Users will be able to use their Google account to access \appname
-	\item \textbf{F4: Store OAuth token} API Authentication Token will be stored in device memory
-	\item \textbf{F5: Token refreshment} API Token will be refreshed when needed, so user won't have to login again
-	\item \textbf{F6: University selection} As a part of user registration flow, user will be able to select his university
+	\item \textbf{F1: Registration/Login using email} Access to \appname is possible by creating an account using email address/password combination.
+	\item \textbf{F2: Registration/Login using Facebook} User will be able to use his/her Facebook account to access \appname.
+	\item \textbf{F3: Registration/Login using Google} User will be able to use his/her Google account to access \appname.
+	\item \textbf{F4: Store OAuth token} API Authentication Token will be stored in device memory.
+	\item \textbf{F5: Token refreshment} API Token will be refreshed when needed, so user won't have to login again.
+	\item \textbf{F6: University selection} As a part of user registration flow, user will be able to select his/her university.
 \end{itemize}
 \bigskip
 \textbf{Library Management (Notes \& Notebooks)}
 \begin{itemize}
-	\item \textbf{F7: Notebook creation} User will be able to create new notebooks with the name they choose
-	\item \textbf{F8: Notebook deletion} User will be able to delete existing notebooks
-	\item \textbf{F9: Notebook name edition} User will be able to edit notebooks names
+	\item \textbf{F7: Notebook creation} User will be able to create new notebooks with the name he/she choose.
+	\item \textbf{F8: Notebook deletion} User will be able to delete existing notebooks.
+	\item \textbf{F9: Notebook name edition} User will be able to edit notebooks names.
 	\item \textbf{F10: Note creation} User will be able to create a note with specific title and content.
-	\item \textbf{F11: Note edition} User will be able to edit existing note, or completely delete it
-	\item \textbf{F12: Show Notebooks} : User will be able to view all the notebooks he created
-	\item \textbf{F13: Show Notes}: By clicking on notebook item, user will be able to view the list of notes that are assigned to this notebooks
+	\item \textbf{F11: Note edition} User will be able to edit existing note, or completely delete it.
+	\item \textbf{F12: Show Notebooks} : User will be able to view all the notebooks he/she created.
+	\item \textbf{F13: Show Notes}: By clicking on notebook item, user will be able to view the list of notes that are assigned to this notebook.
 \end{itemize}
 
 \bigskip
 \textbf{Sharing Hub}
 \begin{itemize}
-	\item \textbf{F14: View published notebooks} User will be able to view notebooks published by other users
-	\item \textbf{F15: Search through published books} User will be able to search through the published notebooks by applying different filters (such as author, university and subject)
-	\item \textbf{F16: Browse through published notebook} User will be able to see notes inside the notebook that's been published
-	\item \textbf{F17: View comments} User will be able to view others users comments discussing a notebook that's been published
-	\item \textbf{F18: Leave a comment} User can comment on other user published notebook
+	\item \textbf{F14: View published notebooks} User will be able to view notebooks published by other users.
+	\item \textbf{F15: Search through published books} User will be able to search through the published notebooks by applying different filters (such as author, university and subject/topic).
+	\item \textbf{F16: Browse through published notebook} User will be able to see notes inside the notebook that's been published.
+	\item \textbf{F17: View comments} User will be able to view others users comments discussing a notebook that's been published.
+	\item \textbf{F18: Leave a comment} User can comment on other user published notebook.
 	\item \textbf{F19: Delete a comment} Application will let user to delete his/her comment.
-	\item \textbf{F20: Save published notebook} User will be able to save published notebook to his library
-	\item \textbf{F21: Publish notebook} User will be able to publish his notebook
-	\item \textbf{F22: Update published notebook} Author of the published notebook will be able to update it's information
-	\item \textbf{F23: Delete published notebook} Author of the published notebook will be able to delete the his notebook
-	\item \textbf{F24: Share notebook} User will be able to share his notebook by generating a deeplink
+	\item \textbf{F20: Save published notebook} User will be able to save published notebook to his/her library.
+	\item \textbf{F21: Publish notebook} User will be able to publish his notebook.
+	\item \textbf{F22: Update published notebook} Author of the published notebook will be able to update it's information.
+	\item \textbf{F23: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
+	\item \textbf{F24: Share notebook} User will be able to share his notebook by generating a deep-link.
  \end{itemize}
 
 \bigskip
 \textbf{Study Hub}
 \begin{itemize}
-	\item \textbf{F25: Start a basic self-check} User will be able to use an interactive way to look through his notes
-	\item \textbf{F26: Start a written test} User will be able to participate in a written test based on one of his notebooks to test his knowledge
-	\item \textbf{F27: Start a quiz} User will be able to participate in quiz challenge that will be based on one of his notebooks
+	\item \textbf{F25: Start a basic self-check} User will be able to use an interactive way to look through his/her notes
+	\item \textbf{F26: Start a written test} User will be able to participate in a written test based on one of notebooks to test his/her knowledge
+	\item \textbf{F27: Start a quiz} User will be able to participate in quiz challenge that will be based on one of his/her notebooks
 	
 \end{itemize}
 
 \bigskip
 \textbf{Settings}
 \begin{itemize}
-	\item \textbf{F28: View Profile Information} User will be able to view his profile information such as first name, last name and his university
-	\item \textbf{F29: Edit Profile Information} User will be able to edit his profile information
+	\item \textbf{F28: View Profile Information} User will be able to view his/her profile information such as first name, last name and his university.
+	\item \textbf{F29: Edit Profile Information} User will be able to edit his/her profile information.
 	\item \textbf{F30: Logout} User will be able to logout from the application.
 \end{itemize}
 
 
+\subsection{Non-functional requirements}
+
+\begin{itemize}
+  \item \textbf{N1: Native Android application}  Application will be written using native Android SDK.
+  \item \textbf{N2: Android Version} Application minimal SDK version must be low enough to support as many devices as possible and high enough to use latest Android APIs considering other functional and non-functional requirements.
+  \item \textbf{N3: Material Design} Application user interface will follow latest Material design guidelines and best practises.
+  \item \textbf{N4: Scalable app architecture} Application's architecture must be scalable and easy testable.
+  \item \textbf{N5: Tablet \& Phone support} Application GUI must be well suited for multiple screen sizes.
+  \item \textbf{N6: App Localization} Application will be able to adapt to different languages based on user locale
+\end{itemize}
+
+
+\newpage
 
 \section{Platform-Independent Model}
 
