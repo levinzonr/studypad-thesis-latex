@@ -109,10 +109,10 @@ of the development
 	\item \textbf{F18: Leave a comment} User can comment on other user published notebook.
 	\item \textbf{F19: Delete a comment} Application will let user to delete his/her comment.
 	\item \textbf{F20: Save published notebook} User will be able to save published notebook to his/her library.
-	\item \textbf{F21: Publish notebook} User will be able to publish his notebook.
-	\item \textbf{F22: Update published notebook} Author of the published notebook will be able to update it's information.
+	\item \textbf{F21: Publish notebook} User will be able to publish his/her notebook.
+	\item \textbf{F22: Update published notebook} Author of the published notebook will be able to update its information.
 	\item \textbf{F23: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
-	\item \textbf{F24: Share notebook} User will be able to share his notebook by generating a deep-link.
+	\item \textbf{F24: Share notebook} User will be able to share his/her notebook by generating a deep-link.
  \end{itemize}
 
 \bigskip
@@ -127,7 +127,7 @@ of the development
 \bigskip
 \textbf{Settings}
 \begin{itemize}
-	\item \textbf{F28: View Profile Information} User will be able to view his/her profile information such as first name, last name and his university.
+	\item \textbf{F28: View Profile Information} User will be able to view his/her profile information such as first name, last name and  university.
 	\item \textbf{F29: Edit Profile Information} User will be able to edit his/her profile information.
 	\item \textbf{F30: Logout} User will be able to logout from the application.
 \end{itemize}
@@ -137,7 +137,7 @@ of the development
 
 \begin{itemize}
   \item \textbf{N1: Native Android application}  Application will be written using native Android SDK.
-  \item \textbf{N2: Android Version} Application minimal SDK version must be low enough to support as many devices as possible and high enough to use latest Android APIs considering other functional and non-functional requirements.
+  \item \textbf{N2: Android Version} Application minimal SDK version must be low enough to support as many devices as possible and high enough to use most applicable  Android APIs considering other functional and non-functional requirements.
   \item \textbf{N3: Material Design} Application user interface will follow latest Material design guidelines and best practises.
   \item \textbf{N4: Scalable app architecture} Application's architecture must be scalable and easy testable.
   \item \textbf{N5: Tablet \& Phone support} Application GUI must be well suited for multiple screen sizes.
@@ -149,25 +149,76 @@ of the development
 
 \section{Existing solutions}
 
-There are several apps out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and discovering options. Table bellow shows requirementes
-
+There are several apps out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and discovering options. Table bellow shows requirements comparison such apps
 
 \bigskip
-\textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when hes trying to learn anything other than new words
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Application\\ Requirement\end{tabular}} & \multicolumn{1}{c|}{\textbf{Quizlet}} & \multicolumn{1}{c|}{\textbf{Cram}} & \multicolumn{1}{c|}{\textbf{TinyCards}} \\ \hline
+\textbf{F1}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F2}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F3}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F4}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F5}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F6}                                                                & Absent                                & Absent                             & Absent                                  \\ \hline
+\textbf{F7}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F8}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F9}                                                                & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F10}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F11}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F12}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F13}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F14}                                                               & Absent                                & Absent                             & Present                                 \\ \hline
+\textbf{F15}                                                               & Limited                               & Limited                            & Limited                                 \\ \hline
+\textbf{F16}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F17}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
+\textbf{F18}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
+\textbf{F19}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
+\textbf{F20}                                                               & Present                               & Limited                            & Limited                                 \\ \hline
+\textbf{F21}                                                               & Limited                               & Limited                            & Limited                                 \\ \hline
+\textbf{F22}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F23}                                                               & Present                               & Present                            & Present                                 \\ \hline
+\textbf{F24}                                                               & Present                               & Limited                            & Limited                                 \\ \hline
+\textbf{F25}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\textbf{F26}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\textbf{F27}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\textbf{F28}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\textbf{F29}                                                               & Limted                                & Limted                             & Limited                                 \\ \hline
+\textbf{F30}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\end{tabular}
+
+\bigskip
+\subsection{Quzlet - Key differences}
+
+\textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when he/she is trying to learn anything other than new words
+
+
 
 \begin{itemize}
-	\item \textbf{F15: View published notebooks} When searching for Notebooks, The only distinctions between Study Sets in Quizlet is its name and language. Lack of filtering options makes it hard to find something specific
-	\item \textbf{F20, F21: Notebooks sharing} - All Study Sets in Quizlet are visible to everyone by default. This makes it impossible to distinct between between personal study set and a published one. Moreover, flow of saving a study set is not very straightforward
-	\item \textbf{F29: } Profile Edition is fairly limited. User only allowed to change his/her username, and only once
-
-
-
-
+	\item \textbf{Publishing}: Content publishing process is very different to what \appname\ is trying to achieve. All study sets are visible to other users by default, which makes it hard, if not impossible, to distinct between local and shared published set.
+	\item \textbf{Importing}: Importing flow allows user to either copy or save study set to a specific folder. This flow may confuse some of the users, because only copy allows actually add set to user library and modify it. Saving study set to the specific folder only saves the link to it and splits library management in 2 parts.
+	\item \textbf{Discovering:} This limitation comes from the fact, that Quizlet is an app for language learners. As a consequence, the only distinctions between Study sets are its name and a language. These are the only 2 options available for filtering published study sets.
 
 \end{itemize}
 
+\subsection{Cram - Key differences}
+\textbf{Cram} is very similar to Quizlet but feels much more outdated in terms of UX and brings some sharing limitations to the table.
 
+\begin{itemize}
+	\item  \textbf{Publishing:} Content publishing is similar to Quizlet - All sets are either visible by other users or not. Sharing a deep-link to a single study set was not functional at the time of writing this section
+	\item \textbf{Discovering} Searching for content in Cram is even more limited comparing to Quizlet, only name of the study set is used
+	\item \textbf{Importing} Library management here is splitted in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, it can only be automatically saved to Recent section, or manually added to Favourites. This makes it impossible to make local edits
+\end{itemize}
 
+\subsection{TinyCards - Key Differences}
+
+\textbf{TinyCards} is app made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages
+	\begin{itemize}
+		\item \textbf{Importing:} Similar to Cram, it is not possible to edit the study set user have downloaded and saved to his library
+		\item \textbf{Challenges:} Tests for user are generated automatically and there is no way to choose test type
+	\end{itemize}
+	
 
 \section{Platform-Independent Model}
 
