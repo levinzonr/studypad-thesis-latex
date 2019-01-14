@@ -65,10 +65,47 @@
 To allow this, user will be able to create notes, that will act a single information piece. Notes are stored in distinct sets - Notebooks.
 
 \setsecnumdepth{all}
+\newpage
 \chapter{Analysis}
+
+This chapter contains \appname\ domain description
+
 \section{System description}
-\section{Existing solutions}
-\section{Domain model}
+
+Class diagram bellow represents Domain Model of the application, it provides visual representation of Entities and relations between them. Design is based on the entities used on server-side
+
+\begin{figure}[t]
+	\includegraphics[scale=0.4]{Domain}
+\end{figure}
+
+\subsection{User}
+	User entity represents someone who have completed registration flow using one of the clients app. It consists of such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorize, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
+	
+\subsection{Note}
+	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and defenition or question and answer
+\subsection{Notebook}
+	Notebook is one of the main entities used in the application flow. Only User can create a Notebook. Soul purpose of the Notebook is to store Notes and serve as a source for Shared Notebook. Properties name and color are used to help Users distinct between different Notebooks
+	
+	
+	
+\subsection{University}
+University represents school, where User can assign himself during registration flow as a student. It is used to unite users/students from the same schools, so they could faster find content they are looking from
+
+\subsection{Published Notebook}
+Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing additional details:
+name, optional description,  Topic and optional set of Tags. All these details are later used for Search flow to optimize searching results.
+
+\subsection{Published Note}
+Published Note represent the note inside of the Published Notebook and  contains the exact same properties as usual note
+
+\subsection{Topic}
+Topic represents main topic or subject of the Published Notebook. Topic consist of only one property: name
+\subsection{Tag}
+Tag is us short label thats attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property - it's actual value stored as name
+
+\subsection{Comment}
+Users can comment on published notebooks. Most of the properties are assigned automatically, the only exception is content which is property that represents the body of the comment 
+
 \section{Android Platform}
 
 \newpage
@@ -219,9 +256,9 @@ There are several apps out there, whose goal is similar to \appname. However, mo
 		\item \textbf{Challenges:} Tests for user are generated automatically and there is no way to choose test type
 	\end{itemize}
 	
-
+\newpage
 \section{Platform-Independent Model}
-
+\subsection{}
 
 \chapter{Design}
 \section{Wireframes}
