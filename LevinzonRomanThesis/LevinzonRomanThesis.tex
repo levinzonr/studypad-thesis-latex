@@ -61,28 +61,32 @@
 \chapter{Introduction}
 
 \appname\ is a combination of a note-taking service and a social network. Main purpose of the app is help users memorize different piecies  of information and make it easy this information easy to exchange with other users.
-To allow this, user will be able to create notes, that will act a single information piece and stored in distinct sets: Notebooks. User will be able to participate in different challenges or tests based on one his/her notebooks and help other users by sharing and exchanging it. Whole application flow can be splitted into folowing sections:
-
-	\subsection{Library Management}
-	Library Management is all about note-taking part of the user experience. T
+To allow this, user will be able to create notes, that will act a single information piece and stored in distinct sets: Notebooks. User will be able to participate in different challenges or tests based on one his/her notebooks and help other users by sharing and exchanging it. Whole application can be split into following sections:
+	\begin{itemize}
+		\item Library Management
+		\item Shareable Content
+		\item Tests \& Challenges
+		\item User Management
+	\end{itemize}
 	
-	\subsection{Shareable Content}
-	This part covers such things as Notebooks Sharing, Searching, Filtering and Commenting.
-
-	\subsection{Tests And Challenges}
-	This part covers creating tests of different types base on one of the user notebooks
 	
-	\subsection{User Management}
-	User management section involves different operations based on User entity. Updating user profile, changing or assigning University and Login/Logout flows
-
 \setsecnumdepth{all}
 \newpage
 \chapter{Analysis}
 
-This chapter contains \appname\ domain description
+This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals
+
+// TODO Component diagram
 
 \section{System description}
+ \appname\ system follows client-server software architecture. Server part is presented by REST API thats is developed using Spring framework. Client part consists of  client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS  application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server directly.
+ 
+ 
+ 
+ The detailed structure of the Android client structure and its connection with other components are presented in the component diagram bellow. It will be connected with Facebook SDK and Google Auth SDK to provide options for user to login and some minimal setup of Firebase SDK to enable analytics and crash reporting functionality 
 
+
+\section{Domain Description}
 Class diagram bellow represents Domain Model of the application, it provides visual representation of Entities and relations between them. Design is based on the entities used on server-side
 
 \begin{figure}[t]
@@ -90,17 +94,17 @@ Class diagram bellow represents Domain Model of the application, it provides vis
 \end{figure}
 
 \subsection{User}
-	User entity represents someone who have completed registration flow using one of the client app. This entity holds such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorize, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
+	User entity represents someone who have completed registration flow using one of the client app. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorize, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
 
 	
 \subsection{Note}
 	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and defenition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
 \subsection{Notebook}
-	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Shared Notebook. Properties name and color are used to help Users distinct between different Notebooks
+	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Shared Notebook. Properties name and color are used to help users distinct between different Notebooks
 	
 	
 \subsection{University}
-University represents school, where User can assign himself as a student during registration flow. It is used to unite users/students from the same schools, so they could faster find content they are looking for
+University represents school, where User can assign himself as a student during registration flow. It is used to unite users from the same schools, so they could faster find content they are looking for.
 
 \subsection{Published Notebook}
 Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
@@ -118,6 +122,9 @@ Tag is us short label thats attached to the Published Notebook. It is mainly  us
 Users can comment on published notebooks. Most of the properties are assigned automatically, the only exception is content which is property that represents the body of the comment. All other properties are assigned automatically and can not be changed
 
 \section{Android Platform}
+
+
+
 
 \newpage
 \section{Requirements}
