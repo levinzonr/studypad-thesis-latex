@@ -17,6 +17,8 @@
 % \usepackage[cp1250]{inputenc} % LaTeX source encoded as Windows-1250
 
 \usepackage{graphicx} %graphics files inclusion
+\usepackage{float}
+
 % \usepackage{subfig} %subfigures
 % \usepackage{amsmath} %advanced maths
 % \usepackage{amssymb} %additional math symbols
@@ -60,7 +62,7 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way. of life, made it easier and it is hard to come up with the single aspect of it, which was not improved by some or the a other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
+Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way. of life, made it easier and it is hard to come up with the single aspect of it, which was not improved by some or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
 
 Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use the so-called flash card system in the study process - displaying small pieces of information one after another so the user could memorise it more easily. However, most of these services are fairly limited in terms of what the are trying to teach and some of the greatest  features are scattered across different applications. \appname\ wants to give its users freedom in what they want to learn and deliver convenient environment to make study process even more easier
 
@@ -78,34 +80,39 @@ The publication process is to provide additional information about the notebook,
 The author of the notebook reserves the right to make edits/corrections the notebook located in the shared space by editing the his local notebook. Other users (hereinafter subscribers) in turn can save the Published notebook to their library, discuss this notebook with other users, or suggest the author changes or corrections to improve the content inside. By saving Published notebook to his library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions locally, though any local changes will be deleted. The author of the notebook, in turn, will be notified of such activities as: suggestion or correction of content and new comments left by subscribers
 
 \setsecnumdepth{all}
-\newpage
 \chapter{Analysis}
+This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals \appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server-side database directly. 
 
-This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals
+The detailed structure of the Android client structure and its connection with other components is presented in the component diagram on figure \ref{fig:deploy}. 
 
-// TODO Component diagram
-
-\section{System description}
- \appname\ system follows client-server software architecture. Server part is presented by REST API thats is developed using Spring framework. Client part consists of  client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS  application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server directly.
- 
- 
- 
- The detailed structure of the Android client structure and its connection with other components are presented in the component diagram bellow. It will be connected with Facebook SDK and Google Auth SDK to provide options for user to login and some minimal setup of Firebase SDK to enable analytics and crash reporting functionality 
-
-
-\section{Domain Description}
-Class diagram bellow represents Domain Model of the application, it provides visual representation of Entities and relations between them. Design is based on the entities used on server-side
-
-\begin{figure}[t]
-	\includegraphics[scale=0.4]{Domain}
+Android component  will be connected with Facebook SDK and Google Auth SDK to provide options for user to login and Firebase SDK which will enable analytics service, crash reporting and push notifications. Android component will be divided into three layers, where the data layer
+is choosing how to get or write data: from database or server. The business layer is responsible for business logic and for calling the right component. And Presentation cares only about displaying received information.
+\newpage
+\begin{figure}[H]
+  \includegraphics[scale=0.3]{deployment}
+  \caption{Deployment Diagram}
+  \label{fig:deploy}
 \end{figure}
 
+
+\newpage
+\section{Domain Description}
+ Class Diagram on figure \ref{fig:domain} represents Domain Model of the application, it provides visual representation of Entities and relations between them. Design is based on the entities used on server-side
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Domain}
+  \caption{Domain Diagram}
+  \label{fig:domain}
+\end{figure}
+
+ 
+
 \subsection{User}
-	User entity represents someone who have completed registration flow using one of the client app. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorize, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
+	User entity represents someone who have completed registration flow using one of the client app. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorise, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
 
 	
 \subsection{Note}
-	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and defenition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
+	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
 \subsection{Notebook}
 	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Shared Notebook. Properties name and color are used to help users distinct between different Notebooks
 	
@@ -115,7 +122,7 @@ University represents school, where User can assign himself as a student during 
 
 \subsection{Published Notebook}
 Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
-name, optional description,  Topic and optional set of Tags. All these details are later used for Search flow to optimize searching results.
+name, optional description,  Topic and optional set of Tags. All these details are later used for Search flow to optimise searching results.
 
 \subsection{Published Note}
 Published Note represent the note inside of the Published Notebook and  contains the exact same properties as usual note
