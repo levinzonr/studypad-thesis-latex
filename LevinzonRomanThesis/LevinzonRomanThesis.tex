@@ -62,31 +62,31 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way. of life, made it easier and it is hard to come up with the single aspect of it, which was not improved by some or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
+Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
 
-Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use the so-called flash card system in the study process - displaying small pieces of information one after another so the user could memorise it more easily. However, most of these services are fairly limited in terms of what the are trying to teach and some of the greatest  features are scattered across different applications. \appname\ wants to give its users freedom in what they want to learn and deliver convenient environment to make study process even more easier
+Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use the so-called flash card system in the study process - displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn and deliver a convenient environment to make education process even more easier
 
 \subsection{\appname\ service}
-\appname\ is a combination of a note taking service and a social network. This service is focused primarily on students and it aims to get rid of the boundaries of what it can teach - because users will be able to create teaching materials themselves and share it with each other.
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on is content creation and its discovery
 
-The basis of \appname\ is such concepts as Notebook. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you can hear at the job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and content. Note can be interpreted as a question and answer, or a term and its definition.
+\appname\ core concepts are \textbf{notebooks} and \textbf{notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at the job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
 
-Each user has his own space where he can create, store and edit his notebooks (Further Library) and then use as a basis for various tests and exercises to quickly memorise information from a notebook using the familiar flash card system
+Each user has his own space where he can create, store and edit his notebooks (hereafter Library) and then use as a basis for various tests and exercises to quickly memorise information from a notebook using the familiar flash card system. All notebooks in Library are private by default and cannot be accessed by others users
 
-\appname\ also allows users to easily share these notebooks with each other. Each notebook can be published, thereby making it available for viewing and downloading to other users.
-The publication process is to provide additional information about the notebook, including its name, optional description, topic and optional tags that serve to narrow the topic. All this data, including the author's school, will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also the ability to quickly send a notebook using the links. In this case, if the notepad has not yet been published, its published version will be created with a minimum of details and excluded from the search results, making it accessible only using link until all details nedeed are provided, link to the Published version will be sent otherwise
+\appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to other users for viewing and downloading .
+The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also an ability to quickly send a notebook using its link. In this case, if the notebook has not yet been published, its published version will be created with a minimum of details. It will be also excluded from the search results, making it accessible only by using link, until all details necessary are provided. Link to the already created Published version will be sent otherwise
 
 
-The author of the notebook reserves the right to make edits/corrections the notebook located in the shared space by editing the his local notebook. Other users (hereinafter subscribers) in turn can save the Published notebook to their library, discuss this notebook with other users, or suggest the author changes or corrections to improve the content inside. By saving Published notebook to his library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions locally, though any local changes will be deleted. The author of the notebook, in turn, will be notified of such activities as: suggestion or correction of content and new comments left by subscribers
-
+The author of the notebook reserves the right to make edits/corrections the Published Notebook by editing its local version. Other users (hereinafter subscribers) in turn can save a Published notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, though any changes made by a subscriber will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
 \setsecnumdepth{all}
 \chapter{Analysis}
-This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals \appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server-side database directly. 
+This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals 
+
+\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server-side database directly. 
 
 The detailed structure of the Android client structure and its connection with other components is presented in the component diagram on figure \ref{fig:deploy}. 
 
-Android component  will be connected with Facebook SDK and Google Auth SDK to provide options for user to login and Firebase SDK which will enable analytics service, crash reporting and push notifications. Android component will be divided into three layers, where the data layer
-is choosing how to get or write data: from database or server. The business layer is responsible for business logic and for calling the right component. And Presentation cares only about displaying received information.
+ Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer.Data layer is only responsible for downloading data and storing it. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK and Google Auth SDK to provide authentication options  and Firebase SDK to enable analytics service, crash reporting and push notifications.
 \newpage
 \begin{figure}[H]
   \includegraphics[scale=0.3]{deployment}
@@ -114,7 +114,7 @@ is choosing how to get or write data: from database or server. The business laye
 \subsection{Note}
 	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
 \subsection{Notebook}
-	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Shared Notebook. Properties name and color are used to help users distinct between different Notebooks
+	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Published Notebook. Properties name and color are used to help users distinct between different Notebooks
 	
 	
 \subsection{University}
@@ -155,6 +155,7 @@ of the development
 	\item \textbf{F4: Store OAuth token} API Authentication Token will be stored in device memory.
 	\item \textbf{F5: Token refreshment} API Token will be refreshed when needed, so user won't have to login again.
 	\item \textbf{F6: University selection} As a part of user registration flow, user will be able to select his/her university.
+	\item \textbf{F7: University Addition} User will be able to add his/her school, in case of not finding it in \appname\ database.
 \end{itemize}
 \bigskip
 \textbf{Library Management (Notes \& Notebooks)}
@@ -166,39 +167,44 @@ of the development
 	\item \textbf{F11: Note edition} User will be able to edit existing note, or completely delete it.
 	\item \textbf{F12: Show Notebooks} : User will be able to view all the notebooks he/she created.
 	\item \textbf{F13: Show Notes}: By clicking on notebook item, user will be able to view the list of notes that are assigned to this notebook.
+	\item \textbf{F14: MathJax support}: User will be able to use complex mathematical expressions as Notes content
 \end{itemize}
 
 \bigskip
 \textbf{Sharing Hub}
 \begin{itemize}
-	\item \textbf{F14: View published notebooks} User will be able to view notebooks published by other users.
-	\item \textbf{F15: Search through published books} User will be able to search through the published notebooks by applying different filters (such as author, university and subject/topic).
-	\item \textbf{F16: Browse through published notebook} User will be able to see notes inside the notebook that's been published.
-	\item \textbf{F17: View comments} User will be able to view others users comments discussing a notebook that's been published.
-	\item \textbf{F18: Leave a comment} User can comment on other user published notebook.
-	\item \textbf{F19: Delete a comment} Application will let user to delete his/her comment.
-	\item \textbf{F20: Save published notebook} User will be able to save published notebook to his/her library.
-	\item \textbf{F21: Publish notebook} User will be able to publish his/her notebook.
-	\item \textbf{F22: Update published notebook} Author of the published notebook will be able to update its information.
-	\item \textbf{F23: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
-	\item \textbf{F24: Share notebook} User will be able to share his/her notebook by generating a deep-link.
+	\item \textbf{F15: View published notebooks} User will be able to view notebooks published by other users.
+	\item \textbf{F16: Search through published books} User will be able to search through the published notebooks by applying different filters (such as author, university and subject/topic).
+	\item \textbf{F17: Browse through published notebook} User will be able to see notes inside the notebook that's been published.
+	\item \textbf{F18: View comments} User will be able to view others users comments discussing a notebook that's been published.
+	\item \textbf{F19: Leave a comment} User can comment on other user published notebook.
+	\item \textbf{F20: Delete a comment} Application will let user to delete his/her comment.
+	\item \textbf{F21: Save published notebook} User will be able to save published notebook to his/her library.
+	\item \textbf{F22: Publish notebook} User will be able to publish his/her notebook.
+	\item \textbf{F23: Update published notebook} Author of the published notebook will be able to update its information.
+	\item \textbf{F24: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
+	\item \textbf{F25: Share notebook} User will be able to share his/her notebook by generating a deep-link.
+	\item \textbf{F26: Notification on update:q} User will be notified on updates to the Published notebook he subscribed to
+	\item \textbf{F27: Suggestions} Subscribers will be able to suggest a change or correction to the Published Notebook
+	\item \textbf{F28: Copy Published Notebook} User will be able to copy published notebook. This will 
  \end{itemize}
 
 \bigskip
 \textbf{Study Hub}
 \begin{itemize}
-	\item \textbf{F25: Start a basic self-check} User will be able to use an interactive way to look through his/her notes
-	\item \textbf{F26: Start a written test} User will be able to participate in a written test based on one of notebooks to test his/her knowledge
-	\item \textbf{F27: Start a quiz} User will be able to participate in quiz challenge that will be based on one of his/her notebooks
+	\item \textbf{F29: Start a basic self-check} User will be able to use an interactive way to look through his/her notes
+	\item \textbf{F30: Start a written test} User will be able to participate in a written test based on one of notebooks to test his/her knowledge
+	\item \textbf{F31: Start a quiz} User will be able to participate in quiz challenge that will be based on one of his/her notebooks
 	
 \end{itemize}
+
 
 \bigskip
 \textbf{Settings}
 \begin{itemize}
-	\item \textbf{F28: View Profile Information} User will be able to view his/her profile information such as first name, last name and  university.
-	\item \textbf{F29: Edit Profile Information} User will be able to edit his/her profile information.
-	\item \textbf{F30: Logout} User will be able to logout from the application.
+	\item \textbf{F32: View Profile Information} User will be able to view his/her profile information such as first name, last name and  university.
+	\item \textbf{F33: Edit Profile Information} User will be able to edit his/her profile information.
+	\item \textbf{F34: Logout} User will be able to logout from the application.
 \end{itemize}
 
 
@@ -210,7 +216,7 @@ of the development
   \item \textbf{N3: Material Design} Application user interface will follow latest Material design guidelines and best practises.
   \item \textbf{N4: Scalable app architecture} Application's architecture must be scalable and easy testable.
   \item \textbf{N5: Tablet \& Phone support} Application GUI must be well suited for multiple screen sizes.
-  \item \textbf{N6: App Localization} Application will be able to adapt to different languages based on user locale
+  \item \textbf{N6: App Localisation} Application will be able to adapt to different languages based on user locale
 \end{itemize}
 
 
@@ -218,71 +224,49 @@ of the development
 
 \section{Existing solutions}
 
-There are several apps out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and discovering options. Table bellow shows requirements comparison such apps
+There are several apps out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. Table on figure \ref{table:requirements} represents key requirements comparison
 
-\bigskip
 
-\begin{tabular}{|l|l|l|l|}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
 \hline
-\textbf{\begin{tabular}[c]{@{}l@{}}Application\\ Requirement\end{tabular}} & \multicolumn{1}{c|}{\textbf{Quizlet}} & \multicolumn{1}{c|}{\textbf{Cram}} & \multicolumn{1}{c|}{\textbf{TinyCards}} \\ \hline
-\textbf{F1}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F2}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F3}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F4}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F5}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F6}                                                                & Absent                                & Absent                             & Absent                                  \\ \hline
-\textbf{F7}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F8}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F9}                                                                & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F10}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F11}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F12}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F13}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F14}                                                               & Absent                                & Absent                             & Present                                 \\ \hline
-\textbf{F15}                                                               & Limited                               & Limited                            & Limited                                 \\ \hline
-\textbf{F16}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F17}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
-\textbf{F18}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
-\textbf{F19}                                                               & Absent                                & Absent                             & Absent                                  \\ \hline
-\textbf{F20}                                                               & Present                               & Limited                            & Limited                                 \\ \hline
-\textbf{F21}                                                               & Limited                               & Limited                            & Limited                                 \\ \hline
-\textbf{F22}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F23}                                                               & Present                               & Present                            & Present                                 \\ \hline
-\textbf{F24}                                                               & Present                               & Limited                            & Limited                                 \\ \hline
-\textbf{F25}                                                               & Present                               & Present                            & Limited                                 \\ \hline
-\textbf{F26}                                                               & Present                               & Present                            & Limited                                 \\ \hline
-\textbf{F27}                                                               & Present                               & Present                            & Limited                                 \\ \hline
-\textbf{F28}                                                               & Present                               & Present                            & Limited                                 \\ \hline
-\textbf{F29}                                                               & Limted                                & Limted                             & Limited                                 \\ \hline
-\textbf{F30}                                                               & Present                               & Present                            & Limited                                 \\ \hline
+\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Application Name\\ Requirement\end{tabular}}} & StudyPad & Quizlet & Cram    & TinyCards \\ \hline
+\textbf{F6: University Selection}                                                                     & Present  & Absent  & Absent  & Absent    \\ \hline
+\textbf{F14: MathJax support}                                                                         & Present  & Absent  & Absent  & Limited   \\ \hline
+\textbf{F16: Searching and Filtering}                                                      & Present  & Limited & Limited & Limited   \\ \hline
+\textbf{F18-F20: User commentaries}                                                   & Present  & Absent  & Absent  & Absent    \\ \hline
+\textbf{F21: Save published notebook}                                                                 & Present  & Present & Present & Present   \\ \hline
+\textbf{F25: Share published notebook}                                                                & Present  & Present & Limited & Present   \\ \hline
+\textbf{F27: Suggestions}                                                                             & Present  & Absent  & Absent  & Absent    \\ \hline
 \end{tabular}
+\label{table:requirements}
+\caption{Key requirements comparison}
+\end{table}
 
-\bigskip
 \subsection{Quzlet - Key differences}
-
 \textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when he/she is trying to learn anything other than new words
 
 
 
 \begin{itemize}
 	\item \textbf{Publishing}: Content publishing process is very different to what \appname\ is trying to achieve. All study sets are visible to other users by default, which makes it hard, if not impossible, to distinct between local and shared published set.
-	\item \textbf{Importing}: Importing flow allows user to either copy or save study set to a specific folder. This flow may confuse some of the users, because only copy allows actually add set to user library and modify it. Saving study set to the specific folder only saves the link to it and splits library management in 2 parts.
-	\item \textbf{Discovering:} This limitation comes from the fact, that Quizlet is an app for language learners. As a consequence, the only distinctions between Study sets are its name and a language. These are the only 2 options available for filtering published study sets.
+	\item \textbf{Importing}: Importing flow allows user to either copy or save study set to a specific folder. This flow may confuse some of the users, because only copy allows actually add a study set to user library and modify it. Saving study set to the specific folder only saves the link to it and splits library management in 2 parts.
+	\item \textbf{Discovering:} This limitation comes from the fact, that Quizlet is an app for studying new languages. As a consequence, the only distinctions between Study sets are its name and a language. These are the only 2 options available for when searching through published study sets.
 
 \end{itemize}
 
 \subsection{Cram - Key differences}
-\textbf{Cram} is very similar to Quizlet but feels much more outdated in terms of UX and brings some sharing limitations to the table.
+\textbf{Cram} is very similar to Quizlet but seems much more outdated in terms of UX and brings some sharing limitations to the table.
 
 \begin{itemize}
 	\item  \textbf{Publishing:} Content publishing is similar to Quizlet - All sets are either visible by other users or not. Sharing a deep-link to a single study set was not functional at the time of writing this section
 	\item \textbf{Discovering} Searching for content in Cram is even more limited comparing to Quizlet, only name of the study set is used
-	\item \textbf{Importing} Library management here is splitted in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, it can only be automatically saved to Recent section, or manually added to Favourites. This makes it impossible to make local edits
+	\item \textbf{Importing} Library management here is split in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, however, it will be automatically saved to Recent section, or user can add it manually to Favourites. This makes it impossible to make local edits
 \end{itemize}
 
 \subsection{TinyCards - Key Differences}
 
-\textbf{TinyCards} is app made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages
+\textbf{TinyCards} is an application made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages
 	\begin{itemize}
 		\item \textbf{Importing:} Similar to Cram, it is not possible to edit the study set user have downloaded and saved to his library
 		\item \textbf{Challenges:} Tests for user are generated automatically and there is no way to choose test type
