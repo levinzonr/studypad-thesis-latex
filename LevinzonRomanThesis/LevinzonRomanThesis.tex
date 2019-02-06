@@ -64,33 +64,33 @@
 
 Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
 
-Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use the so-called flash card system in the study process - displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn and deliver a convenient environment to make education process even more easier
+Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use flash card system in the study process - displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to collaborate to their study process even more easier
 
 \subsection{\appname\ service}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on is content creation and its discovery
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation its sharing and discovery
 
-\appname\ core concepts are \textbf{notebooks} and \textbf{notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at the job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
+\appname\ core concepts are \textbf{notebooks} and \textbf{notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
 
-Each user has his own space where he can create, store and edit his notebooks (hereafter Library) and then use as a basis for various tests and exercises to quickly memorise information from a notebook using the familiar flash card system. All notebooks in Library are private by default and cannot be accessed by others users
+Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textbf{Library}). All notebooks stored in library can be used in various tests and exercises to help users to memorise its content. 
 
 \appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to other users for viewing and downloading .
-The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also an ability to quickly send a notebook using its link. In this case, if the notebook has not yet been published, its published version will be created with a minimum of details. It will be also excluded from the search results, making it accessible only by using link, until all details necessary are provided. Link to the already created Published version will be sent otherwise
+The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also a functionality to quickly send a notebook using its link. In this case, if the notebook has not yet been published, its published version will be created with a minimum amount of details.Such notebook will be also excluded from the search results, making it accessible only by using its link, until all necessary details are provided. Link to the already created Published version will be sent otherwise
 
 
-The author of the notebook reserves the right to make edits/corrections the Published Notebook by editing its local version. Other users (hereinafter subscribers) in turn can save a Published notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, though any changes made by a subscriber will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
+The author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, though any local changes made by a subscriber will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
 \setsecnumdepth{all}
 \chapter{Analysis}
 This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals 
 
-\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the server which allows to modify certain data without dealing with the server-side database directly. 
+\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the backend which allows to view and modify and certain data without dealing with the server-side database directly. 
 
 The detailed structure of the Android client structure and its connection with other components is presented in the component diagram on figure \ref{fig:deploy}. 
 
- Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer.Data layer is only responsible for downloading data and storing it. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK and Google Auth SDK to provide authentication options  and Firebase SDK to enable analytics service, crash reporting and push notifications.
+ Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer. Data layer is only responsible for downloading and storing data. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK and Google Auth SDK to provide authentication options and Firebase SDK to enable analytics service, crash reporting and push notifications.
 \newpage
 \begin{figure}[H]
-  \includegraphics[scale=0.3]{deployment}
-  \caption{Deployment Diagram}
+  \includegraphics[scale=0.4]{deployment}
+  \caption{Component Diagram}
   \label{fig:deploy}
 \end{figure}
 
@@ -224,7 +224,7 @@ of the development
 
 \section{Existing solutions}
 
-There are several apps out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. Table on figure \ref{table:requirements} represents key requirements comparison
+There are several services out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. Table on figure \ref{table:requirements} represents key requirements comparison
 
 
 \begin{table}[H]
@@ -242,6 +242,8 @@ There are several apps out there, whose goal is similar to \appname. However, mo
 \label{table:requirements}
 \caption{Key requirements comparison}
 \end{table}
+
+
 
 \subsection{Quzlet - Key differences}
 \textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when he/she is trying to learn anything other than new words
