@@ -18,11 +18,10 @@
 
 \usepackage{graphicx} %graphics files inclusion
 \usepackage{float}
-
+\usepackage{csquotes}
 % \usepackage{subfig} %subfigures
 % \usepackage{amsmath} %advanced maths
 % \usepackage{amssymb} %additional math symbols
-
 \usepackage{dirtree} %directory tree visualisation
 
 % % list of acronyms
@@ -62,31 +61,35 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications - more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
+Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
 
-Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use flash card system in the study process - displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to collaborate to their study process even more easier
+Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use flash card system in the study process -- displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to collaborate on study materials to make their education process even more easier.
 
 \subsection{\appname\ service}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation its sharing and discovery
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation, its sharing and discovery.
 
-\appname\ core concepts are \textbf{notebooks} and \textbf{notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
+\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
+\\
 
-Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textbf{Library}). All notebooks stored in library can be used in various tests and exercises to help users to memorise its content. 
+Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content. 
 
-\appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to other users for viewing and downloading .
-The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also a functionality to quickly send a notebook using its link. In this case, if the notebook has not yet been published, its published version will be created with a minimum amount of details.Such notebook will be also excluded from the search results, making it accessible only by using its link, until all necessary details are provided. Link to the already created Published version will be sent otherwise
+\appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
+The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school and language will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also a functionality to quickly share a notebook by sending a link, which will act as a deep-link, navigating user directly to a Published Notebook.
 
+The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscriber will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, however, any local changes made by him/her will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
 
-The author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscribers will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, though any local changes made by a subscriber will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
 \setsecnumdepth{all}
 \chapter{Analysis}
-This chapter contains \appname\ application analysis with the goal to identify requirements and how it is compared with its rivals 
+This chapter contains \appname\ system description and analysis with the goal to identify requirements and how it is compared with its rivals
 
-\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Main task of this thesis is to deliver an Android application. iOS application is developed as a part subject called BI-IOS and hence, has some limitations in its implementation. Web client is being developed alongside the Android one is serves as Admin Panel for the backend which allows to view and modify and certain data without dealing with the server-side database directly. 
 
-The detailed structure of the Android client structure and its connection with other components is presented in the component diagram on figure \ref{fig:deploy}. 
+\section{System description}
 
- Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer. Data layer is only responsible for downloading and storing data. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK and Google Auth SDK to provide authentication options and Firebase SDK to enable analytics service, crash reporting and push notifications.
+\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Web client is being developed alongside the Android one to serve as an Admin Panel. Main task of this thesis is to deliver an Android client.
+
+The detailed structure of the Android client structure and how it is connected with other components is presented on the component diagram on figure \ref{fig:deploy}. 
+
+ Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer. Data layer is only responsible for downloading and storing data. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK, Google Auth SDK and Firebase Sdk to provide authentication options. Firebase SDK will also enable analytics service, crash reporting and push notifications.
 \newpage
 \begin{figure}[H]
   \includegraphics[scale=0.4]{deployment}
@@ -108,32 +111,32 @@ The detailed structure of the Android client structure and its connection with o
  
 
 \subsection{User}
-	User entity represents someone who have completed registration flow using one of the client app. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorise, some of the properties will either come from the user's input or from the 3rd party API ( Google or Facebook ).
+	User entity represents someone who have completed registration flow using one of the client applications. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorise, some of the properties will either come from the user's input or from the 3d party API (such as Firebase)
 
 	
 \subsection{Note}
-	Note represent a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
+	Note represents a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
 \subsection{Notebook}
 	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Published Notebook. Properties name and color are used to help users distinct between different Notebooks
 	
 	
 \subsection{University}
-University represents school, where User can assign himself as a student during registration flow. It is used to unite users from the same schools, so they could faster find content they are looking for.
+University represents school, where User can assign himself as a student during registration flow. It is used to unite users from the same school to make content searching easier. 
 
 \subsection{Published Notebook}
 Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
-name, optional description,  Topic and optional set of Tags. All these details are later used for Search flow to optimise searching results.
+name, optional description,  topic and optional list of tags. All these details are later used in a searching flow to optimise results.
 
 \subsection{Published Note}
-Published Note represent the note inside of the Published Notebook and  contains the exact same properties as usual note
+Published Note represent the note inside of the Published Notebook and contains the exact same properties as usual note
 
 \subsection{Topic}
-Topic represents main topic or subject of the Published Notebook. Topic consist of only one property: name
+Topic represents main topic or subject of the Published Notebook. Topic consist of only one property -- its name
 \subsection{Tag}
-Tag is us short label thats attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property - it's actual value stored as name
+Tag is a short label thats attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property -- its actual value stored as name
 
 \subsection{Comment}
-Users can comment on published notebooks. Most of the properties are assigned automatically, the only exception is content which is property that represents the body of the comment. All other properties are assigned automatically and can not be changed
+Users can comment on published notebooks. Most of the properties are assigned automatically, the only exception is content which is property that represents the body of the comment.
 
 \section{Android Platform}
 
@@ -167,7 +170,7 @@ of the development
 	\item \textbf{F11: Note edition} User will be able to edit existing note, or completely delete it.
 	\item \textbf{F12: Show Notebooks} : User will be able to view all the notebooks he/she created.
 	\item \textbf{F13: Show Notes}: By clicking on notebook item, user will be able to view the list of notes that are assigned to this notebook.
-	\item \textbf{F14: MathJax support}: User will be able to use complex mathematical expressions as Notes content
+	\item \textbf{F14: MathJax support}: User will be able to use complex mathematical expressions as notes content
 \end{itemize}
 
 \bigskip
@@ -224,28 +227,23 @@ of the development
 
 \section{Existing solutions}
 
-There are several services out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. Table on figure \ref{table:requirements} represents key requirements comparison
+There are several services out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. 
+
+\subsection{StudyBlue overview}
+
+\textbf{StudyBlue} not only partially shares a name with \appname\ but also a goal and a wide set of features. It is clearly on of the biggest rivals on the market and it is very important to determine what StudyBlue does right and what not.
+
+Notebooks here are called \textit{decks} and notes are represented by \textit{cards}. Moreover, all decks in StudyBlue are stored in specialised folders named Classes and Interests. Interest, as an entity, not only stores decks, but also unites them by a subject or a topic (eg Spanish, Literature). Being a student of the university, user can also create an interest, that will be connected to his/her school -- Class. Both Interests and Classes are split into 2 parts, shared space, where user can found all the decks created by other users, and personal space, where user can keep decks he/she created, saved or copied.
 
 
-\begin{table}[H]
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Application Name\\ Requirement\end{tabular}}} & StudyPad & Quizlet & Cram    & TinyCards \\ \hline
-\textbf{F6: University Selection}                                                                     & Present  & Absent  & Absent  & Absent    \\ \hline
-\textbf{F14: MathJax support}                                                                         & Present  & Absent  & Absent  & Limited   \\ \hline
-\textbf{F16: Searching and Filtering}                                                      & Present  & Limited & Limited & Limited   \\ \hline
-\textbf{F18-F20: User commentaries}                                                   & Present  & Absent  & Absent  & Absent    \\ \hline
-\textbf{F21: Save published notebook}                                                                 & Present  & Present & Present & Present   \\ \hline
-\textbf{F25: Share published notebook}                                                                & Present  & Present & Limited & Present   \\ \hline
-\textbf{F27: Suggestions}                                                                             & Present  & Absent  & Absent  & Absent    \\ \hline
-\end{tabular}
-\label{table:requirements}
-\caption{Key requirements comparison}
-\end{table}
+\begin{itemize}
+	\item \textbf{Library management:} Main difference in library management comes with the fact, that each deck must be associated with an Interest or Class, moreover, it's not possible just to create deck, user have to create at least 2 cards first. Every  Class or an Interest, user adds, is being stored in a \textit{Backpack}. So, Backpack here acts as a personal library, and serves as an entry point for all the decks user have saved. 
+	\item \textbf{Importing}: As mentioned before, user can save deck from an existing shared folder to his personal folder, but he would not be able to make any editions unless he made a copy.
+	\item \textbf{Discovering:} The fact that all decks are either assigned to an Interest or a Class makes searching quite simple. User can search for deck, classes and users by its name.All these searching options are separated in the UI, so there is no way of combining them. To search for the decks based on the Interest, user have to add this Interest to his/her \enquote{Backpack}
+	\item \textbf{UI \&  UX}: StudyBlue has been in development roughly since 2009, and is for now, UI looks outdated and UX can be greatly improved just by applying best practises. Confusing UI elements, inconsistent 
+\end{itemize}
 
-
-
-\subsection{Quzlet - Key differences}
+ \subsection{Quzlet overview}
 \textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when he/she is trying to learn anything other than new words
 
 
@@ -257,7 +255,7 @@ There are several services out there, whose goal is similar to \appname. However
 
 \end{itemize}
 
-\subsection{Cram - Key differences}
+\subsection{Cram overview}
 \textbf{Cram} is very similar to Quizlet but seems much more outdated in terms of UX and brings some sharing limitations to the table.
 
 \begin{itemize}
@@ -266,7 +264,7 @@ There are several services out there, whose goal is similar to \appname. However
 	\item \textbf{Importing} Library management here is split in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, however, it will be automatically saved to Recent section, or user can add it manually to Favourites. This makes it impossible to make local edits
 \end{itemize}
 
-\subsection{TinyCards - Key Differences}
+\subsection{TinyCards overview}
 
 \textbf{TinyCards} is an application made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages
 	\begin{itemize}
