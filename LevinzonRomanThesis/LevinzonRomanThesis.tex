@@ -61,11 +61,11 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay  fit and healthy and more. And some of the most popular applications tend to teach us something new.	
+Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. And some of the most popular applications tend to teach us something new.	
 
-Educational apps are one of the most popular apps on both mobile platforms (iOS and Android). Many of them use flash card system in the study process -- displaying small pieces of information one after another, so the user could memorise it more easily. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to collaborate on study materials to make their education process even more easier.
+Educational applications are one of the most popular on both mobile platforms (iOS and Android). Many of them use flash card system in the study process -- displaying small pieces of information one after another, so the user could memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
 
-\subsection{\appname\ service}
+\section{\appname\ service}
 \appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation, its sharing and discovery.
 
 \appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
@@ -73,10 +73,11 @@ Educational apps are one of the most popular apps on both mobile platforms (iOS 
 
 Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content. 
 
+\subsection{Sharing \& Collaboration }
 \appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
-The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. All this data along with Author's school and language will then be used in the process of searching and filtering - which will facilitate the search for the necessary materials. There is also a functionality to quickly share a notebook by sending a link, which will act as a deep-link, navigating user directly to a Published Notebook.
+The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. Everything Author have provided along with his school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also allows to quickly share a notebook by sending a link, which will act as a deep-link, navigating user directly to a Published Notebook.
 
-The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library, or suggest the author changes/corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he sees fit and use it as normal. Subscriber will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, however, any local changes made by him/her will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by subscribers
+The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library, or suggest some changes or corrections to improve the content inside. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he/she sees fit and use it as normal. Subscriber will be notified about any updates to the Published Notebook so that they can apply changes to their local versions, however, any local changes made by him/her will be deleted. The author of the notebook, in turn, will be notified about latest suggestions and comments left by the subscribers.
 
 \setsecnumdepth{all}
 \chapter{Analysis}
@@ -182,14 +183,15 @@ of the development
 	\item \textbf{F18: View comments} User will be able to view others users comments discussing a notebook that's been published.
 	\item \textbf{F19: Leave a comment} User can comment on other user published notebook.
 	\item \textbf{F20: Delete a comment} Application will let user to delete his/her comment.
+	\item \textbf{F21: Edit a Comment} Application will let user to edit his/her comment
 	\item \textbf{F21: Save published notebook} User will be able to save published notebook to his/her library.
 	\item \textbf{F22: Publish notebook} User will be able to publish his/her notebook.
 	\item \textbf{F23: Update published notebook} Author of the published notebook will be able to update its information.
 	\item \textbf{F24: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
 	\item \textbf{F25: Share notebook} User will be able to share his/her notebook by generating a deep-link.
-	\item \textbf{F26: Notification on update:q} User will be notified on updates to the Published notebook he subscribed to
-	\item \textbf{F27: Suggestions} Subscribers will be able to suggest a change or correction to the Published Notebook
-	\item \textbf{F28: Copy Published Notebook} User will be able to copy published notebook. This will 
+	\item \textbf{F26: Notification on update} User will be notified on updates to the Published notebook hes subscribed to
+	\item \textbf{F27: Suggestions} Subscribers will be able to suggest a change or correction to the Published Notebook. Author will be able to approve it, which will result in the update of the Published Notebook, or decline it.
+	\item \textbf{F28: Copy Published Notebook} User will be able to copy published notebook. This will create a standalone copy of this notebook in the users library.
  \end{itemize}
 
 \bigskip
@@ -227,49 +229,118 @@ of the development
 
 \section{Existing solutions}
 
-There are several services out there, whose goal is similar to \appname. However, most of the solutions are limited to learning languages and have limited sharing and/or searching options. 
+There are several services out there, whose goal is similar to \appname. However, most of the solutions are specialised for learning languages and have limited sharing and/or searching options. Each application/service will be reviewed separately and will include requirements and main processes comparison.
 
-\subsection{StudyBlue overview}
+\subsection{StudyBlue}
 
-\textbf{StudyBlue} not only partially shares a name with \appname\ but also a goal and a wide set of features. It is clearly on of the biggest rivals on the market and it is very important to determine what StudyBlue does right and what not.
+\textbf{StudyBlue} not only partially shares a name with \appname\ but also a goal and a wide set of features. It is clearly on of the biggest rivals on the market and it is very important to determine what StudyBlue does right and what not. How most important \appname\ requirements are compared to the StudyBlue functionality can be seen on table \ref{tab:studyblue}
 
 Notebooks here are called \textit{decks} and notes are represented by \textit{cards}. Moreover, all decks in StudyBlue are stored in specialised folders named Classes and Interests. Interest, as an entity, not only stores decks, but also unites them by a subject or a topic (eg Spanish, Literature). Being a student of the university, user can also create an interest, that will be connected to his/her school -- Class. Both Interests and Classes are split into 2 parts, shared space, where user can found all the decks created by other users, and personal space, where user can keep decks he/she created, saved or copied.
 
 
+\begin{table}[H]
+\caption{\appname\ \& StudyBlue requirements comparison}
+\label{tab:studyblue}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Requirements / Application name}} & \multicolumn{1}{l|}{\textbf{StudyPad}} & \multicolumn{1}{l|}{\textbf{StudyBlue}} \\ \hline
+F6: University Selection                                       & Present                                & Present                                \\ \hline
+F13: Show Notes                                                & Present                                & Limited                                \\ \hline
+F14: MathJax /ASCII Math support                               & Present                                & Limited                                \\ \hline
+F16: Browse Through Published Notebooks                        & Present                                & Present                               \\ \hline
+F17: Search Through The Published Notebooks                    & Present                                & Present                               \\ \hline
+F18-F21: User Commentaries                                     & Present                                & Absent                                \\ \hline
+F27: User Suggestions                                          & Present                                & Absent                               \\ \hline
+\end{tabular}
+\end{table}
+
 \begin{itemize}
-	\item \textbf{Library management:} Main difference in library management comes with the fact, that each deck must be associated with an Interest or Class, moreover, it's not possible just to create deck, user have to create at least 2 cards first. Every  Class or an Interest, user adds, is being stored in a \textit{Backpack}. So, Backpack here acts as a personal library, and serves as an entry point for all the decks user have saved. 
-	\item \textbf{Importing}: As mentioned before, user can save deck from an existing shared folder to his personal folder, but he would not be able to make any editions unless he made a copy.
-	\item \textbf{Discovering:} The fact that all decks are either assigned to an Interest or a Class makes searching quite simple. User can search for deck, classes and users by its name.All these searching options are separated in the UI, so there is no way of combining them. To search for the decks based on the Interest, user have to add this Interest to his/her \enquote{Backpack}
-	\item \textbf{UI \&  UX}: StudyBlue has been in development roughly since 2009, and is for now, UI looks outdated and UX can be greatly improved just by applying best practises. Confusing UI elements, inconsistent 
+	\item \textbf{Library management:} Main difference in library management comes with the fact, that each deck must be associated with an Interest or Class, moreover, it's not possible just to create deck, user have to create at least 2 cards first. Because of that, library management not only includes managing your decks and card, but also interests and classes. Everything user have saved or created, whether class, interest or a deck can be accessed via \textit{Backpack}.
+	\item \textbf{Publishing:} Publishing process is quite different comparing to what \appname\ is trying to achieve. When creating a deck, user can choose whether he wants to make his/her deck visible for other users in this Class/Interest or to make it private. It is not possible to collaborate on a deck or suggest a change
+	
+	\item \textbf{Importing}: As mentioned before, user can save a deck from an existing Interest/Class to his personal space, but he would not be able to make any editions without making a copy.
+	\item \textbf{Discovering:} The fact that all decks are either assigned to an Interest or a Class makes searching quite simple. User can search for deck, classes and users by its name.All these searching options are separated in the UI, so there is no way of combining them. Searching based on the Interest is also available, but user have to add this Interest to his/her \enquote{Backpack}
+	\item \textbf{UI \&  UX}: StudyBlue has been in development roughly since 2009, and is for now, UI looks outdated and UX can be greatly improved. The most common UI issue here -- Inconsistent usage of UI elements styles.
 \end{itemize}
 
- \subsection{Quzlet overview}
-\textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. Closest analogy to Notebook there is Study set with Terms inside. This makes it easier for tests generation, but limits user when he/she is trying to learn anything other than new words
+ \subsection{Quizlet}
+\textbf{Quizlet} is primarily used for learning languages, from where most of the limitations are coming from. Closest analogy to a Notebook here is a Study set with Terms inside. Being an application for language learners makes the process of generating different tests and quizzes quite easy, and this is where this application shines the most. Table \ref{tab:quizlet} shows requirements comparison between \appname\ and Quizlet
 
-
+\begin{table}[H]
+\caption{\appname\ \& Quizlet requirements comparison}
+\label{tab:quizlet}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Requirements / Application name}} & \multicolumn{1}{l|}{\textbf{StudyPad}} & \multicolumn{1}{l|}{\textbf{Quizlet}} \\ \hline
+F6: University Selection                                       & Present                                & Absent                                \\ \hline
+F13: Show Notes                                                & Present                                & Absent                                \\ \hline
+F14: MathJax /ASCII Math support                               & Present                                & Absent                                \\ \hline
+F16: Browse Through Published Notebooks                        & Present                                & Present                               \\ \hline
+F17: Search Through The Published Notebooks                    & Present                                & Limited                               \\ \hline
+F18-F21: User Commentaries                                     & Present                                & Absent                                \\ \hline
+F27: User Suggestions                                          & Present                                & Limited                               \\ \hline
+\end{tabular}
+\end{table}
 
 \begin{itemize}
-	\item \textbf{Publishing}: Content publishing process is very different to what \appname\ is trying to achieve. All study sets are visible to other users by default, which makes it hard, if not impossible, to distinct between local and shared published set.
+	\item \textbf{Publishing}: Similar to StudyBlue, all Study Sets are visible to everyone else by default. However, Quizlet provides a wider variety of privacy options. Study Set can either be completely public, private or semi-private using a password protection. Password protection can also be used to allow certain users modify a study set
 	\item \textbf{Importing}: Importing flow allows user to either copy or save study set to a specific folder. This flow may confuse some of the users, because only copy allows actually add a study set to user library and modify it. Saving study set to the specific folder only saves the link to it and splits library management in 2 parts.
-	\item \textbf{Discovering:} This limitation comes from the fact, that Quizlet is an app for studying new languages. As a consequence, the only distinctions between Study sets are its name and a language. These are the only 2 options available for when searching through published study sets.
+	\item \textbf{Discovering:} This limitation comes from the fact, that Quizlet is an app for studying foreign  languages. As a consequence, the only distinctions between Study Sets are its name and its language. These are the only 2 options available when searching through study sets.
 
 \end{itemize}
 
-\subsection{Cram overview}
-\textbf{Cram} is very similar to Quizlet but seems much more outdated in terms of UX and brings some sharing limitations to the table.
+\subsection{Cram}
+\textbf{Cram} is very similar to Quizlet but seems highly outdated in terms of UX/UI and brings some sharing limitations to the table. Table \ref{tab:cram} shows requirements comparison between \appname\ and Cram
+
+
+
+\begin{table}[H]
+\caption{\appname\ \& Cram requirements comparison}
+\label{tab:cram}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Requirements / Application name}} & \multicolumn{1}{l|}{\textbf{StudyPad}} & \multicolumn{1}{l|}{\textbf{Cram}} \\ \hline
+F6: University Selection                                       & Present                                & Absent                             \\ \hline
+F13: Show Notes                                                & Present                                & Present                            \\ \hline
+F14: MathJax /ASCII Math support                               & Present                                & Limited                            \\ \hline
+F16: Browse Through Published Notebooks                        & Present                                & Present                            \\ \hline
+F17: Search Through The Published Notebooks                    & Present                                & Limited                            \\ \hline
+F18-F21: User Commentaries                                     & Present                                & Absent                             \\ \hline
+F27: User Suggestions                                          & Present                                & Absent                             \\ \hline
+\end{tabular}
+\end{table}
 
 \begin{itemize}
-	\item  \textbf{Publishing:} Content publishing is similar to Quizlet - All sets are either visible by other users or not. Sharing a deep-link to a single study set was not functional at the time of writing this section
+	\item  \textbf{Publishing:} Content publishing is similar to Quizlet -- All sets are either visible by other users or not. Sharing a deep-link to a single study set was not functional at the time of writing this section.
 	\item \textbf{Discovering} Searching for content in Cram is even more limited comparing to Quizlet, only name of the study set is used
-	\item \textbf{Importing} Library management here is split in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, however, it will be automatically saved to Recent section, or user can add it manually to Favourites. This makes it impossible to make local edits
+	\item \textbf{Importing} Library management here is split in 3 parts: User personal sets, Favourite sets, and Recently studied. When searching, there is no way to save published study set to personal library, however, it will be automatically saved to Recent section, or user can add it manually to Favourites. It is not possible to make any local editions.
 \end{itemize}
 
-\subsection{TinyCards overview}
 
-\textbf{TinyCards} is an application made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages
+\subsection{TinyCards}
+
+\textbf{TinyCards} is an application made by Duolingo, one of the biggest app for learning languages. TinyCard is meant to be more generic as it offers users to create custom study sets, often not limited to languages. Table \ref{tab:tinycards} shows how \appname\ requirements are compared to TinyCards functionality 
+
+\begin{table}[H]
+\caption{\appname\ \& TinyPads requirements comparison}
+\label{tab:tinycards}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Requirements / Application name}} & \multicolumn{1}{l|}{\textbf{StudyPad}} & \multicolumn{1}{l|}{\textbf{TinyCards}} \\ \hline
+F6: University Selection                                       & Present                                & Absent                                  \\ \hline
+F13: Show Notes                                                & Present                                & Present                                 \\ \hline
+F14: MathJax /ASCII Math support                               & Present                                & Absent                                  \\ \hline
+F16: Browse Through Published Notebooks                        & Present                                & Present                                 \\ \hline
+F17: Search Through The Published Notebooks                    & Present                                & Limited                                 \\ \hline
+F18-F21: User Commentaries                                     & Present                                & Absent                                  \\ \hline
+F27: User Suggestions                                          & Present                                & Absent                                  \\ \hline
+\end{tabular}
+\end{table}
+
+
 	\begin{itemize}
 		\item \textbf{Importing:} Similar to Cram, it is not possible to edit the study set user have downloaded and saved to his library
-		\item \textbf{Challenges:} Tests for user are generated automatically and there is no way to choose test type
+		\item \textbf{Challenges:} Tests are generated automatically and there is no way to choose test type
 	\end{itemize}
 	
 \newpage
