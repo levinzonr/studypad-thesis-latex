@@ -345,6 +345,14 @@ Android is a mobile operating system developed by Google. It is based on a modif
 Since its inception several versions have been released, with the latest one being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions. Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was a case until AndroidX was introduced.
 AndroidX is a major improvement to the original Android Support Library. Like the Support Library, AndroidX ships separately from the Android OS and provides backwards-compatibility across Android releases. 
 
+\begin{figure}[H]
+\center
+  \includegraphics[scale=0.5]{androidversions}
+  \caption{Android Versions distribution}
+  \label{fig:androidversions}
+\end{figure}
+
+
 When developing applications for Android, developer has to consider which OS versions application will support. Specifically, the minSdkVersion and targetSdkVersion attributes  identify the lowest API level with which your application is compatible and the highest API level against which you've designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure high compatibility rate of 85\% and Material Design Support, which is one of non-functional requirements.
 
 \section{Firebase}
