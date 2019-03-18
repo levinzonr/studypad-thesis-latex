@@ -61,19 +61,21 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. And some of the most popular applications tend to teach us something new.	
+Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. And some of the most popular applications tend to teach us something new.
 
 Educational applications are one of the most popular on both mobile platforms (iOS and Android). Many of them use flash card system in the study process -- displaying small pieces of information one after another, so the user could memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
 
 \section{\appname\ service}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation, its sharing and discovery.
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation, its sharing and discovery. 
+
+\appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All these components will be described more thoroughly in Chapter 1.
+ 
 
 \appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
 \\
 
-Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content. 
-
-\subsection{Sharing \& Collaboration }
+Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
+\subsection{Sharing \& Collaboration}
 \appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
 The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. Everything Author have provided along with his school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also allows to quickly share a notebook by sending a link, which will act as a deep-link, navigating user directly to a Published Notebook.
 
@@ -86,7 +88,7 @@ This chapter contains \appname\ system description and analysis with the goal to
 
 \section{System description}
 
-\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Client part consists of client applications for several platforms: Android, iOS and Web. Web client is being developed alongside the Android one to serve as an Admin Panel. Main task of this thesis is to deliver an Android client.
+\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Its first version was a result of semestral project within a subject Enterprise Java. Client part consists of client applications for several platforms: Android, iOS and Web. Web client is being developed alongside the Android one to serve as an Admin Panel. iOS client was developed within the subject Introduction to iOS Development (BI-IOS). Main task of this thesis is to deliver an Android OS client.
 
 The detailed structure of the Android client structure and how it is connected with other components is presented on the component diagram on figure \ref{fig:component}. 
 
