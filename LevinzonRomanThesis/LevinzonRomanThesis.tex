@@ -42,13 +42,13 @@
 \authorWithDegrees{Roman Levinzon} %author's name with academic degrees
 \supervisor{Ing. Miroslav Bal{\'i}k, Ph.D}
 \acknowledgements{THANKS (remove entirely in case you do not with to thank anyone)}
-\abstractEN{StudyPad is a combination of note-taking service and a social network, aimed to help students to memorise different pieces of information.  The goal of this thesis is to develop an application for Android OS which will serve as client. This text acknowledges existing solutions, contains domain and requirements analysis, description and choise of application's architecture and it's implementation}
+\abstractEN{StudyPad is a combination of a note-taking service and a social network, aimed at helping students to memorise different pieces of information.  The goal of this thesis is to develop an application for Android OS that will serve as the client. This text acknowledges existing solutions, contains domain and requirements analysis, description and the choice of application's architecture and it's implementation.}
 
 
 \abstractCS{StudyPad je kombinace slu{\v z}by pro pori{\v z}ovan{\' i} pozn{\'a}mek a soc{\'i}{\'a}ln{\'i} s{\'i}t{\v e} s c{\'i}lem  pomoci studentum zapamatovat si ruzn{\'e} informace. C{\'i}lem pr{\'a}ce je vyvinout aplikaci pro OS Android, kter{\'a} bude slou{\v z}it jako klient. Tento text uzn{\'a}v{\'a} st{\'a}vaj{\' i}c{\'i} {\v r}e{\v s}en{\'i}, obsahuje anal{\'y}zu dom{\'e}n a po{\v z}adavku, popis a v{\'y}b{\v e}r architektury aplikace a jej{\'i} implementace}
 \placeForDeclarationOfAuthenticity{Prague}
-\keywordsCS{Android, Kotlin, MVVM}
-\keywordsEN{Android, Kotlin, MVVM}
+\keywordsCS{Android, Kotlin, MVVM, Clean architecture}
+\keywordsEN{Android, Kotlin, MVVM, Clean architecture}
 \declarationOfAuthenticityOption{1} %select as appropriate, according to the desired license (integer 1-6)
 % \website{http://site.example/thesis} %optional thesis URL
 
@@ -61,38 +61,49 @@
 \setsecnumdepth{part}
 \chapter{Introduction}
 
-Each year, our smartphones get smarter and mobile applications -- more advanced. Arrival of smartphones and mobile applications completely changed our way of living, made it easier, and it is hard to come up with the single aspect of life, which has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. And some of the most popular applications tend to teach us something new.
+Each year, our smartphones get smarter and mobile applications become more advanced. The arrival of smartphones and mobile applications has completely changed our way of living, made it easier, and it is hard to come up with a single aspect of life, that has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. In addition, some of the most popular applications tend to teach us something new.
 
-Educational applications are one of the most popular on both mobile platforms (iOS and Android). Many of them use flash card system in the study process -- displaying small pieces of information one after another, so the user could memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ wants to give its users freedom in what they could learn, and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
+Educational applications are very popular on both mobile platforms (iOS and Android). Many of them use a flash card system in the study process -- displaying small pieces of information one after another, so that the user can memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. Using Android OS, today's most popular mobile platform, \appname\ wants to give its users freedom in what they can learn and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
 
-\section{\appname\ service}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. \appname\ primary focus is on the content creation, its sharing and discovery. 
+\section{\appname\ Service}
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
 
-\appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All these components will be described more thoroughly in Chapter 1.
+The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 1.
  
 
-\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn, or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer, or a term and its definition.
+\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
 \\
 
-Each user has his/her own space where he can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
+Each user has his/her own space where they can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
 \subsection{Sharing \& Collaboration}
 \appname\ also allows users to easily share these notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
-The publication process involves providing additional information about the notebook, including its name, optional description, topic and optional tags, that serve to narrow the topic. Everything Author have provided along with his school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also allows to quickly share a notebook by sending a link, which will act as a deep-link, navigating user directly to a Published Notebook.
+The publication process involves providing additional information about the notebook, including its name, an optional description, topic and optional tags that serve to narrow the topic. Everything the author has provided along with their school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also makes it possible to quickly share a notebook by sending a link, which will act as a deep-link, navigating the user directly to a Published Notebook.
 
-The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library, or suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, subscriber will be able to make any local changes as he/she sees fit and use it as normal. Subscriber will be notified about any updates/changes made to the Published Notebook so that he/she can apply changes to his/her local version, however, any local changes made by him/her will be deleted. The Author of the notebook, in turn, will be notified about latest suggestions and comments left by  subscribers.
+The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library or suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, the subscriber will be able to make any local changes as he/she sees fit and use it as normal. The Subscriber will be notified about any updates made to the Published Notebook so that he/she can apply the changes to his/her local version, however, any local changes will be deleted. The Author of the notebook, in turn, will be notified about latest suggestions and comments left by the subscribers.
 
 \setsecnumdepth{all}
 \chapter{Analysis}
-This chapter contains \appname\ system description and analysis with the goal to identify requirements and how it is compared with its rivals
+This chapter contains a \appname\ system description and analysis with the goal to identify requirements and how it is compares with its rivals
 
 
 \section{System description}
 
-\appname\ system follows classic client-server software architecture. Server part is represented by Spring Boot application, which is communicating with it clients using REST API. Its first version was a result of semestral project within a subject Enterprise Java. Client part consists of client applications for several platforms: Android, iOS and Web. Web client is being developed alongside the Android one to serve as an Admin Panel. iOS client was developed within the subject Introduction to iOS Development (BI-IOS). Main task of this thesis is to deliver an Android OS client.
+The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel. The iOS client was developed within the subject Introduction to iOS Development (BI-IOS). The main task of this thesis is to deliver an Android OS client.
+
+\subsection{User Roles}
+Some of the use-cases, such as university creation, requires moderation. The simplest example is a university creation use-case. Though it is possible to submit new school/university in case user haven't found it, the name, that user has submitted has to be verified first and other details, like school location and translations should be updated. This is a main purpose of the Admin Panel and it will require an introduction of different user roles: User and Admin. 
+
+The User role is a default one and will be assigned automatically to everyone who have completed the registration process. It will only be used in the client applications.
+Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
+
+\subsection{\appname\ REST API}
+\appname\ has its own REST API is represented by Spring Boot application. The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. 
+
+\subsection{Android client}
 
 The detailed structure of the Android client structure and how it is connected with other components is presented on the component diagram on figure \ref{fig:component}. 
 
- Android component will be divided into three layers: Data layer, Domain Layer and Presentation layer. Data layer is only responsible for downloading and storing data. Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will be also connected to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable analytics service, crash reporting and push notifications.
+ Android component will be divided into three layers: the Data layer, Domain Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
 \newpage
 \begin{figure}[H]
   \includegraphics[scale=0.2]{deployment}
@@ -103,7 +114,7 @@ The detailed structure of the Android client structure and how it is connected w
 
 \newpage
 \section{Domain Description}
- Class Diagram on figure \ref{fig:domain} represents Domain Model of the application, it provides visual representation of Entities and relations between them. Design is based on the entities used on server-side
+ The Class Diagram on figure \ref{fig:domain} represents the Domain Model of the application, it provides visual representation of Entities and relations between them. The Design is based on the entities used on server-side
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{Domain}
@@ -114,29 +125,25 @@ The detailed structure of the Android client structure and how it is connected w
  
 
 \subsection{User}
-	User entity represents someone who have completed registration flow using one of the client applications. This entity contains such properties as: firstName, lastName, email, password, university. Due to the fact, that \appname\ provides several ways for user to authorise, some of the properties will either come from the user's input or from the 3d party API (such as Firebase)
-
+	The User entity represents someone who has completed registration flow using one of the client applications or created manually (in case of Admin role). This entity contains such properties as: role, first name, last name, email address, password, university. Due to the fact, that \appname\ provides several ways for the user to authorise, some of the properties will either come from the user's input or from the 3d party API (such as Firebase).
 	
 \subsection{Note}
-	Note represents a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Every note must be assigned to one of the notebooks, hence theres a 1:N relation
+	Note represents a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Each note must be assigned to one of the notebooks, hence theres a 1:N relation.
 \subsection{Notebook}
-	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. Soul purpose of the Notebook is to store Notes and serve as a source for Published Notebook. Properties name and colour are used to help users distinct between different Notebooks
+	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user.The soul purpose of the Notebook is to store Notes and serve as a source for a Published Notebook. Properties name and colour are used to help users distinguish between different Notebooks.
 	
 	
 \subsection{University}
-University represents school, where User can assign himself as a student during registration flow. It is used to unite users from the same school to make content searching easier. 
+University represents a school, where the User can assign himself as a student during registration flow. It is used to unite users from the same school to make content searching easier. 
 
 \subsection{Published Notebook}
 Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
 name, optional description,  topic and optional list of tags. All these details are later used in a searching flow to optimise results.
 
-\subsection{Published Note}
-Published Note represent the note inside of the Published Notebook and contains the exact same properties as usual note
-
 \subsection{Topic}
-Topic represents main topic or subject of the Published Notebook. Topic consist of only one property -- its name
+Topic represents the main topic or subject of the Published Notebook. Topic consist of only one property -- its name
 \subsection{Tag}
-Tag is a short label thats attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property -- its actual value stored as name
+Tag is a short label that is attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property -- its actual value stored as the name.
 
 \subsection{Comment}
 Users can comment on published notebooks. Most of the properties are assigned automatically, the only exception is content which is property that represents the body of the comment.
@@ -144,50 +151,49 @@ Users can comment on published notebooks. Most of the properties are assigned au
 
 \newpage
 \section{Requirements}
-It is important to establish all functional and non-functional requirements for \appname. Section bellow contains all requirements designed before the start
-of the development
+It is important to establish all functional and non-functional requirements for \appname. The section bellow contains all requirements designated  before the start of the development.
 
-\subsection{Functional requirements}
+\subsection{Functional Requirements}
 \bigskip
 \textbf{User Authentication}
 \begin{itemize}
-	\item \textbf{F1: Registration/Login using email} Access to \appname\ is possible by creating an account using email address/password combination.
-	\item \textbf{F2: Registration/Login using Facebook} User will be able to use his/her Facebook account to access \appname.
-	\item \textbf{F3: Registration/Login using Google} User will be able to use his/her Google account to access \appname.
-	\item \textbf{F4: Store OAuth token} API Authentication Token will be stored in device memory.
-	\item \textbf{F5: Token refreshment} API Token will be refreshed when needed, so user won't have to login again.
-	\item \textbf{F6: University selection} As a part of user registration flow, user will be able to select his/her university.
-	\item \textbf{F7: University Addition} User will be able to add his/her school, in case of not finding it in \appname\ database.
+	\item \textbf{F1: Registration/Login using email} Access to \appname\ is possible by creating an account using an email address/password combination.
+	\item \textbf{F2: Registration/Login using Facebook} The User will be able to use his/her Facebook account to access \appname.
+	\item \textbf{F3: Registration/Login using Google} The ser will be able to use his/her Google account to access \appname.
+	\item \textbf{F4: Store OAuth token} API Authentication Token will be stored in a device memory.
+	\item \textbf{F5: Token refreshment} API Token will be refreshed when needed, so the user will not have to login again.
+	\item \textbf{F6: University selection} As part of user registration flow, the user will be able to select his/her university.
+	\item \textbf{F7: University Addition} The user will be able to add his/her school, in case of not finding it in a \appname\ database.
 \end{itemize}
 \bigskip
 \textbf{Library Management (Notes \& Notebooks)}
 \begin{itemize}
-	\item \textbf{F7: Notebook creation} User will be able to create new notebooks with the name he/she choose.
-	\item \textbf{F8: Notebook deletion} User will be able to delete existing notebooks.
-	\item \textbf{F9: Notebook name edition} User will be able to edit notebooks names.
-	\item \textbf{F10: Note creation} User will be able to create a note with specific title and content.
-	\item \textbf{F11: Note edition} User will be able to edit existing note, or completely delete it.
-	\item \textbf{F12: Show Notebooks} : User will be able to view all the notebooks he/she created.
-	\item \textbf{F13: Show Notes}: By clicking on notebook item, user will be able to view the list of notes that are assigned to this notebook.
+	\item \textbf{F7: Notebook creation} The user will be able to create new notebooks with the name he/she choose.
+	\item \textbf{F8: Notebook deletion} The user will be able to delete existing notebooks.
+	\item \textbf{F9: Notebook name edition} The user will be able to edit notebooks names.
+	\item \textbf{F10: Note creation} The user will be able to create a note with a specific title and content.
+	\item \textbf{F11: Note edition} The user will be able to edit an existing note, or completely delete it.
+	\item \textbf{F12: Show Notebooks}: The user will be able to view all the notebooks he/she created.
+	\item \textbf{F13: Show Notes}: By clicking on notebook item, the user will be able to view the list of notes that are assigned to this notebook.
 	\item \textbf{F14: MathJax/ASCII Math support}: User will be able to use complex mathematical expressions as notes content
 \end{itemize}
 
 \bigskip
 \textbf{Sharing Hub}
 \begin{itemize}
-	\item \textbf{F15: View published notebooks} User will be able to view notebooks published by other users.
-	\item \textbf{F16: Search through published books} User will be able to search through the published notebooks by applying different filters (such as author, university and subject/topic).
-	\item \textbf{F17: Browse through published notebook} User will be able to see notes inside the notebook that's been published.
-	\item \textbf{F18: View comments} User will be able to view others users comments discussing a notebook that's been published.
-	\item \textbf{F19: Leave a comment} User can comment on other user published notebook.
-	\item \textbf{F20: Delete a comment} Application will let user to delete his/her comment.
-	\item \textbf{F21: Edit a Comment} Application will let user to edit his/her comment
+	\item \textbf{F15: View published notebooks} The user will be able to view notebooks published by other users.
+	\item \textbf{F16: Search through published books} The user will be able to search through the published notebooks by applying different filters (such as author, university, and subject/topic).
+	\item \textbf{F17: Browse through published notebook} User will be able to see notes inside the notebook that hav been published.
+	\item \textbf{F18: View comments} User will be able to view others users comments discussing a notebook that have been published.
+	\item \textbf{F19: Leave a comment} The user can comment on an other user published notebook.
+	\item \textbf{F20: Delete a comment} The application will allow the user to delete his/her comment.
+	\item \textbf{F21: Edit a Comment} The application will allow the user to edit his/her comment
 	\item \textbf{F21: Save published notebook} User will be able to save published notebook to his/her library.
 	\item \textbf{F22: Publish notebook} User will be able to publish his/her notebook.
-	\item \textbf{F23: Update published notebook} Author of the published notebook will be able to update its information.
-	\item \textbf{F24: Delete published notebook} Author of the published notebook will be able to delete the his/her notebook from shared space.
-	\item \textbf{F25: Share notebook} User will be able to share his/her notebook by generating a deep-link.
-	\item \textbf{F26: Notification on update} User will be notified on updates to the Published notebook hes subscribed to
+	\item \textbf{F23: Update published notebook} The Author of the published notebook will be able to update its information.
+	\item \textbf{F24: Delete published notebook} The Author of the published notebook will be able to delete the his/her notebook from shared space.
+	\item \textbf{F25: Share notebook} The user will be able to share his/her notebook by generating a deep-link.
+	\item \textbf{F26: Notification on update} The user will be notified on updates to the Published notebook hes subscribed to
 	\item \textbf{F27: Suggestions} Subscribers will be able to suggest a change or correction to the Published Notebook. Author will be able to approve it, which will result in the update of the Published Notebook, or decline it.
 	\item \textbf{F28: Copy Published Notebook} User will be able to copy published notebook. This will create a standalone copy of this notebook in the users library.
  \end{itemize}
@@ -378,7 +384,36 @@ Firebase Cloud Messages will enable push-notifications, which is a great way to 
 \newpage
 
 \chapter{Design}
+
+This chapter describes how \appname\ will comply with its requirements. This includes reviewing of application UI \& UX standpoint and choice of applications architecture
+
+
 \section{Wireframes}
+
+\subsection{Navigation Principle}
+How user will be able to navigate through your applications different screens and section is one of most important choices when developing a mobile applications. Material Design describes 3 types of navigation hierarchies that can be used for a top-level navigation
+
+\begin{itemize}
+	\item Bottom navigation bar -- Bottom navigation bars provide access to 2-5 top-level destinations on mobile devices. Their location, visibility, and persistence across screens allow quick pivoting between destinations.
+	\item Navigation drawer -- Navigation drawers are appropriate for five or more top-level destinations, and can be used across device sizes for a consistent navigation experience.
+	\item Tabs -- Tabs can be used at any level of an application's hierarchy to present two or more peer sets of data across screen sizes.
+\end{itemize}
+
+\appname\ application has 4 main independent sections: My Library, Sharing Hub, Challenges and Profile making the Bottom Navigation bar the perfect choice. It will enable quick and persistent navigation between different sections.
+
+\subsection{Top-level sections}
+Following application sections are used for top level navigation. They must provide access to application core functionalities
+
+
+
+\textbf{My Library} section covers note-taking service part of the application. Its entry point contains a list of Notebooks and provides different actions related to the notebook management, such as: Notebook creation, edition, deletion and sharing. By clicking on one of the notebooks in the list, user will be transferred to the Notes subsection, that will contain a list of notes from this notebook. Like Notebooks section, Notes section covers all the note management related actions and interactions such as Note creation, edition and deletion.
+
+\textbf{Sharing Hub} section features list of Published Notebooks. One of the main responsibilities of this section is to enable Searching \& Filtering flow. 
+
+\textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks
+
+\textbf{Profile} sections provides various user-important information and allows user to modify them.
+
 \section{Application architecture}
 \section{Platform-specific model}
 \section{Main sequence diagrams}
@@ -398,6 +433,7 @@ Firebase Cloud Messages will enable push-notifications, which is a great way to 
 
 \bibliographystyle{iso690}
 \bibliography{mybibliographyfile}
+
 
 \setsecnumdepth{all}
 \appendix
