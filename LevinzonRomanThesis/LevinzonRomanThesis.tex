@@ -23,6 +23,7 @@
 % \usepackage{amsmath} %advanced maths
 % \usepackage{amssymb} %additional math symbols
 \usepackage{dirtree} %directory tree visualisation
+\usepackage{subcaption}
 
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
@@ -36,6 +37,17 @@
 \department{Department of Software Engeeniring}
 \title{StudyPad - Android Client}
 \newcommand{\appname}{StudyPad}
+\newcommand{\quoting}[1]{\textit{``#1"}}
+\newcommand{\fullStar}
+	{\begin{figure}[H]
+	\centering
+  \includegraphics[scale=0.1]{ic_star_black_24dp.png}
+\end{figure}}
+
+
+
+
+
 \authorGN{Roman} %author's given name/names
 \authorFN{Levinzon} %author's surname
 \author{Roman Levinzon} %author's name without academic degrees
@@ -63,7 +75,20 @@
 
 Each year, our smartphones get smarter and mobile applications become more advanced. The arrival of smartphones and mobile applications has completely changed our way of living, made it easier, and it is hard to come up with a single aspect of life, that has not been improved by one or the other application. They are everywhere: helping us to navigate in our neighbourhood, keeping us up to date with latest news, helping us to stay in touch with our loved ones, stay fit and healthy and more. In addition, some of the most popular applications tend to teach us something new.
 
-Educational applications are very popular on both mobile platforms (iOS and Android). Many of them use a flash card system in the study process -- displaying small pieces of information one after another, so that the user can memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. Using Android OS, today's most popular mobile platform, \appname\ wants to give its users freedom in what they can learn and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
+Educational applications are very popular on both mobile platforms (iOS and Android). Many of them use a flash card system in the study process -- displaying small pieces of information one after another, so that the user can memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ is a new solution to this problem. Using Android OS, today's most popular mobile platform, \appname\ wants to give its users freedom in what they can learn and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
+
+\section{Goal}
+The goal of this thesis is to deliver  \appname\ client application for  Android OS. This includes following steps:
+\begin{itemize}
+	\item Analysis of  the existing solutions 
+	\item Analysis of the functional and non-functional requirements 
+	\item Requirements design and its implementation 
+	\item Testing of the resulted solution
+\end{itemize}
+
+\section{Motivation}
+The primary motivation is to practice software
+development processes on the big and scalable project while applying advanced practices and technics of Android Development.
 
 \section{\appname\ Service}
 \appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
@@ -88,7 +113,7 @@ This chapter contains a \appname\ system description and analysis with the goal 
 
 \section{System description}
 
-The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel. The iOS client was developed within the subject Introduction to iOS Development (BI-IOS). The main task of this thesis is to deliver an Android OS client.
+The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel.\cite{studypad-web} The iOS client was developed within the subject Introduction to iOS Development (BI-IOS). \cite{studypad-ios} The main task of this thesis is to deliver an Android OS client.
 
 \subsection{User Roles}
 Some of the use-cases, such as university creation, requires moderation. The simplest example is a university creation use-case. Though it is possible to submit new school/university in case user haven't found it, the name, that user has submitted has to be verified first and other details, like school location and translations should be updated. This is a main purpose of the Admin Panel and it will require an introduction of different user roles: User and Admin. 
@@ -97,19 +122,30 @@ The User role is a default one and will be assigned automatically to everyone wh
 Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
 
 \subsection{\appname\ REST API}
-\appname\ has its own REST API is represented by Spring Boot application. The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. 
+\appname\ has its own REST API is represented by Spring Boot application. \cite{studypad-backend} \quoting{The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform.} \cite{wiki-spring}
 
 \subsection{Android client}
 
 The detailed structure of the Android client structure and how it is connected with other components is presented on the component diagram on figure \ref{fig:component}. 
 
  Android component will be divided into three layers: the Data layer, Domain Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
-\newpage
+
+
 \begin{figure}[H]
-  \includegraphics[scale=0.2]{deployment}
+\centering
+  \includegraphics[scale=0.25]{androiddiagram}
+  \caption{Android component Diagram}
+  \label{fig:android-component}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+  \includegraphics[scale=0.25]{systemdiagram}
   \caption{Component Diagram}
   \label{fig:component}
 \end{figure}
+
 
 
 \newpage
@@ -351,7 +387,7 @@ F27: User Suggestions                                          & Present        
 Android is a mobile operating system developed by Google. It is based on a modified version of the Linux kernel and other open source software, and is designed primarily for touchscreen mobile devices such as smartphones and tablets. In addition, Google has further developed Android TV for televisions, Android Auto for cars, and Wear OS for wrist watches, each with a specialised user interface.
 
 Since its inception, several versions have been released, with the latest one being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions. Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was the case until AndroidX was introduced.
-AndroidX is a major improvement to the original Android Support Library. Like the Support Library, AndroidX ships separately from the Android OS and provides backwards-compatibility across Android releases. 
+ \quoting{AndroidX is a major improvement to the original Android Support Library. Like the Support Library, AndroidX ships separately from the Android OS and provides backwards-compatibility across Android releases.} \cite{androix-overview}
 
 \begin{figure}[H]
 \center
@@ -364,7 +400,8 @@ AndroidX is a major improvement to the original Android Support Library. Like th
 When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the minSdkVersion and targetSdkVersion attributes  identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 85\% and Material Design Support, which is one of the non-functional requirements.
 
 \section{Firebase}
-Firebase is Google's mobile platform that helps to quickly develop high-quality applications and grow businesses. Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
+
+\quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure.} \cite{firebase} Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
 \begin{itemize}
 	\item \textbf{Firebase Analytics} is a cost-free app measurement solution that provides insight into app usage and user engagement.
 	\item \textbf{Firebase Cloud Messaging} Formerly known as Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM) is a cross-platform solution for messages and notifications for Android, iOS, and web applications, which as of 2016 can be used at no cost.
@@ -378,39 +415,75 @@ Firebase is Google's mobile platform that helps to quickly develop high-quality 
 
 Storing user credentials, and most importantly, storing them safely is not an easy task. With a little effort, Firebase Auth will handle everything related to user management, including access token generation and refreshment, as well as credentials storing and encryption.
 
-Firebase Cloud Messages will enable push-notifications, which is a great way to communicate with users and introduce some real-time functionality to the application. 
+Firebase Cloud Messages will enable push-notifications, which is a great way to interact with users and introduce some real-time functionality to the application. 
 
 	
-\newpage
-
 \chapter{Design}
 
-This chapter describes how \appname\ will comply with its requirements. This includes reviewing of application UI \& UX standpoint and choice of applications architecture
+This chapter describes how \appname\ will comply with its requirements. This includes reviewing of application UI \& UX standpoint and choice of application's architecture
 
+\section{Material Design}
+Material Design is a design language that Google developed in 2014. Later in 2018, it was revamped with a goal to provide more flexibility for designers to create more custom themes. Material Design was chosen as a main source of inspiration when creating \appname\ UI due following  reasons:
+\begin{itemize}
+	\item Material Design has very wide support on Android Platform. Every component that is described in Material Design Guidelines is implemented by Google and can be used by developers
+	\item Material Design is cross-platform, meaning that its guidelines can easily be applied when creating design for other platforms like iOS or Web
+\end{itemize}
+
+\subsection{Used Components}
+This section contains a list of Material Design Components that were used when creating design for \appname
+
+\begin{itemize}
+	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center.} \cite{material-fab} FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
+	\item \textbf{Bottom App Bar}: \quoting{Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.} \cite{material-bottomappbar}. In \appname\ it is primarily used in the details screens with one primary action (FAB) and two or more secondary actions.
+\end{itemize}
 
 \section{Wireframes}
 
-\subsection{Navigation Principle}
-How user will be able to navigate through your applications different screens and section is one of most important choices when developing a mobile applications. Material Design describes 3 types of navigation hierarchies that can be used for a top-level navigation
+This section contains screen wireframes of the different application sections
 
-\begin{itemize}
-	\item Bottom navigation bar -- Bottom navigation bars provide access to 2-5 top-level destinations on mobile devices. Their location, visibility, and persistence across screens allow quick pivoting between destinations.
-	\item Navigation drawer -- Navigation drawers are appropriate for five or more top-level destinations, and can be used across device sizes for a consistent navigation experience.
-	\item Tabs -- Tabs can be used at any level of an application's hierarchy to present two or more peer sets of data across screen sizes.
-\end{itemize}
+\subsection{My Library Section}
 
-\appname\ application has 4 main independent sections: My Library, Sharing Hub, Challenges and Profile making the Bottom Navigation bar the perfect choice. It will enable quick and persistent navigation between different sections.
+\textbf{My Library} section covers note-taking service part of the application and serves as the main entry point for the returning users. Wireframes of this sections can be viewed on figure \ref{fig:section-library}.
+	
+	Its first screen, as shown on figure \ref{fig:notebooks}, contains a list of Notebooks and provides different actions related to the notebook management, such as: Notebook creation, edition, deletion and sharing. The FAB here is used to trigger the notebook creation action
+	
+	By clicking on one of the notebooks in the list, user will be transferred to the Notes subsection (\ref{fig:notes}), that will contain a list of notes from this notebook. Like Notebooks section, Notes section covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger create action. 
+	
+	Finally, by choosing a note, the user will be able to view its details.As shown of figure \ref{fig:detail}, this screen utilises Bottom app bar to provide access for key actions and FAB.
+	
+	\begin{figure}
+ 
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{Notebooks.png}
+  \caption{Notebooks List Screen}
+  \label{fig:notebooks}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{Notes}
+  \caption{Notes List Screen}
+  \label{fig:notes}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{NoteDetailView}
+  \caption{Note Detail Screen}
+  \label{fig:detail}
+\end{subfigure}
 
-\subsection{Top-level sections}
-Following application sections are used for top level navigation. They must provide access to application core functionalities
+\caption{My Library Section Wireframes}
+\label{fig:section-library}
+\end{figure}
 
-
-
-\textbf{My Library} section covers note-taking service part of the application. Its entry point contains a list of Notebooks and provides different actions related to the notebook management, such as: Notebook creation, edition, deletion and sharing. By clicking on one of the notebooks in the list, user will be transferred to the Notes subsection, that will contain a list of notes from this notebook. Like Notebooks section, Notes section covers all the note management related actions and interactions such as Note creation, edition and deletion.
+\subsection{Sharing Hub Section}
 
 \textbf{Sharing Hub} section features list of Published Notebooks. One of the main responsibilities of this section is to enable Searching \& Filtering flow. 
+\subsection{Challenges Section}
 
 \textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks
+\subsection{Profile Section}
 
 \textbf{Profile} sections provides various user-important information and allows user to modify them.
 
@@ -423,7 +496,7 @@ Following application sections are used for top level navigation. They must prov
 \section{Component diagram}
 \section{Installation}
 
-
+\cite{WEBSITE:1}
 \chapter{Testing}
 
 
@@ -443,6 +516,7 @@ Following application sections are used for top level navigation. They must prov
 \begin{description}
 	\item[GUI] Graphical user interface
 	\item[XML] Extensible markup language
+	\item[FAB] Floating Action Button
 \end{description}
 
 
