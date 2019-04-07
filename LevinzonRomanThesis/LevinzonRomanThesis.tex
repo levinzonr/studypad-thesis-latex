@@ -34,6 +34,7 @@
 % EDIT THIS
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
+
 \department{Department of Software Engeeniring}
 \title{StudyPad - Android Client}
 \newcommand{\appname}{StudyPad}
@@ -429,30 +430,36 @@ Material Design is a design language that Google developed in 2014. Later in 201
 	\item Material Design is cross-platform, meaning that its guidelines can easily be applied when creating design for other platforms like iOS or Web
 \end{itemize}
 
+
+
 \subsection{Used Components}
-This section contains a list of Material Design Components that were used when creating design for \appname
+This section contains a list of Material Design specific Components (not including widely used elements such as Buttons and Input Fields)that were used when creating design for \appname.
+
 
 \begin{itemize}
 	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center.} \cite{material-fab} FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
 	\item \textbf{Bottom App Bar}: \quoting{Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.} \cite{material-bottomappbar}. In \appname\ it is primarily used in the details screens with one primary action (FAB) and two or more secondary actions.
+	\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action.}\cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed in the ChipGroup -- a special container to store dynamic amount of Chips
 \end{itemize}
 
-\section{Wireframes}
+\section{UI \& UX}
 
-This section contains screen wireframes of the different application sections
+This section contains most important screens description from UI \& UX standpoint, wireframes and it's iteration
 
-\subsection{My Library Section}
 
-\textbf{My Library} section covers note-taking service part of the application and serves as the main entry point for the returning users. Wireframes of this sections can be viewed on figure \ref{fig:section-library}.
+\subsection{Navigation Principle}
+\appname contailes
+
+\subsection{Library Managent}
+Library management requirements (F7-F14) are covered by the first top-level destination: \textbf{My Library}. This part of the application serves as the main entry point for the returning users. Wireframes of this sections can be viewed on figure \ref{fig:section-library}.
 	
-	Its first screen, as shown on figure \ref{fig:notebooks}, contains a list of Notebooks and provides different actions related to the notebook management, such as: Notebook creation, edition, deletion and sharing. The FAB here is used to trigger the notebook creation action
-	
-	By clicking on one of the notebooks in the list, user will be transferred to the Notes subsection (\ref{fig:notes}), that will contain a list of notes from this notebook. Like Notebooks section, Notes section covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger create action. 
+	Its first screen, as shown on Figure \ref{fig:notebooks}, contains a scrollable list of Notebooks and provides different actions related to the notebook management, such as: Notebook creation, edition, deletion and sharing. The FAB here is used to trigger the notebook creation flow. 
+		
+	By clicking on one of the notebooks in the list, user will be transferred to the Notes List Screen (\ref{fig:notes}). Similar to Notebooks List Screen, this screen contains a scrollable list of notes from this notebook and  covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger create action.
 	
 	Finally, by choosing a note, the user will be able to view its details.As shown of figure \ref{fig:detail}, this screen utilises Bottom app bar to provide access for key actions and FAB.
 	
-	\begin{figure}
- 
+\begin{figure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -477,9 +484,143 @@ This section contains screen wireframes of the different application sections
 \label{fig:section-library}
 \end{figure}
 
-\subsection{Sharing Hub Section}
+\newpage
+\subsection{Notebook Publishing}
+The fact the all the content in \appname\ is made by its community makes Notebook Publishing Flow is one of the core functionalities of the application. The flow it self acts as complex form with different types of inputs:
+\begin{itemize}
+	\item Notebook name -- Single-line input field, will be pre-filled with the name of local Notebook that is being published.
+	\item Language of the Notebook -- Selector, will be pre-filled with the current user locale.
+	\item University/School associated with this Notebook -- Selector, will be pre-filled with the User's university, this field is optional.
+	\item Topic/Category of the Notebook -- Selector, this field is mandatory
+	\item Tags -- ChipGroup, chosen tags will be represented by Chips. The field is optional
+	\item Description/Message for other users -- Multi-line input field, this field is optional.
+\end{itemize}
 
-\textbf{Sharing Hub} section features list of Published Notebooks. One of the main responsibilities of this section is to enable Searching \& Filtering flow. 
+
+
+Considering an amount of input needed, its variety, the decision was made to split this form into several steps. It will allow make the form more dynamic and put more emphasis on some inputs by grouping them.
+
+First step will include all fields that can be pre-filled: Notebook's name, language and University. This will allow to skip this step in most cases, making it only about controlling pre-filled information.
+Second step will require users to provide search-relevant information, such as Tags and Topic/Category. Third step will allow user to provide a message or a more detailed of description of the Notebook. Fourth step will be all about confirmation, in which the user can double-check information he/she entered and submit it.
+
+Though the choice of UI elements in different steps is well defined, they way we present these steps is not. Simplified wireframes with different approaches of how the steps can be presented are shown on Figure \ref{fig:publishing-sketches}. In the end, decision to go with the Stepper solution was made as it gives a number of advantages:
+	\begin{itemize}
+		\item Stepper is a standardised element of Material Design
+		\item In every step, Stepper gives an overview of all steps available and its completion state
+		\item Stepper allows to quickly navigate between different steps.
+	\end{itemize}
+	
+	More detailed wireframes for this flow using Stepper are shown of Figure \ref{fig:publishing-wireframe}
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.3]{publishing-sketches}
+\end{subfigure}%
+
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.3]{publishing-sketches2}
+\end{subfigure}
+
+\caption{Notebook Publishing Flow - Sketch Phase}
+\label{fig:publishing-sketches}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{step1}
+  \caption{First Step of Notebook Publishing}
+  \label{fig:step1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{step2}
+  \caption{Second Step of Notebook Publishing }
+  \label{fig:step2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{step3}
+  \caption{Third Step of Notebook Publishing }
+  \label{fig:step3}
+\end{subfigure}
+
+\caption{Notebook Publishing Wireframes}
+\label{fig:publishing-wireframe}
+\end{figure}
+
+
+
+
+\subsection{Sharing Hub}
+
+\textbf{Sharing Hub} is another top-level destination, that allows users to access various Notebooks published by other users.
+
+In the early stage of the \appname\ development, Sharing Hub root screen (Figure \ref{fig:section-sharinghubv1}) contained only one list with the Published Notebooks, with the idea of showing the most recently added Notebooks. Later on, the decision was made to make this screen more personalised by introducing Sections and Search Shortcuts (Figure \ref{fig:section-sharinghubv2sletch})
+
+Search Shortcut represent one of the previously entered queries during Search Flow. By clicking the Shortcuts, new Search Flow will be started with all the previously used Search Options, such as tags, pre-filled.
+Section is small list of Published Notebooks of fixed size, that can be scrolled horizontally. By introducing these small lists it will be possible to group Published Notebooks into personalised sets(Notebooks from the user's university for example). By its nature, Sections are simple queries, so it can be used as Search Shortcuts too. So, by clicking See All in Notebooks From my University section, user will be navigated to the Search Flow with the  pre-filled University selection.
+
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.5]{SharingHub}
+  \caption{First Iteration of Sharing Hub Landing Page}
+  \label{fig:section-sharinghubv1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.28]{SharingHubV2Sketch}
+  \caption{Second Iteration of Sharing Hub Landing Page}
+  \label{fig:section-sharinghubv2sletch}
+\end{figure}
+
+
+
+ One of the main responsibilities of this screen is to start Discovery flow. Discovery flow includes various tools with goal to help find user new notebooks, on of them being Searching flow. Searching flow key requirements are following:
+ \begin{itemize}
+ 
+ \item There are should several primary searching options available: Notebooks name, University/School, Topic/Category. There are also several secondary options to narrow the search result: Tags and a language. Name of the notebook should be the only option that can be typed manually by user, all the other options, such as University or Topic, are well defined by the backed and can be chosen via Dialog for example.
+ \item When none of searching options are active, empty state should be presented
+ \item Previously used Searching options (if any) will be saved locally and presented as a shortcut when next discovery flow starts (i.e Empty state)
+ \end{itemize}
+
+   
+
+ 
+\subsection{Published Notebook Details}
+Published Notebook, as an entity, contains a large amount properties and there are a lot of actions associated with it. This screen will cover all actions regarding user comments (requirements F18-F21) and various Published Notebook actions such as saving, sharing, and copying. Including all these actions and flows into one screen would make UI very crowded, resulting in bad UX. \textit{Tabs} can help solve this issue quite easy.
+
+According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy. \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more responsive.
+ 
+
+Details Tab (Figure \ref{fig:published-details}) features key information about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups. First group contains simple properties such as Notebook's name, its author, category/topic, language and associated university. Second group contains more dynamic content such as description, that can take multiple lines, and a ChipGroup with tags. And the last group will serve a preview for the Notes.
+
+
+Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scrollable list of the user comments and an Input Field, that will be used to create a new comment, or edit the old one. Also, every comment contains an options button that will trigger either an edit or a delete action.
+
+
+
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{comments}
+  \caption{Details Tab}
+  \label{fig:published-details}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.5]{details}
+  \caption{Comments Tab}
+  \label{fig:published-comments}
+\end{subfigure}
+
+
+\caption{Published Notebook Details Wireframes}
+\label{fig:section-published}
+\end{figure}
+
 \subsection{Challenges Section}
 
 \textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks
@@ -517,6 +658,8 @@ This section contains screen wireframes of the different application sections
 	\item[GUI] Graphical user interface
 	\item[XML] Extensible markup language
 	\item[FAB] Floating Action Button
+	\item[UI] User Interface
+	\item[UX] User Expirience
 \end{description}
 
 
