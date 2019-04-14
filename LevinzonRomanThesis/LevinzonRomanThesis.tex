@@ -153,7 +153,7 @@ Admin role is the only one that have the access to the admin panel and an abilit
 
 The detailed structure of the Android client and how it is connected with other components is presented on the component diagram on figure \ref{fig:component}. 
 
- Android component will be divided into three layers: the Data layer, Domain Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
+ Android component will be divided into three layers: the Data Layer, Business Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business Layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
 
 
 \begin{figure}[H]
@@ -454,6 +454,11 @@ Since its inception, several versions have been released, with the latest one be
 
 When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the minSdkVersion and targetSdkVersion attributes  identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 85\% and Material Design Support, which is one of the non-functional requirements.
 
+
+\section{Kotlin}
+
+
+
 \section{Firebase}
 
 \quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure.} \cite{firebase} Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
@@ -734,6 +739,7 @@ Settings screen contains application-relevant information and preferences. On of
 
 
 \section{Application architecture}
+
 \section{Platform-specific model}
 \section{Main sequence diagrams}
 
