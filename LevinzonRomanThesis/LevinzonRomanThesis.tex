@@ -114,8 +114,13 @@ development processes on the big and scalable project while applying advanced pr
 \appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
 
 The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 1.
- 
 
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.26]{systemdesc}
+  \caption{\appname\ sevice}
+  \label{fig:android-component}
+\end{figure}
 \appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
 \\
 
@@ -265,7 +270,7 @@ It is important to establish all functional and non-functional requirements for 
 
 
 \bigskip
-\textbf{Settings}
+\textbf{Profile}
 \begin{itemize}
 	\item \textbf{F32: View Profile Information} The user will be able to view his/her profile information such as first name, last name, and  university.
 	\item \textbf{F33: Edit Profile Information} The user will be able to edit his/her profile information.
@@ -289,13 +294,41 @@ It is important to establish all functional and non-functional requirements for 
 
 \section{Existing solutions}
 
-There are several services out there whose goal is similar to \appname. However, most of those solutions are specialised in language-learning and have limited sharing and/or searching options. Each application/service will be reviewed separately and will include a requirements and main processes comparison.
+There are several services out there whose goal is similar to \appname. However, most of those solutions are specialised in language-learning and have limited sharing and/or searching options. Each application/service will be reviewed separately and will include a requirements and main processes comparison. 
+
+Symbols are used in Tables  to indicate  requirement availability in the applications. Symbol on Figure \ref{fig:star} represents the functionality  that is fully supported by the application. Symbol on Figure \ref{fig:starhalf} demonstrates that the given functionality is either limited/incomplete or not working as intended. Lastly, symbol on Figure \ref{fig:starborder} indicates that the given application does not support the requirement.
+ 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.2]{ic_star_black_24dp}
+  \caption{Present Functionality}
+  \label{fig:star}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.2]{ic_star_half_black_24dp.png}
+  \caption{Limited Functionality}
+  \label{fig:starhalf}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[scale=0.2]{ic_star_border_black_24dp.png}
+  \caption{Absent Functionality}
+  \label{fig:starborder}
+\end{subfigure}
+
+\caption{Functionality  Symbols}
+\end{figure}
+
+
 
 \subsection{StudyBlue}
 
 \textbf{StudyBlue} not only partially shares a name with \appname\ but also a goal and a wide range of features. It is clearly one of the biggest rivals on the market and it is very important to determine what StudyBlue does right and what it does not. How most important \appname\ requirements are compared to the StudyBlue functionality can be seen on Table \ref{tab:studyblue}
 
-Notebooks here are called \textit{decks} and notes are represented by \textit{cards}. Moreover, all decks in StudyBlue are stored in specialised folders named Classes and Interests. Interest, as an entity, not only stores decks, but also unites them by a subject or a topic (e.g. Spanish, Literature). Being a student of the university, the user can also create an interest that will be connected to his/her school -- Class. Both Interests and Classes are split into two parts, shared space, where the user can find all the decks created by other users, and personal space, where the user can keep the decks he/she has created, saved or copied.
+Notebooks here are called \textit{decks} and notes are represented by \textit{cards}. Moreover, all decks in StudyBlue are stored in specialised folders named Classes and Interests. Interest, as an entity, not only stores decks, but also unites them by a subject or a topic (e.g. Spanish, Literature). Being a student of the university, the user can also create an Interest that will be connected to his/her school -- Class. Both Interests and Classes are split into two parts: shared space, where the user can find all the decks created by other users, and personal space, where the user can keep the decks he/she has created, saved or copied.
 
 
 \begin{table}[H]
@@ -316,7 +349,7 @@ F27: User Suggestions                                          & \present       
 
 \begin{itemize}
 	\item \textbf{Library management:} The main difference in library management comes with the fact that each deck must be associated with an Interest or Class, moreover, it is not possible just to create a deck, the user has to create at least two cards first. Because of that, library management not only includes managing your decks and card, but also interests and classes. Everything the user has saved or created, whether class, interest or a deck can be accessed via \textit{Backpack}.
-	\item \textbf{Publishing:} The Publishing process is quite different compared  to what \appname\ is trying to achieve. When creating a deck, the user can choose whether they wants to make his/her deck visible for other users in this Class/Interest or to make it private. It is not possible to collaborate on a deck or suggest a change.
+	\item \textbf{Publishing:} The Publishing process is quite different compared  to what \appname\ is trying to achieve. When creating a deck, the user can choose whether they want to make his/her deck visible for other users in this Class/Interest or to make it private. It is not possible to collaborate on a deck or suggest a change.
 	
 	\item \textbf{Importing}: As mentioned before, user can save a deck from an existing Interest/Class to their personal space, but they will not be able to make any edits without making a copy.
 	\item \textbf{Discovering:} The fact that all decks are either assigned to an Interest or a Class makes searching quite simple. The user can search for deck, classes and users by its name. All these searching options are separated in the UI, so there is no way of combining them. Searching based on the Interest is also available, but the user has to add this Interest to his/her \enquote{Backpack}.
@@ -379,7 +412,7 @@ F27: User Suggestions                                          & \present       
 
 \subsection{TinyCards}
 
-\textbf{TinyCards} is a flash-card application made by Duolingo, one of the biggest applications for learning languages. TinyCard is meant to be more generic as it alows users to create custom study sets, often not limited to languages. Table \ref{tab:tinycards} shows how \appname\ requirements compared to TinyCards functionality.
+\textbf{TinyCards} is a flash-card application made the same developer that created Duolingo --  one of the biggest language-learning applications in the market. TinyCard is meant to be more generic as it alows users to create custom study sets, often not limited to languages. Table \ref{tab:tinycards} shows how \appname\ requirements compared to TinyCards functionality.
 
 \begin{table}[H]
 \caption{\appname\ \& TinyPads requirements comparison}
@@ -425,10 +458,10 @@ When developing applications for Android, the developer has to consider which OS
 
 \quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure.} \cite{firebase} Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
 \begin{itemize}
-	\item \textbf{Firebase Analytics} is a cost-free app measurement solution that provides insight into app usage and user engagement.
-	\item \textbf{Firebase Cloud Messaging} Formerly known as Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM) is a cross-platform solution for messages and notifications for Android, iOS, and web applications, which as of 2016 can be used at no cost.
-	\item \textbf{Firebase Auth} is a service that can authenticate users using only client-side code. It supports social login providers Facebook, GitHub, Twitter and Google (and Google Play Games). Additionally, it includes a user management system whereby developers can enable user authentication with email and password login stored with Firebase.
-	\item \textbf{Crashlytics} Crash Reporting creates detailed reports of the errors in the app. Errors are grouped into clusters of similar stack traces and triaged by the severity of impact on app users.
+	\item \textbf{Firebase Analytics} Firebase Analytics provides free application measurement solution, that allows you analyse how the users interact with your application based  on up to 500 distinct events \cite{firebase-analytics}
+		\item \textbf{Firebase Cloud Messaging} \quoting{Firebase Cloud Messaging (FCM) provides a reliable and battery-efficient connection between your server and devices that allows you to deliver and receive messages and notifications on iOS, Android, and the web at no cost.}\cite{firebase-messaging}
+	\item \textbf{Firebase Auth} \quoting{Firebase Auth  provides an end-to-end identity solution, supporting email and password accounts, phone auth, and Google, Twitter, Facebook, and GitHub login, and more.}\cite{firebase-auth}
+	\item \textbf{Crashlytics} Crash Reporting allows you track detailed reports of the errors and crashes in the application. All the issues experienced by the users are then grouped into clusters of similar stack traces and triaged by the severity of impact on application users.\cite{firebase-crash}
 
 \end{itemize}
 
@@ -461,7 +494,8 @@ This section contains a list of Material Design specific Components (not includi
 	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center.} \cite{material-fab} FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
 	\item \textbf{Bottom App Bar}: \quoting{Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.} \cite{material-bottomappbar}. In \appname\ it is primarily used in the details screens with one primary action (FAB) and two or more secondary actions.
 	\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action.}\cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed in the ChipGroup -- a special container to store dynamic amount of Chips
-\end{itemize}
+	\item \textbf{Bottom Sheets}: \quoting{Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.}. The most common Bottom Sheet type used in \appname\ is Modal Bottom Sheet, that allows user to provide certain kind of input, like Topic, Univerisity selection e.t.c
+	\end{itemize}
 
 \section{UI \& UX}
 
@@ -518,7 +552,7 @@ The fact the all the content in \appname\ is made by its community makes Noteboo
 Considering an amount of input needed, its variety, the decision was made to split this form into several steps. It will allow make the form more dynamic and put more emphasis on some inputs by grouping them.
 
 First step will include all fields that can be pre-filled: Notebook's name, language and University. This will allow to skip this step in most cases, making it only about controlling pre-filled information.
-Second step will require users to provide search-relevant information, such as Tags and Topic/Category. Third step will allow user to provide a message or a more detailed of description of the Notebook. Fourth step will be all about confirmation, in which the user can double-check information he/she entered and submit it.
+Second step will require users to provide search-relevant information, such as Tags and Topic/Category, topic being a required option. Third step will allow user to provide a message or a more detailed of description of the Notebook. Fourth step will be all about confirmation, in which the user can double-check information he/she entered and submit it.
 
 Though the choice of UI elements in different steps is well defined, they way we present these steps is not. Simplified wireframes with different approaches of how the steps can be presented are shown on Figure \ref{fig:publishing-sketches}. In the end, decision to go with the Stepper solution was made as it gives a number of advantages:
 	\begin{itemize}
@@ -575,37 +609,57 @@ Though the choice of UI elements in different steps is well defined, they way we
 
 \textbf{Sharing Hub} is another top-level destination, that allows users to access various Notebooks published by other users.
 
-In the early stage of the \appname\ development, Sharing Hub root screen (Figure \ref{fig:section-sharinghubv1}) contained only one list with the Published Notebooks, with the idea of showing the most recently added Notebooks. Later on, the decision was made to make this screen more personalised by introducing Sections and Search Shortcuts (Figure \ref{fig:section-sharinghubv2sletch})
+In the early stage of the \appname\ development, Sharing Hub root screen (Figure \ref{fig:section-sharinghubv1}) contained only one list with the Published Notebooks, with the idea of showing the most recently added Notebooks. Later on, the decision was made to make this screen more personalised by introducing Sections and Notifications preview (Figure \ref{fig:section-sharinghubv2sletch}).
 
-Search Shortcut represent one of the previously entered queries during Search Flow. By clicking the Shortcuts, new Search Flow will be started with all the previously used Search Options, such as tags, pre-filled.
-Section is small list of Published Notebooks of fixed size, that can be scrolled horizontally. By introducing these small lists it will be possible to group Published Notebooks into personalised sets(Notebooks from the user's university for example). By its nature, Sections are simple queries, so it can be used as Search Shortcuts too. So, by clicking See All in Notebooks From my University section, user will be navigated to the Search Flow with the  pre-filled University selection.
+
+Section is a small list of Published Notebooks of fixed size, that can be scrolled horizontally. By introducing these small lists it will be possible to group Published Notebooks into personalised sets (Notebooks from the user's university for example). Each Section is result of an executed query, so it can be used to facilitate the search flow. So, clicking the See All Button, will launch Search Flow with pre-filled search options, associated with this section.
+
+Another newly added element is a Notifications preview. Located on the top part of the screen, this element displays notifications about the most recent activities like Notebooks updates. By clicking the notification user will be to view the Notebook details associated with this notification.
 
 
 \begin{figure}[H]
 \centering
-  \includegraphics[scale=0.5]{SharingHub}
-  \caption{First Iteration of Sharing Hub Landing Page}
+\begin{subfigure}{.5\textwidth}
+  \centering
+ \includegraphics[scale=0.4]{SharingHub}
+  \caption{Landing page v1}
   \label{fig:section-sharinghubv1}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-  \includegraphics[scale=0.28]{SharingHubV2Sketch}
-  \caption{Second Iteration of Sharing Hub Landing Page}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.2]{sharingHubV2.jpg}
+  \caption{Landing Page v2}
   \label{fig:section-sharinghubv2sletch}
+\end{subfigure}
+
+\caption{Sharing Hub Wireframes}
+\label{fig:publishing-wireframe}
 \end{figure}
 
 
-
- One of the main responsibilities of this screen is to start Discovery flow. Discovery flow includes various tools with goal to help find user new notebooks, on of them being Searching flow. Searching flow key requirements are following:
+\newpage
+\subsection{Searching Flow}
+ One of the main responsibilities of this screen is to start Search flow. Search flow is either launched by a Search Menu Item located in the Top bar or by the expanding on expanding on the Notebooks Section. Here a list of some basic requirements while
  \begin{itemize}
  
- \item There are should several primary searching options available: Notebooks name, University/School, Topic/Category. There are also several secondary options to narrow the search result: Tags and a language. Name of the notebook should be the only option that can be typed manually by user, all the other options, such as University or Topic, are well defined by the backed and can be chosen via Dialog for example.
- \item When none of searching options are active, empty state should be presented
- \item Previously used Searching options (if any) will be saved locally and presented as a shortcut when next discovery flow starts (i.e Empty state)
- \end{itemize}
+ \item There are should several primary searching/filtering options available: Notebooks name, University/School, Topic/Category and Tags.
+ \item All these options must be easily accessible with the idea that more searching options might be introduced during later phases of development.
+ \item When none of searching options are active, empty state must be presented.
+  \end{itemize}
 
+The resulting wireframe is shown on Figure \ref{fig:section-search} . This approach is using Top App bar to display active searching options. Each options is represented by Chip action, that can have two states: Chip is either inactive  and displays the name of the search option, or it is active, displaying selected option's values. When there are a lot of values selected, in case of multiple Tags for example, last three selected will be shown. 
+
+Clicking the Chip will result in showing Modal Bottom Sheet, that will allow user to tweak selection of the active values and every change to a Search options values will result in updating the search results. Search results themselves appear in the scrollable list bellow the Top Bar. 
    
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.23]{sectionSearch}
+  \caption{Search Flow Wireframes}
+  \label{fig:section-search}
+\end{figure}
+
+
 
  
 \subsection{Published Notebook Details}
@@ -614,14 +668,19 @@ Published Notebook, as an entity, contains a large amount properties and there a
 According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy. \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more responsive.
  
 
-Details Tab (Figure \ref{fig:published-details}) features key information about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups. First group contains simple properties such as Notebook's name, its author, category/topic, language and associated university. Second group contains more dynamic content such as description, that can take multiple lines, and a ChipGroup with tags. And the last group will serve a preview for the Notes.
+Details Tab (Figure \ref{fig:published-details}) features key details about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups.
 
-
+\begin{itemize}
+	\item \textbf{Basic details}: This group contains simple properties such as Notebook's name, its author, category/topic, language and associated university.
+	\item  \textbf{Description}: This group contains more dynamic content such as description, that can take multiple lines, and a Chip Group with tags.
+	\item \textbf{Notebook Action:} This view represents a primary action available for this notebook in regards to user Library. This can either act as a Save button, that will save the latest Notebook version to the users Library or as an Update Button, that will result in applying changes from local notebook to the Published one, thus updating its contents. If none of the actions are available, this view will be hidden.
+	 \item \textbf{Suggestions}: This view group serves as preview and an entry point for suggestions left by other users. 
+	\item \textbf{Notes Preview}: Last view at the bottom of the screen serves as an entry point for notes browsing.
+\end{itemize}
+ 
 Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scrollable list of the user comments and an Input Field, that will be used to create a new comment, or edit the old one. Also, every comment contains an options button that will trigger either an edit or a delete action.
 
-
-
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{comments}
   \caption{Details Tab}
@@ -638,12 +697,41 @@ Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scroll
 \label{fig:section-published}
 \end{figure}
 
-\subsection{Challenges Section}
+\subsection{Challenges}
 
-\textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks
-\subsection{Profile Section}
+\textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks.
 
-\textbf{Profile} sections provides various user-important information and allows user to modify them.
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.23]{challenges.jpg}}
+  \caption{Challenges Wireframes}
+  \label{fig:section-search}
+\end{figure}
+
+\subsection{Profile}
+
+\textbf{Profile} is the last top-level destination available from the Navigation bar. As shown on Figure \ref{fig:section-profile}, it features basic information about currently logged-in user and provides buttons to access three more subsections: Profile Edition, Notifications and Settings.
+
+Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. Screen contains two input fields, that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input field changes. Pressing Save button will try to update information and navigate back to profile screen in case of success.
+
+Notifications screen contains a scrollable list of  all previously received notifications. It is the same component used in the Sharing Hub screen.
+
+Settings screen contains application-relevant information and preferences. On of the key functionalities here is a Logout button (requirement F34).
+
+
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{profile}
+  \caption{Profile Screen Wireframe}
+  \label{fig:section-profile}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{editProfile}
+  \caption{Edit Profile Screen Wireframe}
+  \label{fig:section-editprofile}
+\end{subfigure}
+\end{figure}
+
 
 \section{Application architecture}
 \section{Platform-specific model}
@@ -676,7 +764,9 @@ Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scroll
 	\item[XML] Extensible markup language
 	\item[FAB] Floating Action Button
 	\item[UI] User Interface
-	\item[UX] User Expirience
+	\item[UX] User Experience
+	\item[FCM] Firebase Messaging Service
+	\item[GCM] Google Messaging Service
 \end{description}
 
 
