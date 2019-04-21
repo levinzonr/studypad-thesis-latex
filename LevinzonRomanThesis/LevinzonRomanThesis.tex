@@ -871,21 +871,34 @@ Settings screen contains application-relevant information and preferences. On of
 \setsecnumdepth{part}
 \chapter{Conclusion}
 
-Conclusion
 The goal of this thesis was to develop a StudyPad client for Android OS, which involved domain, requirements and existing solutions analysis as the first step. Next, the application UI and architecture was designed to support the requirements established in the previous step. Finally, the application was developed applying best practices from the world of the modern Android application development.
 All requirements specified in the Analysis were implemented along with the  couple new functionalities that were not a part  of the requirements specifications:
-	1) A screen to view latest notifications received
-	2)  Introduction of real-time features when receiving push-notifications when the application is in the foreground.
-3) The functionality to send feedback from the users
-4) Crash-Reporting and Analytics Services to support application future development.
-The application has not been uploaded to the play store yet; hence it has not been tested by the broader set of users.
+\begin{itemize}
+	\item A screen to view latest notifications received.
+	\item Introduction of real-time features when receiving.
+push-notifications when the application is in the foreground.
+	\item The functionality that allows users to send feedback about the application.
+	\item Offline functionality that covers Challenges and Local Notebooks.
+\end{itemize}
+
+The application has not been uploaded to the Play Store yet; hence it has not been tested by the broader set of users.
 Testing the application will be the last step to this thesis and it will give me more insight into what was done right and can be improved in the future.
 
-Future development
-StudyPad development is far from over.  The current iteration of the application had an epmhasis on content creation, sharing, and collaboration, with just a few tests available for users to study and learn. The real process of studying has yet to be researched and executed.
-Future  StudyPad development will concentrate on how to improve this aspect of the application.
+\subsection{Future development}
+\appname\ development is far from over.  The current iteration of the application had an emphasis on content creation, sharing, and collaboration, with just a few tests available for users to study and learn. The real process of studying has yet to be researched and executed.
+This could be a main focus for the future development of \appname.
+
+
 There also some small changes that could be  addressed such as:
-1) Powerful Notes editor that would make notes creation easier.
+\begin{itemize}
+	\item Powerful Notes editor that would make notes creation easier.
+	\item Implementing of Paging. Currently, neither API or the Application supports paging. Paging would improve loading time, which is especially important when there is a lot of content available.
+	\item Unit and Instrumentation tests to ensure application stability.
+	\item Implementation of Modular Architecture. It would enhance the quality of code and make test coverage easier.
+	\end{itemize}
+	
+	\noindent Though there are still a lot of work to be done on the Android application, \appname\ could be much bigger. In the long run, the iOS client could be finalised, and the Web client implemented making it a fully cross-platform experience. 
+
 \bibliographystyle{iso690}
 \bibliography{mybibliographyfile}
 
