@@ -243,7 +243,7 @@ MVP or Model-View-Presenter is an architecture pattern that is very common in An
 Model is the data layer
 View is the UI layer, which in the Android worlds are Fragments and Activities. 
 Presenter - is the layer between the View and the Model. It receives events from the View and updates the Model layer and applies the result to the UI layer.
-The View and Presenter both are abstracted to an Interface, it makes all the layers testable and easily testable.\cite{arch-mvp}
+The View and Presenter both are abstracted to an Interface, it makes all the layers easily testable. \cite{arch-mvp} However, one of the main disadvantages is that Presenter must hold a reference to a View, which can lead to memory leaks and other problems around Android lifecyle.
 
 \subsection{MVVM}
 MVVM or Model-View-ViewModel is another pattern to apply Clean Architecture principles. It is very similar to MVP  when it comes to View and Model layers, with the only difference being ViewModel.
