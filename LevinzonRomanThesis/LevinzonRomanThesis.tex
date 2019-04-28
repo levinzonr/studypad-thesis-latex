@@ -118,29 +118,6 @@ Each year, our smartphones get smarter and mobile applications become more advan
 
 Educational applications are very popular on both most popular mobile platforms (iOS and Android). Many of them use a flash card system in the study process -- displaying small pieces of information one after another, so that the user can memorise it more efficiently. However, most of these services are fairly limited in terms of what they are trying to teach and some of the greatest  features are scattered across different applications and services. \appname\ is a new solution to this problem. Using Android OS, today's most popular mobile platform, \appname\ wants to give its users freedom in what they can learn and give them proper tools to share, exchange and collaborate on study materials to make the education process even more easier.
 
-
-\section{State-of-the-art}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
-
-The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 2.
-
-\begin{figure}[H]
-\centering
-  \includegraphics[scale=0.26]{systemdesc}
-  \caption{\appname\ sevice}
-  \label{fig:android-component}
-\end{figure}
-\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
-
-
-Each user has his/her own space where they can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
-\subsection{Sharing \& Collaboration}
-\appname\ also allows users to easily share their notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
-The publication process involves providing additional information about the notebook, including its name, an optional description, topic and optional tags that serve to narrow the topic. Everything the user has provided(hereafter Author) along with their school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also makes it possible to quickly share a notebook by sending a link, which will act as a deep-link, navigating the user directly to a Published Notebook.
-
-The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library or suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, the subscriber will be able to make any local changes as he/she sees fit and use it as normal. The Subscriber will be notified about any updates made to the Published Notebook so that he/she can apply the changes to his/her local version, however, any local changes will be deleted. The Author of the notebook, in turn, will be notified about latest suggestions and comments left by the subscribers.
-
-
 \section{Goal}
 The goal of this thesis is to deliver  \appname\ client application for  Android OS with the emphasis on content creation, sharing and collaboration. This includes following steps:
 \begin{itemize}
@@ -156,8 +133,31 @@ development processes on the big and scalable project while applying advanced pr
 
 \setsecnumdepth{all}
 
-\chapter{Research}
-This chapters serves as an introduction to the Android development and gives the overview to the core technologies that will be used during the development.
+\chapter{State-of-the-art}
+\section{StudyPad Service}
+\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
+
+The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 2.
+
+\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
+
+
+Each user has his/her own space where they can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
+\subsection{Sharing \& Collaboration}
+\appname\ also allows users to easily share their notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
+The publication process involves providing additional information about the notebook, including its name, an optional description, topic and optional tags that serve to narrow the topic. Everything the user has provided(hereafter Author) along with their school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also makes it possible to quickly share a notebook by sending a link, which will act as a deep-link, navigating the user directly to a Published Notebook.
+
+The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library or suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, the subscriber will be able to make any local changes as he/she sees fit and use it as normal. The Subscriber will be notified about any updates made to the Published Notebook so that he/she can apply the changes to his/her local version, however, any local changes will be deleted. The Author of the notebook, in turn, will be notified about latest suggestions and comments left by the subscribers.
+
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.26]{systemdesc}
+  \caption{\appname\ sevice}
+  \label{fig:android-component}
+\end{figure}
+
+
 
 
  
@@ -314,7 +314,7 @@ The User role is a default one and will be assigned automatically to everyone wh
 Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
 
 \subsection{\appname\ API}
-\appname\ has its own REST API that is represented by Spring Boot application using JSON as a data-interchange response format. \cite{studypad-backend}} The Spring Framework is a Java-based framework that enhances developing of Java EE applications. It has modular architecture and supports Dependency Injection and using Inversion of Control principles.\cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced.\cite{spring-kotlin}
+\appname\ has its own REST API that is represented by Spring Boot application using JSON as a data-interchange response format. \cite{studypad-backend} The Spring Framework is a Java-based framework that enhances developing of Java EE applications. It has modular architecture and supports Dependency Injection and using Inversion of Control principles.\cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced.\cite{spring-kotlin}
 
 
 The author of this thesis developed the first iteration of the API as a semestral project for subject BI-EJA. The API is still being updated to support requirements for the client applications.
@@ -431,9 +431,9 @@ It is important to establish all functional and non-functional requirements for 
 \bigskip
 \textbf{Study Hub}
 \begin{itemize}
-	\item \textbf{F29: Start a basic self-check} The user will be able to use an interactive method of looking through his/her notes.
+	\item \textbf{F29: Start a Flashcards walkthrough} The user will be able to use an interactive method of looking through his/her notes.
 	\item \textbf{F30: Start a written test} The user will be able to participate in a written test based on one of the notebooks to test his/her knowledge.
-	\item \textbf{F31: Start a quiz} The user will be able to participate in a quiz challenge that will be based on one of his/her notebooks
+	\item \textbf{F31: Start a self-check} The user will be able to participate in a quiz challenge that will be based on one of his/her notebooks
 	
 \end{itemize}
 
@@ -812,22 +812,68 @@ Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scroll
   \caption{Comments Tab}
   \label{fig:published-comments}
 \end{subfigure}
-
-
 \caption{Published Notebook Details Wireframes}
 \label{fig:section-published}
 \end{figure}
 
 \subsection{Challenges}
+Current iteration of \appname provides a small amount of very straightforward challenges (or tests) where user can test his/her knowledge of of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
 
-\textbf{Challenges} section serves as an entry point for setting up different tests based on the user notebooks.
+
+
+Its landing screen (Figure \ref{fig:challenge-start}) features a list of recently completed challenges, including some statistics if available,  and three buttons, that are responsible for launching three distinct challenges with add: Flashcards, Write and Self-check. There is also a button that will navigate the user to a more in-depth configuration of his/her trial - Setup Challenge screen. Clicking one of the recently completed challenges entries will launch this challenge with all the options pre-set automatically. If the user hasn't completed any challenge yet, the empty view will be featured.
+
+
+
+
+
+Besides choosing the type of the challenge and the notebook, Setup Challenge screen (Figure \ref{fig:challenge-setup})  allows the user to select some additional options before generating his test such as order of the question and what will serve as an answer (either title of the note or its content). After all the details required are provided, most importantly challenge type and the notebook, the user will be able to start his test.
+
+
+
+Flashcard challenge is one of the simplest tests and requires no validation. Wireframe of this challenge can be seen in Figure \ref{fig:challenge-flash}.  This challenge is just an interactive way to walk through the notes, featuring a scrollable list of notes. User can flip the displayed flashcard to show the answer to a question and back. Navigation here doesn't have any boundaries so that the user can scroll this in any direction.  When reaching the end of the list, the user will see how many notes he/she studied.
+
+
+Just like the Flashcards challenge, next test features a list of questions base on of the users' notebooks. The idea of Self-check challenge \ref{fig:challenge-self} is straightforward. Given a list of questions, the user must ask himself a simple question: Do I Know the answer? Two buttons below the flashcard are then self-explanatory: It's the user answer, either he/she know the answer or not. Clicking will "I know" will reveal the next question and clicking "Study again" will reveal the answer to the current question.
+
+
+
+Write challenge (Figure \ref{fig:challenge-write})  is very similar to the Self-check challenge with the only distinction being that the user must provide his answer using an input field.
+His answer will then be validated, and, depending on how close user was to the correct answer, it will either show next question or will require the user to re-submit his answer, correcting his/her mistake.
 
 \begin{figure}[H]
 \centering
-  \includegraphics[scale=0.23]{challenges.jpg}
-  \caption{Challenges Wireframes}
-  \label{fig:section-search}
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.2]{challengesStart}
+  \caption{Challenges Landing Screen Wireframe}
+  \label{fig:challenge-start}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.2]{challengesSetup}
+  \caption{Setup Challenge Wireframe}
+  \label{fig:challenge-setup}
+\end{subfigure}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{write}
+  \caption{Write Challenge Wireframe}
+  \label{fig:challenge-write}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{selfcheck}
+  \caption{Self-check Challenge Wirefram}
+  \label{fig:challenge-selfcheck}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.45]{flashcards}
+  \caption{Flashcards Challenge Wireframe}
+  \label{fig:challenge-flash}
+\end{subfigure}
+\end{figure}
+
 
 \subsection{Profile}
 
@@ -855,16 +901,38 @@ Settings screen contains application-relevant information and preferences. On of
 
 
 \section{Application architecture}
+On the of key requirements for \appname\ development is its architecture scalability. This section describes the approach chosen for its development and patterns in use
 
-\section{Platform-specific model}
-\section{Main sequence diagrams}
+\subsection{MVVM}
+MVVM architecture was a rather easy choice for main architecture pattern. It is well supported by Android libraries and recommended by Google. ViewModel serves as glue between Presentation Layer and Data Layer. In example provided by Google (Figure \ref{fig:architecture-final}) Fragments/Activities represents the Presentation Layer and Repository acts as the data layer.
 
+
+\subsection{Repository}
+Repository is an abstraction that deals with the Entities. Repository can have one or multiple data sources. One of the main \appname\ data sources is its REST API. In-memory database will act as a secondary data source to allow some offline capabilities. 
+
+\subsection{Interactors}
+Though the repository pattern is a great abstraction for data layer, it would make sense to go even further and apply more Clean architecture principles. Interactor, or a Use-case, is another abstraction that represents single use-case -- one rule of business logic. Interactor is usually talks to the repository and the returns the result to whatever called it in the first place.
+
+This will even more propagate the separation of concerns as every Interactor will only deal with one particular functionality, which will make code more readable and make uni-testing easier in the future.
+
+
+\subsection{Dependncy Injection}
+Dependency injection (DI) is another technique that will help provide a more clean code and will be great help when providing a test-coverage.
+
+\subsection{\appname\ Architecture}
+Overall architecture will include following components:
+\begin{itemize}
+	\item \textbf{Presentation Layer}, that is represented by \texttt{Fragments} and \texttt{Activities}. They are only aware about how to display information and does not contain any complex logic. All the interactions are getting handled by Domain Layer
+	\item \textbf{Business Layer} is represented by \texttt{ViewModel}. ViewModel is injected into the Presentation Layer, it handles all user interactions and decides what and when to display, including navigation. ViewModel also executes Interactors and handles its result.
+	\item \textbf{Data Layer} is represented by Interactors and Repositories. Interactors get injected into ViewModel and serves to execute certain request in the background and provide a result via callbacks. Repositories provide Entity-based operations using the data sources.
+\end{itemize}
+ 
 \chapter{Implementation}
+This chapter describes main pin points of \appname\ implementation, platform-specific technologies and libraries. 
 \section{Choice of technologies}
 \section{Component diagram}
 \section{Installation}
 
-\cite{WEBSITE:1}
 \chapter{Testing}
 
 
