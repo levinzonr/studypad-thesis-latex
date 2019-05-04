@@ -929,9 +929,296 @@ Overall architecture will include following components:
  
 \chapter{Implementation}
 This chapter describes main pin points of \appname\ implementation, platform-specific technologies and libraries. 
-\section{Choice of technologies}
+\section{Used Libraries and Technologies}
+
+\subsection{DI Framework}
+There are a few DI frameworks available for Android, \texttt{Dagger} being one of the most popular. Dagger is a fully static  Java DI framework that uses annotations for dependencies resolution. Dagger got huge support from the developers' community, mainly because of its performance. All dependencies are resolved and generated during the building phase, thus making the application perform faster. But,  Dagger is pretty old, complex and requires a lot of boilerplate code to function properly. 
+
+\texttt{Koin} is a lightweight dependency injection framework written in pure Kotlin. Koin uses DSL (Domain Specific Language) for modules declaration and, as opposed to Dagger, it is very easy to use. And one of its most significant advantages: It provides \texttt{ViewModel} support out of the box us by using just a ViewModel keyword. Listings \ref{code:dagger} and \ref{code:koin} shows the example of declaring and injecting \texttt{ViewModels} using Dagger and Koin respectively. This example shows quite well how easy it to use Koin comparing to Dagger
+
+Because of its great features, simplicity and the desire to make this application as modern as possible, Koin was chosen as the DI framework.
+\newpage
+\begin{lstlisting}[caption={ViewModel Injecting using Koin}, label={code:koin}, language=Kotlin]
+
+// Define the dependency     
+viewModel { LoginViewModel(get(), get(), get(), get()) }
+
+// Inject into the fragment/activity
+private val viewModel: LoginViewModel by viewModel()
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption={ViewModel injecting using Dagger}, label={code:dagger}, language=Kotlin]
+   
+@Binds
+@IntoMap
+@ViewModelKey(MainActivityViewModel::class)
+abstract fun bindViewModel(
+viewModel:MainActivityViewModel): ViewModel
+
+@ContributesAndroidInjector
+internal abstract fun mainActivity(): MainActivity
+
+// Inject factory
+@Inject lateinit var factory: ViewModelProvider.Factory
+
+// Build viewModel
+private val viewModel = ViewModelProviders.of(
+			this, viewModelFactory)
+           		.get(VM::class.java)
+
+\end{lstlisting}
+
+\subsection{HTTP Client}
+
+Retrofit nowadays is pretty much an industry standard, and it is hard to argue with it. Retrofit provides a type-safe way to describe your HTTP API using Java/Kotlin interface and annotations. Annotations allow to m the requests options and parameters such as Request type, request body or query parameters.
+Retrofit also has support for some popular threading libraries like RxJava, and recently -- Kotlin coroutines.
+
+\begin{lstlisting}[caption={Retrofit Call Example}, label={code:retrofit}, language=Kotlin]
+
+
+@PATCH("$API/notebooks/{id}")
+    fun updateNotebookAsync(
+    @Path("id") id: String,
+    @Body body: Body) : Deferred<NotebooksResponse>
+
+   
+\end{lstlisting}
+
+
+\subsection{Threading}
+Threading and background work has always been a problem in the world of Android development.  Google provided some tools and APIs to solve this problem: AsyncTasks and Loaders. Both of them got a lot of issues, mainly because they were not very intuitive and flexible to use. AsyncTask specifically, when not used properly, was the main cause for memory leaks.
+
+Later on, RxJava gains popularity. RxJava is a library for composing asynchronous and event-based programs by using observable sequences. It is a very powerful tool, but the library itself is quite heavy (almost 2 MB), and when used only for threading it is often described as attempt to kill a spider with the bazooka.
+
+Kotlin has its own way to handle background work. Kotlin 1.3 introduced Kotlin Coroutines.   Coroutines can be described as light-weight threads and essentially its a small task that normal thread can execute. Kotlin uses a concept of \texttt{suspending} functions, that is a regular function with the \texttt{suspend} modifier which indicates that the function can suspend the execution of a coroutine.
+When it comes to \appname, Kotlin Coroutines are mainly used in the applications data layer: in Interactors and Repositories
+
+\subsection{Android Navigation Component}
+Navigation in Android can be done either by using Activities or Fragment transactions. Android Architecture Components introduced a new way to solve navigation -- Navigation Component
+
+Navigation Component serves as an abstraction layer above \texttt{FragmentManager} that is used to manage fragment transactions. Navigation Component handles a lot of things:
+\begin{itemize}
+	\item Handles back stack management
+	\item Provides utility methods for commonly used UI Elements such as Toolbar, BottomNavigationBar, and e.t.c
+	\item  Provides a type-safe way to pass arguments between destinations.
+
+\end{itemize}
+
+Navigation is described using XML, Android  Studio also provides a visual editor for it to build your navigation graph(Figure \ref{fig:navigationeditor}). Navigation itself is handled by Navigation Controller, which resolves destinations available and does the Fragment transaction under the hood.
+
+\begin{figure}
+	\caption{Navigation Editor}
+	\includegraphics[scale=0.54]{navigationeditor}
+	\label{fig:navigationeditor}
+\end{figure}
+
+\subsection{ViewModel}
+One of the essential parts of AAC is ViewMode. ViewModel is the implementation of the ViewModel pattern provided by Google as a part of AAC.
+One of the key features of the ViewModel -- it can survive configuration changes. 
+
+Activity's lifecycle is on the of most problematic concepts in Android Development, because every configuration change, such as phone rotation for example, destroys Activity and it must be recreated, thus causing a lot of issues. ViewModel lifecycle is different. As shown on Figure \ref{fig:viewmodellf}, the ViewModel remains in memory until the Lifecycle it's scoped to goes away permanently: in the case of an activity, when it finishes, while in the case of a Fragment when it's detached. The fact that ViewModel can survive configuration make ViewModel a perfect view state holder.
+
+\begin{figure}
+	\centering
+	\label{fig:viewmodellf}
+	\caption{ViewModel lifecycle}
+	\includegraphics[scale=0.7]{viewmodellf}
+\end{figure}
+
+\subsection{LiveData}
+LiveData is another useful tool from the AAC. LiveData is an observable, life-cycle aware data holder class, that goes hand-in-hand with ViewModel. Fragment or Activity can subscribe for updates and LiveData will notify its subscribers when new data is available, allowing them to update themselves accordingly. 
+Because LiveData is lifecycle-aware it allows avoiding memory leaks and can easily be used to restore view state after the configuration change.
+
+
+\section{Architecture Implementation}
+There are four three important parts to the architecture implementation:
+ViewModels, Interactors,  Repositories, and Fragments and Activities.
+
+\subsection{Repository}
+Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only difference being Notebook repository, which also has a Room dependency.
+
+Listing \ref{code:repo} demonstrates implementation of th \texttt{getNotebooks()} function, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing to use generic  \texttt{Deffered} class as a return type, that is then used to wait for the result.
+
+\begin{lstlisting}[caption={Repository Implementation Example}, label={code:repo}, language=Kotlin]
+class NotebookRepositoryImpl(
+    private val localDataSource: AppDatabase,
+    private val remoteDataSource: Api
+) : NotebookRepository {
+
+/**
+/* retrurns a list of the notebooks received from the api
+/* and save the result into database
+*/
+override suspend fun getNotebooks(): List<Notebook> {
+// wait for the api request to finish
+  val list = remoteDataSource.getNotebooksAsync().await()
+  localDataSource.notebookDao()
+  	.putAll(list.map { it.toDomain() })
+  return list
+ }
+ // other functions
+}
+
+\end{lstlisting}
+
+\subsection{Interactors}
+Interactors are used to perform one single use-case, or in other words, one single business logic operation. There are a lot of ways an interactor can be implemented. Sometimes it makes sense to make the interactor return LiveData, some times it is easier to handle the operation result via callbacks. Interactors in StudyPad relies on callbacks.
+
+Every Interactor in \appname\ extends \texttt{BaseInteractor} or \newline \texttt{BaseInputInteractor} (when the opearation requires input). BaseInteractor, is an abstract class, it shortened implementation can be seen on Listing \ref{code:interactor}. This implementation fully relies on Kotlin Coroutines to execute the request in the background and provide a result using callback. 
+This implementation of Interactors makes them very easy to declare, the only thing that has to be specified the actual action to be performed. The example of the resulting interactor can be seen on Listing \ref{code:logininteractor}
+\newpage
+\begin{lstlisting}[caption={BaseInteractor Implementaion}, label={code:interactor}, language=Kotlin]
+abstract class BaseInteractor<T> {
+
+  private var parentJob: Job = Job()
+  var ioContext = Dispatchers.IO
+  var mainContext = Dispatchers.Main
+
+  protected abstract suspend fun runInBackground(): T
+
+  fun execute(block: CompletionBlock<T>) {
+    val response = Request<T>().apply { block() }
+    unsubscribe()
+    parentJob = Job()
+    CoroutineScope(mainContext + parentJob).launch {
+        try {
+           val result = withContext(ioContext) {
+                runInBackground()
+             } catch(e: Exception) {
+                 handleException(e)
+               }
+            }
+        }
+    }
+ }
+\end{lstlisting}
+
+\begin{lstlisting}[caption={LoginInteractor Example}, label={code:logininteractor}, language=Kotlin]
+class LoginInteractor(private val repo: KeychainRepo) : 
+BaseInputInteractor<LoginInteractor.Input, Unit>() {
+
+ data class Input(val email: String, val password: String)
+
+ override suspend fun runInBackground(input: Input) {
+   val email = input.email
+   val pwd = input.password
+   return keychainRepository.login(email, pwd)
+  }
+}\end{lstlisting}
+
+
+\newpage
+\subsection{Applying ViewModel and LiveData}
+\texttt{ViewModel} in \appname\ manages three things:
+\begin{itemize}
+	\item Navigation
+	\item Interactors execution
+	\item Store current view's state
+\end{itemize}
+
+To make development the development process a bit easier, I have created an abstract class \texttt{BaseViewModel} class for all the others ViewModels to extend. \texttt{BaseViewModel} contains two \texttt{MutableLiveData} instances. First one is  \newline \texttt{baseViewStateLiveData}. It holds a view state, that is the most common for every view: loading progress and error event. The second and the last one is \texttt{navigationEventLiveData}, that handles navigation events and commands.  This allows tot easily change view state using helper functions provided by BaseViewModel (Listing \ref{code:baseviewmodel}) in its subclasses. 
+
+
+
+\begin{lstlisting}[caption={LoginInteractor Example}, label={code:baseviewmodel}, language=Kotlin]
+
+protected fun toggleLoading(loading: Boolean) {
+  val oldState = viewStateLiveData.value
+  val updatedState = oldState.copy(isLoading = loading)
+  viewStateLiveData.postValue(updatedState)
+}
+
+fun navigateBack() {
+    val backEvent = NavigationEvent.NavigateBack
+    navigationEventLiveData.call(backEvent)
+}
+
+protected fun navigateTo(direction: NavDirections) {
+   val navEvent = NavigationEvent.NavigateTo(direction)
+   navigationEventLiveData.call(navevnt)
+}
+ 
+ \end{lstlisting}
+
+It is important to mention that the way \texttt{LiveData} manages its data is not perfect for some events. There are some events that should be triggered only once, like showing an error, confirmation message or navigating user to another screen. For this reason, I have implemented a \texttt{Event} class (Listing \ref{code:event}). \texttt{Event} is very simple generic class that holds a data and only allows to handle this data once. Event handling is done using \texttt{handle()} function, that accepts the lambda function, that will be invoked only once. All the error events and navigation events are using this class.
+
+\begin{lstlisting}[caption={Event class}, label={code:event}, language=Kotlin]
+
+class Event<out T>(private val content: T) {
+
+    private var isAlreadyHandled: Boolean = false
+    fun handle(block: (T) -> Unit) {
+        if (!isAlreadyHandled) {
+            isAlreadyHandled = true
+            block.invoke(content)
+        }
+    }
+
+}
+ \end{lstlisting}
+ 
+ 
+ Interactor execution usually results in updating the current screens View State, an example of this process can be seen on Listing \ref{code:viewmodelex}. This is just on of the many example that illustrates the flow of the data in the application.
+ \begin{lstlisting}[caption={Usage of LiveData and Interactors in ViewModel}, label={code:viewmodelex}, language=Kotlin]
+
+ // Update base view state to show loading
+ toggleLoading(true)
+ // Execute the interactor
+ getRelevantNotebooks.execute {
+    // Handle success 
+     onComplete {
+        toggleLoading(false)
+        val data = it.map { it.toDomain() }
+        // post new valuee
+        dataSource.postValue(data)
+      }
+      onError {
+        // handle error
+        toggleLoading(false)
+        handleApplicationError(it)
+     }
+ }
+ \end{lstlisting}
+
+\subsection{Present the data in Fragments}
+The Activities in \appname\ serves only as a container for Fragments, thats why the actuals screens and flows are represented by Fragments. Just like with the \texttt{BaseViewModel}, I have created a basic definition of Fragment, that others fragments can extend -- \texttt{BaseFragment}
+
+\texttt{BaseFragment} provides a couple of helper methods that are used across the application and automatically subscribes for the two LiveData instances available from the \texttt{BaseViewModel}.
+
+The \texttt{baseViewStateLiveData} subscription allows to define \texttt{showLoading()} and \texttt{showError()} methods that others Fragments can override and manage this state without subscribing to it manually all the time.
+
+The \texttt{navigationLiveData} subscription allows to handle the navigation in one place. The LiveData itself it implemented using \texttt{sealed class}. In Kotlin, \texttt{sealed classes} are used for representing restricted class hierarchies, which in a sense allows to use these classes as much more powerful enums. 
+
+
+The way the NavigationEvent is implemented is shown on Listing \ref{code:nav}. This event is then handled in the \texttt{BaseFragment} and depending on the type of the event, the actual navigation is performed (Listing \ref{code:navhandle})
+
+\begin{lstlisting}[caption={NavigationEvent}, label={code:nav}, language=Kotlin]
+sealed class NavEvent {
+  data class NavigateTo(val direction: NavDir):NavEvent()
+  data class ChangeFlow(val flow: Flow) : NavEvent()
+  object NavigateBack: NavEvent()
+  
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption={NavigationEvent}, label={code:navhandle}, language=Kotlin]
+
+ private fun handleNavigationEvent(event: NavEvent) {
+   val navController = view?.findNavController
+   when (event) {
+     is NavEvent.NavigateTo -> navController?.navigate(event)
+     is NavEvent.NavigateBack -> navController?.popBackStack()
+  }
+}
+
+\end{lstlisting}
+
+
+
 \section{Component diagram}
 \section{Installation}
+
 
 \chapter{Testing}
 
