@@ -294,15 +294,6 @@ Firebase Cloud Messages will enable push-notifications, which is a great way to 
 
 
 
-\section{Material Design}
-Material Design is a design language that Google developed in 2014. Later in 2018, it was revamped with a goal to provide more flexibility for designers to create more custom themes. Material Design was chosen as a main source of inspiration when creating \appname\ UI due following  reasons:
-\begin{itemize}
-	\item Material Design has very wide support on Android Platform. Every component that is described in Material Design Guidelines is implemented by Google and can be used by developers.
-	\item Material Design is cross-platform, meaning that its guidelines can easily be applied when creating design for other platforms like iOS or Web.
-\end{itemize}
-\chapter{Analysis}
-This chapter contains a \appname\ system description and analysis with the goal to identify requirements and how it compares with its rivals
-
 \section{System description}
 
 The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel.\cite{studypad-web} The iOS client was developed by the author of this thesis  within the subject Introduction to iOS Development (BI-IOS). \cite{studypad-ios} The main task of this thesis is to deliver an Android OS client.
@@ -607,6 +598,14 @@ F27: User Suggestions                                          & \present       
 
 
 \chapter{Design}
+
+\section{Material Design}
+Material Design is a design language that Google developed in 2014. Later in 2018, it was revamped with a goal to provide more flexibility for designers to create more custom themes. Material Design was chosen as a main source of inspiration when creating \appname\ UI due following  reasons:
+\begin{itemize}
+	\item Material Design has very wide support on Android Platform. Every component that is described in Material Design Guidelines is implemented by Google and can be used by developers.
+	\item Material Design is cross-platform, meaning that its guidelines can easily be applied when creating design for other platforms like iOS or Web.
+\end{itemize}
+
 \subsection{Used Components}
 This section contains a list of Material Design specific Components (not including widely used elements such as Buttons and Input Fields) used when creating design for \appname.
 
@@ -817,7 +816,7 @@ Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scroll
 \end{figure}
 
 \subsection{Challenges}
-Current iteration of \appname provides a small amount of very straightforward challenges (or tests) where user can test his/her knowledge of of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
+The current iteration of \appname provides a small amount of very straightforward challenges (or tests) where user can test his/her knowledge of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
 
 
 
@@ -834,7 +833,7 @@ Besides choosing the type of the challenge and the notebook, Setup Challenge scr
 Flashcard challenge is one of the simplest tests and requires no validation. Wireframe of this challenge can be seen in Figure \ref{fig:challenge-flash}.  This challenge is just an interactive way to walk through the notes, featuring a scrollable list of notes. User can flip the displayed flashcard to show the answer to a question and back. Navigation here doesn't have any boundaries so that the user can scroll this in any direction.  When reaching the end of the list, the user will see how many notes he/she studied.
 
 
-Just like the Flashcards challenge, next test features a list of questions base on of the users' notebooks. The idea of Self-check challenge \ref{fig:challenge-self} is straightforward. Given a list of questions, the user must ask himself a simple question: Do I Know the answer? Two buttons below the flashcard are then self-explanatory: It's the user answer, either he/she know the answer or not. Clicking will "I know" will reveal the next question and clicking "Study again" will reveal the answer to the current question.
+Just like the Flashcards challenge, next test features a list of questions base on of the users' notebooks. The idea of Self-check challenge \ref{fig:challenge-self} is straightforward. Given a list of questions, the user must ask himself a simple question: do know the answer? Two buttons below the flashcard are then self-explanatory: It's the user answer, either he/she know the answer or not. Clicking will "I know" will reveal the next question and clicking "Study again" will reveal the answer to the current question.
 
 
 
@@ -932,9 +931,9 @@ This chapter describes main pin points of \appname\ implementation, platform-spe
 \section{Used Libraries and Technologies}
 
 \subsection{DI Framework}
-There are a few DI frameworks available for Android, \texttt{Dagger} being one of the most popular. Dagger is a fully static  Java DI framework that uses annotations for dependencies resolution. Dagger got huge support from the developers' community, mainly because of its performance. All dependencies are resolved and generated during the building phase, thus making the application perform faster. But,  Dagger is pretty old, complex and requires a lot of boilerplate code to function properly. 
+There are a few DI frameworks available for Android, \texttt{Dagger} being one of the most popular. Dagger is a fully static  Java DI framework that uses annotations for dependencies resolution. Dagger got huge support from the developers' community, mainly because of its performance. All dependencies are resolved and generated during the building phase, thus making the application perform faster. But,  Dagger is pretty old, complex and requires a lot of boilerplate code to function properly. Introduction of Kotlin paved a way for new libraries
 
-\texttt{Koin} is a lightweight dependency injection framework written in pure Kotlin. Koin uses DSL (Domain Specific Language) for modules declaration and, as opposed to Dagger, it is very easy to use. And one of its most significant advantages: It provides \texttt{ViewModel} support out of the box us by using just a ViewModel keyword. Listings \ref{code:dagger} and \ref{code:koin} shows the example of declaring and injecting \texttt{ViewModels} using Dagger and Koin respectively. This example shows quite well how easy it to use Koin comparing to Dagger
+\texttt{Koin} is a lightweight dependency injection framework written in pure Kotlin. Koin uses DSL (Domain Specific Language) for modules declaration and, as opposed to Dagger, it is very easy to use. And one of its most significant advantages: It provides \texttt{ViewModel} support out of the box us by using just a ViewModel keyword. Listings \ref{code:dagger} and \ref{code:koin} shows the example of declaring and injecting \texttt{ViewModels} using Dagger and Koin respectively. This example shows quite well how easy it to use Koin comparing to Dagger.
 
 Because of its great features, simplicity and the desire to make this application as modern as possible, Koin was chosen as the DI framework.
 \newpage
@@ -987,7 +986,7 @@ Retrofit also has support for some popular threading libraries like RxJava, and 
 
 
 \subsection{Threading}
-Threading and background work has always been a problem in the world of Android development.  Google provided some tools and APIs to solve this problem: AsyncTasks and Loaders. Both of them got a lot of issues, mainly because they were not very intuitive and flexible to use. AsyncTask specifically, when not used properly, was the main cause for memory leaks.
+Threading and background work has always been a problem in the world of Android development.  Google provided some tools and APIs to solve this problem: AsyncTasks and Loaders. Both of them have a lot of issues, mainly because they are not very intuitive and not flexible to use. AsyncTask specifically, when not used properly, was the main cause for memory leaks.
 
 Later on, RxJava gains popularity. RxJava is a library for composing asynchronous and event-based programs by using observable sequences. It is a very powerful tool, but the library itself is quite heavy (almost 2 MB), and when used only for threading it is often described as attempt to kill a spider with the bazooka.
 
@@ -999,8 +998,8 @@ Navigation in Android can be done either by using Activities or Fragment transac
 
 Navigation Component serves as an abstraction layer above \texttt{FragmentManager} that is used to manage fragment transactions. Navigation Component handles a lot of things:
 \begin{itemize}
-	\item Handles back stack management
-	\item Provides utility methods for commonly used UI Elements such as Toolbar, BottomNavigationBar, and e.t.c
+	\item Handles back stack management.
+	\item Provides utility methods for commonly used UI Elements such as Toolbar, BottomNavigationBar, and e.t.c.
 	\item  Provides a type-safe way to pass arguments between destinations.
 
 \end{itemize}
@@ -1038,7 +1037,7 @@ ViewModels, Interactors,  Repositories, and Fragments and Activities.
 \subsection{Repository}
 Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only difference being Notebook repository, which also has a Room dependency.
 
-Listing \ref{code:repo} demonstrates implementation of th \texttt{getNotebooks()} function, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing to use generic  \texttt{Deffered} class as a return type, that is then used to wait for the result.
+Listing \ref{code:repo} demonstrates implementation of th \texttt{getNotebooks()} function, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing use of generic   \texttt{Defered} class as a return type, that is then used to wait for the result.
 
 \begin{lstlisting}[caption={Repository Implementation Example}, label={code:repo}, language=Kotlin]
 class NotebookRepositoryImpl(
