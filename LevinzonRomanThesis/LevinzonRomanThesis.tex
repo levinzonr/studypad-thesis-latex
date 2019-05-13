@@ -27,6 +27,8 @@
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
+\usepackage{titlesec}
+
 
 \lstdefinelanguage{Kotlin}{
   comment=[l]{//},
@@ -60,6 +62,8 @@
 \department{Department of Software Engeeniring}
 \title{StudyPad - Android Client}
 \newcommand{\appname}{StudyPad}
+
+\newcommand{\innersection}[1]{\textbf{#1}}
 
 
 \newcommand{\present}{\begin{minipage}{.1\textwidth}
@@ -95,10 +99,10 @@
 \authorWithDegrees{Roman Levinzon} %author's name with academic degrees
 \supervisor{Ing. Miroslav Bal{\'i}k, Ph.D}
 \acknowledgements{THANKS (remove entirely in case you do not with to thank anyone)}
-\abstractEN{StudyPad is a combination of a note-taking service and a social network, aimed at helping students to memorise different pieces of information.  The goal of this thesis is to develop an application for Android OS that will serve as the client. This text acknowledges existing solutions, contains domain and requirements analysis, description and the choice of application's architecture and it's implementation.}
+\abstractEN{StudyPad is a combination of a note-taking service and a social network, aimed at helping students to memorise different pieces of information.  The goal of this thesis is to develop an application for Android OS that will serve as the client. This text acknowledges existing solutions, contains domain and requirements analysis, description and the choice of application's architecture its implementation and testing.}
 
 
-\abstractCS{StudyPad je kombinace slu{\v z}by pro pori{\v z}ovan{\' i} pozn{\'a}mek a soc{\'i}{\'a}ln{\'i} s{\'i}t{\v e} s c{\'i}lem  pomoci studentum zapamatovat si ruzn{\'e} informace. C{\'i}lem pr{\'a}ce je vyvinout aplikaci pro OS Android, kter{\'a} bude slou{\v z}it jako klient. Tento text uzn{\'a}v{\'a} st{\'a}vaj{\' i}c{\'i} {\v r}e{\v s}en{\'i}, obsahuje anal{\'y}zu dom{\'e}n a po{\v z}adavku, popis a v{\'y}b{\v e}r architektury aplikace a jej{\'i} implementace}
+\abstractCS{StudyPad je kombinace slu{\v z}by pro pori{\v z}ovan{\' i} pozn{\'a}mek a soc{\'i}{\'a}ln{\'i} s{\'i}t{\v e} s c{\'i}lem  pomoci student{\r u}m zapamatovat si r{\r u}zn{\'e} informace. C{\'i}lem pr{\'a}ce je vyvinout aplikaci pro OS Android, kter{\'a} bude slou{\v z}it jako klient. Tento text uv{\'a}d{\' i} p{\v r}ehled st{\'a}vaj{\' i}c{\'i}ch {\v r}e{\v s}en{\'i}, obsahuje anal{\'y}zu dom{\'e}ny a po{\v z}adavku, popis a v{\'y}b{\v e}r architektury aplikace, jej{\'i} implementace a testov{\' a}n{\' i}}
 \placeForDeclarationOfAuthenticity{Prague}
 \keywordsCS{Mobilní aplikace, Android, Kotlin, MVVM, Clean architecture, vzd{\v e}lávání}
 \keywordsEN{Mobile application, Android, Kotlin, MVVM, Clean architecture, education}
@@ -128,249 +132,43 @@ The goal of this thesis is to deliver  \appname\ client application for  Android
 \end{itemize}
 
 \section{Motivation}
+
 The primary motivation is to practice software
 development processes on the big and scalable project while applying advanced practices and technics of Android Development. 
 
-\setsecnumdepth{all}
 
 \chapter{State-of-the-art}
+This chapter serves as an introduction of what StudyPad is trying to achieve and compares it to the other applications and services available.  In order to make this comparison more detailed, functional and non-functional requirements are presented.
+
 \section{StudyPad Service}
-\appname\ is a combination of a note taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
+\appname\ is a combination of a note-taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of \appname\ is on content creation, its sharing and discovery. 
 
-The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 2.
+The \appname\ project originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). The first iteration of the backend was introduced as a semestral project for subject Enterprise Java (BI-EJA), and subject Introduction to Android Development (BI-AND) had a great influence on the first iteration of the Android Client. All of these components will be described more thoroughly in Chapter 2.
 
-\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. Notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents a single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
+\appname\ core concepts are \textit{Notebooks} and \textit{Notes}. The notebook is simply a collection of notes united by one theme. This may be a subject in school, a language that you would like to learn or a set of questions that you could hear at a job interview. Note, in turn, is a part of the notebook and represents single piece information that has a name and a content. It can also be interpreted as a question and answer or a term and its definition.
+
+
 
 
 Each user has his/her own space where they can create, store and edit notebooks and notes (hereafter \textit{Library}). All notebooks stored in the library can be used in various tests and exercises to help users to memorise its content.
+
+
 \subsection{Sharing \& Collaboration}
-\appname\ also allows users to easily share their notebooks with each other. Each notebook can be shared by creating a published version of it (hereafter Published Notebook),thereby making it available to everyone else for viewing and importing.
+
+\appname\ also allows users to share their notebooks with each other easily. Each notebook can be shared by creating a published version of it (hereafter Published Notebook), thereby making it available to everyone else for viewing and importing.
 The publication process involves providing additional information about the notebook, including its name, an optional description, topic and optional tags that serve to narrow the topic. Everything the user has provided(hereafter Author) along with their school and language will then be used in the process of searching and filtering -- which will facilitate the search for the necessary materials. \appname\ also makes it possible to quickly share a notebook by sending a link, which will act as a deep-link, navigating the user directly to a Published Notebook.
 
-The Author of the notebook reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library or suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, the subscriber will be able to make any local changes as he/she sees fit and use it as normal. The Subscriber will be notified about any updates made to the Published Notebook so that he/she can apply the changes to his/her local version, however, any local changes will be deleted. The Author of the notebook, in turn, will be notified about latest suggestions and comments left by the subscribers.
-
+The user that has initially published the notebook (hereafter \textit{Author}) reserves the right to make edits/corrections to the Published Notebook. Other users (hereinafter subscribers) in turn can save a Published Notebook to their library and suggest some changes or corrections to improve the content. By saving Published notebook to his/her library, the subscriber will be able to make any local changes as he/she sees fit and use it as normal. The Subscriber will be notified about any updates made to the Published Notebook so that he/she can apply the changes to his/her local version, however, any local changes will be deleted. The Author of the notebook, in turn, will be notified about the latest suggestions and comments left by the subscribers.
 
 \begin{figure}[H]
 \centering
-  \includegraphics[scale=0.26]{systemdesc}
-  \caption{\appname\ sevice}
+  \includegraphics[scale=0.3]{systemdesc}
+  \caption{\appname\ Sevice}
   \label{fig:android-component}
 \end{figure}
 
 
 
-
- 
-	\section{Android Platform}
-Android is a mobile operating system developed by Google. It is based on a modified version of the Linux kernel and other open source software, and is designed primarily for touchscreen mobile devices such as smartphones and tablets.\cite{android-platform}
-
-
-
-\subsection{Android SDK Versions}
-Since its inception, several versions have been released, with the latest one being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions.\cite{android-sdks} Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was the case until AndroidX was introduced.
-
-AndroidX, in essence, is a refactored version of the Support Libraries. Just like Support Libraries it ensures backward-compatibility and is shipped separately from the Android OS, but it also provides a more clear and convenient package names and uses a strict semantic versioning system. \cite{androix-overview}
-
-When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the \texttt{minSdkVersion} and \texttt{targetSdkVersion} attributes are used to identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 85\% and Material Design Support, which is one of the non-functional requirements.
-
-
-\begin{figure}[H]
-\center
-  \includegraphics[scale=0.5]{adnroidversion.png}
-  \caption{Android Versions distribution}
-  \label{fig:androidversions}
-\end{figure}
-
-\subsection{Android High-level Framework Elements}
-Android SDK provides multiple elements and APIs for developers to help them build UI and communicate with the Android OS.
-\begin{itemize}
-	\item \textbf{Activity}: \texttt{Activity} represents a single window where the UI elements can be placed. Android OS managing the creation and destruction of the \texttt{Activities}, that is why \texttt{Intents} are used to start/launch it. Activity's lifecycle is  \cite{android-activity}. 
-	\item \textbf{Fragment}: \texttt{Fragments} were introduced in Android 3.0, primarily to support more flexible UI designs for larger screens (like Tablets). In such designs, \texttt{Activity} serves as container for one or more \texttt{Fragments}, and because each \texttt{Fragment} defines its own layout with its own lifecycle, it can be used in multiple  \texttt{Activities} \cite{android-fragment}.
-	\item \textbf{Broadcast Receiver}: \texttt{Broadcast Receiver} allows the application to receive and send local and system-wide broadcasts similar to the publish-subscribe design pattern. By using \texttt{Broadcast Receiver} application can act upon receiving various kind of events, like the change of internet connectivity or charging status.\cite{android-broadcast}.
-	\item \textbf{Service}: \texttt{Service} is the application component that does not require UI and is used to perform long-running operations, even if the user stops interacting with the application \cite{android-service}.
-	\item \textbf{Intent}: \quoting{An intent is an abstract description of an operation to be performed}. \texttt{Intent} can be used to launch an \texttt{Activity}, start a \texttt{Service} or a \texttt{BroadcastReceiver}. \texttt{Intent} can either start a specific component (explicit Intent) or try to find a component that can complete certain actions (implicit Intent) \cite{android-intent}.For example,  there could be several applications available on the device with the image viewing functionality, implicit intent, in this case, will allow the user to choose which application will handle this section. Explicit intent, on the other hand, is perfect when launching your own \texttt{Activities} and other components. 
-	\end{itemize}
-	
-	
-	\subsection{Resources}
-Resources are the additional files and static content that your code uses, such as bitmaps, layout definitions and user interface strings. Resources are stored in the separated package called \texttt{/res} and can be referenced in the application using ids. Also, depending on current configuration, Android can choose appropriate resource version (if multiple are provided) at run-time. For example, it can be used for localisation support by providing different strings resources for different languages.\cite{android-resources}
-	
-	\subsection{Views} 
-	
-	\texttt{View} is fundamental building block for all the UI components. It serves as base class for \texttt{Widgets}, which are the interactive elements and \texttt{ViewGroups}, that acts as a containers for other Views. \cite{android-views}
-	
-	\texttt{ViewGroup}, as mentioned before, is an invisible container that holds other views. Android provides different ViewGroup subclasses, each with its own purpose and a way to structure its children \cite{android-viewgroup}. \texttt{LinearLayout}, for example, allows to align widgets horizontally or vertically.\cite{android-linear}. Another important ViewGroup that has received a lot of attention and support during the last couple of years is ConstraintLayout. Using constraints, it allows developers to create more complex layouts without using nested ViewGroups (i.e., LinearLayout inside another Linear Layout).\cite{android-constraints}
-	
-	Android uses XML for declaring the UI for Activities and Fragments. XML is then converted to the View object using \texttt{LayoutInfalter}.  Views can also be added programmatically via Java/Kotlin code.	
-
-\section{Android Studio}
-Android Studio is an official IDE for Android development. Out of the box it provides a lot of essential tools, like visual Layout editor, emulator and more. 
-
-
-\section{Gradle}
-Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries.\cite{android-gradle}
-
-\section{Kotlin}
-\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa.\cite{kotlin} Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box.\cite{kotlin-android}. 
-
-
-\subsection{Kotlin Extensions}
-Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend.\cite{kotlin-exts}
-
-When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code. \cite{kotlin-androidexts}
-
-
- \begin{lstlisting}[caption={Kotlin View Binding example}, label={code:viewbinding}, language=Kotlin]
-   // Instead of findViewById<TextView>(R.id.textView)
-   textView.setText("Hello,world!")
-
-\end{lstlisting}
-
-
-
-Due to its official support and features, Kotlin was chosen as a primary language for \appname\ development as opposed to Java.
-
-\section{Application Architecture}
-Application Architecture defines the way different application elements interact with each other and how the application is designed and organised. 
-
-\subsection{Clean Architecture}
-Clean architecture is a set of ideas derived from different kinds of other approaches with the main principle being a separation of concerns. 
-Separation of concerns ensures that all the application's components are easily replaceable and as less independent as possible. When it comes to Android and every software that contains UI, it is essential that the UI does not contain any business logic and serves only as a way to show information.
-
-
-\subsection{MVP}
-MVP or Model-View-Presenter is an architecture pattern that is very common in Android development. 
-Model is the data layer
-View is the UI layer, which in the Android worlds are Fragments and Activities. 
-Presenter - is the layer between the View and the Model. It receives events from the View and updates the Model layer and applies the result to the UI layer.
-The View and Presenter both are abstracted to an Interface, it makes all the layers easily testable. \cite{arch-mvp} However, one of the main disadvantages is that Presenter must hold a reference to a View, which can lead to memory leaks and other problems around Android lifecyle.
-
-\subsection{MVVM}
-MVVM or Model-View-ViewModel is another pattern to apply Clean Architecture principles. It is very similar to MVP  when it comes to View and Model layers, with the only difference being ViewModel.
-ViewModel, as oppose to Presenter, is not aware of the View -- it does not hold the reference to it. Instead, View subscribes to ViewModel events and its state accordingly. ViewModel handles UI interactions, updates the Model layer and then post changes so that the View can get updated.\cite{arch-mvvm}
-
-\subsection{Android Architecture Components}
-Previously, Google, as the leading Android contributor, never cared about the way developers build their applications. It has changed drastically with the introduction of Architecture Components at Google I/O in 2017.\cite{android-archcomponents}
-Architecture Components are a collection of libraries that can be used to design a robust and maintainable architecture.  LiveData and ViewModel components are the most important.  LiveData is a lifecycle-aware component is used to store data and notify its subscribers if the data changes.  ViewModel can store UI-related data and survive Activity Destruction which is especially useful in case of device rotation for example.
-
-\subsection{Recommended Architecture}
-Introduction of Architecture Components made it clear what approach Google recommends when designing application architecture - MVVM. Figure \ref{fig-arch} demonstrates this approach:
-\begin{itemize}
-	\item Fragments and Activities represent the View
-	\item View is connected to a ViewModel. ViewModel there is represented by a ViewModel Architecture component that stores model data using LiveData, that Fragment or Activity can subscribe to. ViewModel requests data from the repository, without knowing where the data comes from
-	\item A Repository pattern represents the Model layer. Repository's responsibility is to retrieve and modify the data using one or multiple sources. Typically there is remote data source (API) and the local data source (on-device database).
-\end{itemize}
-
-\begin{figure}[H]
-	\centering
-  \includegraphics[scale=0.4]{final-architecture}
-  \caption{Architecture Example Diagram}
-  \label{fig-arch}
-\end{figure}
-
-
-\subsection{Chosen Architecture}
-The fact that the MVVM  pattern is recommended by the developers of the Android OS and the existence of Architecture Components makes MVVM a solid choice and good starting point for the application architecture. Its detailed design and implementation is discussed in the following chapters.
-
-
-
-
-\section{Firebase}
-
-\quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure.} \cite{firebase} Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
-\begin{itemize}
-	\item \textbf{Firebase Analytics} Firebase Analytics provides free application measurement solution, that allows you analyse how the users interact with your application based  on up to 500 distinct events \cite{firebase-analytics}
-		\item \textbf{Firebase Cloud Messaging} \quoting{Firebase Cloud Messaging (FCM) provides a reliable and battery-efficient connection between your server and devices that allows you to deliver and receive messages and notifications on iOS, Android, and the web at no cost.}\cite{firebase-messaging}
-	\item \textbf{Firebase Auth} \quoting{Firebase Auth  provides an end-to-end identity solution, supporting email and password accounts, phone auth, and Google, Twitter, Facebook, and GitHub login, and more.}\cite{firebase-auth}
-	\item \textbf{Crashlytics} Crash Reporting allows you track detailed reports of the errors and crashes in the application. All the issues experienced by the users are then grouped into clusters of similar stack traces and triaged by the severity of impact on application users.\cite{firebase-crash}
-
-\end{itemize}.
-
-\noindent While Firebase Analytics and Crash Reporting services are a great help while developing mobile applications, Firebase Auth and FCM are essential for some of the functional requirements. 
-
-Storing user credentials, and most importantly, storing them safely is not an easy task. With a little effort, Firebase Auth will handle everything related to user management, including access token generation and refreshment, as well as credentials storing and encryption.
-
-Firebase Cloud Messages will enable push-notifications, which is a great way to interact with users and introduce some real-time functionality to the application. 
-
-
-
-\section{System description}
-
-The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel.\cite{studypad-web} The iOS client was developed by the author of this thesis  within the subject Introduction to iOS Development (BI-IOS). \cite{studypad-ios} The main task of this thesis is to deliver an Android OS client.
-
-\subsection{User Roles}
-Some of the use-cases requires moderation. The simplest example is a university creation use-case. Though it is possible to submit new school/university in case user haven't found it, the name, that user has submitted has to be verified first and other details, like school location and translations should be updated. This is a main purpose of the Admin Panel and it will require an introduction of different user roles: User and Admin. 
-
-The User role is a default one and will be assigned automatically to everyone who completes the registration process. It will only be used in the client applications.
-Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
-
-\subsection{\appname\ API}
-\appname\ has its own REST API that is represented by Spring Boot application using JSON as a data-interchange response format. \cite{studypad-backend} The Spring Framework is a Java-based framework that enhances developing of Java EE applications. It has modular architecture and supports Dependency Injection and using Inversion of Control principles.\cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced.\cite{spring-kotlin}
-
-
-The author of this thesis developed the first iteration of the API as a semestral project for subject BI-EJA. The API is still being updated to support requirements for the client applications.
-\subsection{Android client}
-
-The detailed structure of the Android client and how it is connected with other components is presented on the component diagram on Figure \ref{fig:component}. 
-
- Android component will be divided into three layers: the Data Layer, Business Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business Layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
-
-
-\begin{figure}[H]
-\centering
-  \includegraphics[scale=0.25]{androiddiagram}
-  \caption{Android component Diagram}
-  \label{fig:android-component}
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-  \includegraphics[scale=0.25]{systemdiagram}
-  \caption{Component Diagram}
-  \label{fig:component}
-\end{figure}
-
-
-
-\newpage
-\section{Domain Description}
- The Class Diagram on Figure \ref{fig:domain} represents the Domain Model of the application, it provides visual representation of Entities and relations between them. The Design is based on the entities used on server-side.
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{Domain}
-  \caption{Domain Diagram}
-  \label{fig:domain}
-\end{figure}
-
- 
-
-\subsection{User}
-	The User entity represents someone who has completed registration flow using one of the client applications or created manually (in case of Admin role). This entity contains such properties as: role, first name, last name, email address, password, university. Due to the fact, that \appname\ provides several ways for the user to authorise, some of the properties will either come from the user's input or from the 3rd party API (such as Firebase).
-	
-\subsection{Note}
-	Note represents a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Each note must be assigned to one of the notebooks, hence there is a 1:N relation.
-\subsection{Notebook}
-	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. The soul purpose of the Notebook is to store Notes and serve as a source for a Published Notebook. Properties name and colour are used to help users distinguish between different Notebooks.
-	
-	
-\subsection{University}
-University represents a school, where the User can assign himself as a student during registration flow. It is used to unite users from the same school to make content searching easier. 
-
-\subsection{Published Notebook}
-Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
-name, optional description,  topic and optional list of tags. All these properties are later used in a searching flow to optimise results.
-
-\subsection{Topic}
-Topic represents the main topic or subject of the Published Notebook. Topic contains only one property -- its name
-\subsection{Tag}
-Tag is a short label attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property -- its actual value stored as the name.
-
-\subsection{Comment}
-Users can comment on published notebooks. Most of the properties are assigned automatically, with the only exception being content: it represents the body of the comment and assigned by the user.
-
-
-\newpage
 \section{Requirements}
 It is important to establish all functional and non-functional requirements for \appname. The section bellow contains all requirements designated  before the start of the development.
 
@@ -455,7 +253,7 @@ It is important to establish all functional and non-functional requirements for 
 
 There are several services out there whose goal is similar to \appname. However, most of those solutions are specialised in language-learning and have limited sharing and/or searching options. Each application/service will be reviewed separately and will include a requirements and main processes comparison. 
 
-Symbols are used in Tables  to indicate  requirement availability in the applications. Symbol on Figure \ref{fig:star} represents the functionality  that is fully supported by the application. Symbol on Figure \ref{fig:starhalf} demonstrates that the given functionality is either limited/incomplete or not working as intended. Lastly, symbol on Figure \ref{fig:starborder} indicates that the given application does not support the requirement.
+Symbols are used in Tables  to indicate  requirement availability in the applications. Symbol in Figure \ref{fig:star} represents the functionality  that is fully supported by the application. Symbol in Figure \ref{fig:starhalf} demonstrates that the given functionality is either limited/incomplete or not working as intended. Lastly, symbol in Figure \ref{fig:starborder} indicates that the given application does not support the requirement.
  
 \begin{figure}[H]
 \centering
@@ -597,7 +395,205 @@ F27: User Suggestions                                          & \present       
 
 
 
+
+
+\setsecnumdepth{all}
+
+\chapter{Analysis}
+This chapter serves as an introduction to Android development and gives an overview of the core technologies and tools used. Also, it provides a domain and requirements analysis, overall system description and acknowledges existing solutions.
+
+\section{Android Platform}
+Android is a mobile operating system developed by Google. It is based on a modified version of the Linux kernel and other open source software, and is designed primarily for touchscreen mobile devices such as smartphones and tablets\cite{android-platform}.
+
+
+
+\subsection{Android SDK Versions}
+Since its inception, several versions have been released, with the latest one being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions.\cite{android-sdks} Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was the case until AndroidX was introduced.
+
+AndroidX, in essence, is a refactored version of the Support Libraries. Just like Support Libraries it ensures backward-compatibility and is shipped separately from the Android OS, but it also provides more clear and convenient package names and uses a strict semantic versioning system. \cite{androix-overview}
+
+When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the \texttt{minSdkVersion} and \texttt{targetSdkVersion} attributes are used to identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 89\% and Material Design Support, which is one of the non-functional requirements.
+
+
+\begin{figure}[H]
+\center
+  \includegraphics[scale=0.5]{androidversion.png}
+  \caption{Android Versions distribution \cite{android-distribution}}
+  \label{fig:androidversions}
+\end{figure}
+
+\subsection{Android High-level Framework Elements}
+Android SDK provides multiple elements and APIs for developers to help them build their applications.
+\begin{itemize}
+	\item \textbf{Activity}: \texttt{Activity} represents a single window where the UI elements can be placed. Android OS managing the creation and destruction of the \texttt{Activities}, that is why \texttt{Intents} are used to start/launch them \cite{android-activity}. 
+	\item \textbf{Fragment}: \texttt{Fragments} were introduced in Android 3.0, primarily to support more flexible UI designs for larger screens (like Tablets). In such designs, \texttt{Activity} serves as container for one or more \texttt{Fragments}, and because each \texttt{Fragment} defines its own layout with its own lifecycle, it can be used in multiple  \texttt{Activities} \cite{android-fragment}.
+	\item \textbf{Broadcast Receiver}: \texttt{Broadcast Receiver} allows the application to receive and send local and system-wide broadcasts similar to the publish-subscribe design pattern. By using \texttt{Broadcast Receiver} application can act upon receiving various kind of events, like the change of internet connectivity or charging status.\cite{android-broadcast}.
+	\item \textbf{Service}: \texttt{Service} is the application component that does not require UI and is used to perform long-running operations, even if the user stops interacting with the application \cite{android-service}.
+	\item \textbf{Intent}: \quoting{An intent is an abstract description of an operation to be performed}. \texttt{Intent} can be used to launch an \texttt{Activity}, start a \texttt{Service} or a \texttt{BroadcastReceiver}. \texttt{Intent} can either start a specific component (explicit Intent) or try to find a component that can complete certain actions (implicit Intent) \cite{android-intent}.For example,  there could be several applications available on the device with the image viewing functionality, implicit intent, in this case, will allow the user to choose which application will handle this action. Explicit intent, on the other hand, is used to launch specific components using its class name.
+	\end{itemize}
+	
+	
+	\subsection{Resources}
+Resources are the additional files and static content that your code uses, such as bitmaps, layout definitions, and user interface strings. Resources are stored in the separated package called \texttt{/res} and can be referenced in the application using ids. Also, depending on the current configuration, Android can choose appropriate resource version (if multiple are provided) at run-time. For example, it can be used for localisation support by providing different strings resources for different languages.\cite{android-resources}
+	
+	\subsection{Views} 
+	
+	\texttt{View} is a fundamental building block for all the UI components. It serves as a base class for \texttt{Widgets}, which are the interactive elements and \texttt{ViewGroups}, that acts as a container for other Views. \cite{android-views}
+    
+    \texttt{ViewGroup}, as mentioned before, is an invisible container that holds other views. Android provides different ViewGroup subclasses, each with its own purpose and a way to structure its children \cite{android-viewgroup}. \texttt{LinearLayout}, for example, allows to align widgets horizontally or vertically.\cite{android-linear}. Another important ViewGroup that has received a lot of attention and support during the last couple of years is ConstraintLayout. Using constraints allows the developer to create more complex layouts without using nested ViewGroups (i.e., LinearLayout inside another Linear Layout).\cite{android-constraints}
+    
+    Android uses XML for declaring the UI for Activities and Fragments. XML is then converted to the View object using \texttt{LayoutInfalter}.  Views can also be added programmatically via Java/Kotlin code.    
+
+\section{Android Studio}
+Android Studio is an official IDE for Android development. Out of the box it provides a lot of essential tools, like visual Layout editor, emulator and more.
+
+\section{Gradle}
+Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries.\cite{android-gradle}
+
+\section{Kotlin}
+\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa.\cite{kotlin} Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box.\cite{kotlin-android}. 
+
+
+\subsection{Kotlin Extensions}
+Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend.\cite{kotlin-exts}
+
+When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code. \cite{kotlin-androidexts}
+
+
+ \begin{lstlisting}[caption={Kotlin View Binding example}, label={code:viewbinding}, language=Kotlin]
+   // Instead of findViewById<TextView>(R.id.textView)
+   textView.setText("Hello,world!")
+
+\end{lstlisting}
+
+
+
+Due to its official support and features, Kotlin was chosen as a primary language for \appname\ development as opposed to Java.
+
+\section{Application Architecture}
+Application Architecture defines the way different application elements interact with each other and how the application is designed and organised. This section aims to address different ways to approach application architecture.
+
+\subsection{Clean Architecture}
+Clean architecture is a set of ideas derived from different kinds of other approaches with the main principle being a separation of concerns. 
+Separation of concerns ensures that all the application's components are easily replaceable and as less independent as possible. When it comes to Android and every software that contains UI, it is essential that the UI does not contain any business logic and serves only as a way to show information.
+
+
+\subsection{MVP}
+MVP or Model-View-Presenter is an architecture pattern that is very common in Android development. 
+Model represents the data layer
+View is the UI layer, which in the Android worlds are Fragments and Activities. 
+Presenter - is the layer between the View and the Model. It receives events from the View and updates the Model layer and applies the result to the UI layer.
+The View and Presenter both are abstracted to Interfaces, thus making all the layers easily testable. \cite{arch-mvp} However, one of the main disadvantages is that Presenter must hold a reference to a View, which can lead to memory leaks and other problems around Android lifecycle.
+
+\subsection{MVVM}
+MVVM or Model-View-ViewModel is another pattern to apply Clean Architecture principles. It is very similar to MVP  when it comes to View and Model layers, with the only difference being ViewModel.
+ViewModel, as oppose to Presenter, is not aware of the View -- it does not hold the reference to it. Instead, View subscribes to ViewModel events and its state accordingly. ViewModel handles UI interactions, updates the Model layer and then post changes so that the View can present these changes to the user \cite{arch-mvvm}.
+
+
+
+\section{Firebase}
+
+\quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure.} \cite{firebase} Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
+\begin{itemize}
+	\item \textbf{Firebase Analytics} Firebase Analytics provides free application measurement solution, that allows you analyse how the users interact with your application based  on up to 500 distinct events \cite{firebase-analytics}.
+		\item \textbf{Firebase Cloud Messaging} \quoting{Firebase Cloud Messaging (FCM) provides a reliable and battery-efficient connection between your server and devices that allows you to deliver and receive messages and notifications on iOS, Android, and the web at no cost} \cite{firebase-messaging}.
+	\item \textbf{Firebase Auth} \quoting{Firebase Auth  provides an end-to-end identity solution, supporting email and password accounts, phone auth, and Google, Twitter, Facebook, and GitHub login, and more} \cite{firebase-auth}.
+	\item \textbf{Crashlytics} Crash Reporting allows you track detailed reports of the errors and crashes in the application. All the issues experienced by the users are then grouped into clusters of similar stack traces and triaged by the severity of impact on application users \cite{firebase-crash}.
+
+\end{itemize}.
+
+\noindent While Firebase Analytics and Crash Reporting services are a great help while developing mobile applications, Firebase Auth and FCM are essential for some of the functional requirements. 
+
+Storing user credentials, and most importantly, storing them safely is not an easy task. With a little effort, Firebase Auth will handle everything related to user management, including access token generation and refreshment, as well as credentials storing and encryption.
+
+Firebase Cloud Messages will enable push-notifications, which is a great way to interact with users and introduce some real-time functionality to the application. 
+
+
+
+\section{System description}
+
+The \appname\ system follows classic client-server software architecture. The server part is represented by the Spring Boot application, which communicates with its clients using REST API. The client part consists of client applications for several platforms: Android, iOS and Web. The Web client is being developed alongside the Android client to serve as an Admin Panel \cite{studypad-web}. The iOS client was developed by the author of this thesis  within the subject Introduction to iOS Development (BI-IOS). \cite{studypad-ios} The main task of this thesis is to deliver an Android OS client.
+
+\subsection{User Roles}
+Some content in \appname\ requires moderation. The simplest example is a university creation. Though it is possible to submit new school/university in case user haven't found it, the name, that user has submitted has to be verified first and other details, like school location and translations should be updated. This is a main purpose of the Admin Panel and it will require an introduction of different user roles: User and Admin. 
+
+The User role is a default one and will be assigned automatically to everyone who completes the registration process. It will only be used in the client applications.
+Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
+
+\subsection{\appname\ API}
+\appname\ has its own REST API that is represented by the Spring Boot application using JSON as a data-interchange response format \cite{studypad-backend}. The Spring Framework is a Java-based framework that enhances the developing of Java EE applications. It has a modular architecture and supports Dependency Injection and using Inversion of Control principles \cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced \cite{spring-kotlin}.
+
+I've developed the first iteration of the API as a semestral project for subject BI-EJA and back then in only supported the library management features (working with Notes and Notebooks). I will still continue to work on it in order to support requirements for the client application.
+\subsection{Android client}
+
+The detailed structure of the Android client and how it is connected with other components is presented on the component diagram in Figure \ref{fig:component}. 
+
+ Android component will be divided into three layers: the Data Layer, Business Layer and Presentation layer. The Data layer is only responsible for downloading and storing data. The Business Layer responsibility is to handle user interactions and converting downloaded data to something that presentation layer can present. Presentation layer is only responsible for displaying data. Android component will also connected be to Facebook SDK, Google Auth SDK and Firebase SDK to provide authentication options. Firebase SDK will also enable an analytics service, crash reporting and push notifications.
+
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=0.23]{androiddiagram}
+  \caption{Android component Diagram}
+  \label{fig:android-component}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+  \includegraphics[scale=0.25]{systemdiagram}
+  \caption{Component Diagram}
+  \label{fig:component}
+\end{figure}
+
+
+
+\newpage
+\section{Domain Description}
+ The Class Diagram in Figure \ref{fig:domain} represents the Domain Model of the application, it provides visual representation of Entities and relations between them. The Design is based on the entities used on server-side.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{Domain}
+  \caption{Domain Diagram}
+  \label{fig:domain}
+\end{figure}
+
+ 
+
+\subsection{User}
+	The User entity represents someone who has completed registration flow using one of the client applications or created manually (in case of Admin role). This entity contains such properties as: role, first name, last name, email address, password, university. Due to the fact, that \appname\ provides several ways for the user to authorise, some of the properties will either come from the user's input or from the 3rd party API (such as Firebase).
+	
+\subsection{Note}
+	Note represents a single piece of information. It consists of two properties: title and content. These can be described as term and definition or question and answer. Each note must be assigned to one of the notebooks, hence there is a 1:N relation.
+\subsection{Notebook}
+	Notebook is one of the main entities used in the application flow, and  can be created by an authenticated user. The soul purpose of the Notebook is to store Notes and serve as a source for a Published Notebook. Properties name and colour are used to help users distinguish between different Notebooks.
+	
+	
+\subsection{University}
+University represents a school, where the User can assign himself as a student during registration flow. It is used to unite users from the same school to make content searching easier. 
+
+\subsection{Published Notebook}
+Published Notebook represents a shareable content. It can be created by user, based on one of his/her notebooks by providing some additional details:
+name, optional description,  topic and optional list of tags. All these properties are later used in a searching flow to optimise results.
+
+\subsection{Topic}
+Topic represents the main topic or subject of the Published Notebook. Topic contains only one property -- its name
+\subsection{Tag}
+Tag is a short label attached to the Published Notebook. It is mainly  used to narrow the topic or school. Tag has only one property -- its actual value stored as the name.
+
+\subsection{Comment}
+Users can comment on published notebooks. Most of the properties are assigned automatically, with the only exception being content: it represents the body of the comment and assigned by the user.
+
+\subsection{Version State and Modification}
+Version state and Modification are used to handle notebooks versioning system which in order to support Suggestions Requirements. Every Notebook, either local or published got its own Version state. Version state contains an identifier, version number, which is used for version comparison and list of the modifications that were done on top of the current version.
+
+
+Modifications are like commits; it is a single notebook modification which is limited to a note update and a creation of a new one.  Modification contains several properties: an identifier, the id of the note that has been modified (if any) and the actual change stored as strings.
+
+\newpage
+
 \chapter{Design}
+This chapter provides insight into how \appname\ will comply with the requirements established previously.
 
 \section{Material Design}
 Material Design is a design language that Google developed in 2014. Later in 2018, it was revamped with a goal to provide more flexibility for designers to create more custom themes. Material Design was chosen as a main source of inspiration when creating \appname\ UI due following  reasons:
@@ -619,12 +615,12 @@ This section contains a list of Material Design specific Components (not includi
 
 \section{UI \& UX}
 
-This section contains most important screens description from UI \& UX standpoint, wireframes and it's iterations
+This section contains most important screens description from UI \& UX standpoint, wireframes and its iterations.
 
-\subsection{Library Managent}
-Library management requirements (F7-F14) are covered by the first top-level destination: \textbf{My Library}. This part of the application serves as the main entry point for the returning users. Wireframes of this sections can be viewed on Figure \ref{fig:section-library}.
+\subsection{Library Management}
+Library management requirements (F7-F14) are covered by the first top-level destination: \textbf{My Library}. This part of the application serves as the main entry point for the returning users. Wireframes of this sections can be viewed in Figure \ref{fig:section-library}.
 	
-	Its first screen, as shown on Figure \ref{fig:notebooks}, contains a scrollable list of Notebooks and provides access to the various notebook-management related actions such as: Notebook creation(triggered by FAB), edition, deletion and sharing
+	Its first screen, as shown in Figure \ref{fig:notebooks}, contains a scrollable list of Notebooks and provides access to the various notebook-management related actions such as: Notebook creation(triggered by FAB), edition, deletion and sharing
 		
 	By clicking on one of the notebooks in the list, user will be transferred to the Notes List Screen (Figure \ref{fig:notes}). Similar to Notebooks List Screen, this screen contains a scrollable list of notes from this notebook and  covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger create action.
 	
@@ -662,8 +658,8 @@ The fact the all the content in \appname\ is made by its community makes Noteboo
 	\item Notebook name -- Single-line input field, will be pre-filled with the name of local Notebook that is being published.
 	\item Language of the Notebook -- Selector, will be pre-filled with the current user locale.
 	\item University/School associated with this Notebook -- Selector, will be pre-filled with the User's university, this field is optional.
-	\item Topic/Category of the Notebook -- Selector, this field is mandatory
-	\item Tags -- ChipGroup, chosen tags will be represented by Chips. The field is optional
+	\item Topic/Category of the Notebook -- Selector, this field is mandatory.
+	\item Tags -- ChipGroup, chosen tags will be represented by Chips. This field is optional.
 	\item Description/Message for other users -- Multi-line input field, this field is optional.
 \end{itemize}
 
@@ -674,10 +670,10 @@ Considering an amount of input needed, its variety, the decision was made to spl
 First step will include all fields that can be pre-filled: Notebook's name, language and University. This will allow to skip this step in most cases, making it only about controlling pre-filled information.
 Second step will require users to provide search-relevant information, such as Tags and Topic/Category, topic being a required option. Third step will allow user to provide a message or a more detailed of description of the Notebook. Fourth step will be all about confirmation, in which the user can double-check information he/she entered and submit it.
 
-Though the choice of UI elements in different steps is well defined, they way we present these steps is not. Simplified wireframes with different approaches of how the steps can be presented are shown on Figure \ref{fig:publishing-sketches}. In the end, decision to go with the Stepper solution was made as it gives a number of advantages:
+Though the choice of UI elements in different steps is well defined, they way we present these steps is not. Simplified wireframes with different approaches of how the steps can be presented are shown in Figure \ref{fig:publishing-sketches}. In the end, decision to go with the Stepper solution was made as it gives a number of advantages:
 	\begin{itemize}
 		\item Stepper is a standardised element of Material Design
-		\item In every step, Stepper gives an overview of all steps available and its completion state
+		\item In every step, Stepper gives an overview of all steps available and its completion state.
 		\item Stepper allows to quickly navigate between different steps.
 	\end{itemize}
 	
@@ -759,7 +755,7 @@ Another newly added element is a Notifications preview. Located on the top part 
 
 \newpage
 \subsection{Searching Flow}
- One of the main responsibilities of this screen is to start Search flow. Search flow is either launched by a Search Menu Item located in the Top bar or by the expanding on expanding on the Notebooks Section. Here a list of some basic requirements while
+ One of the main responsibilities of this screen is to start Search flow. Search flow is either launched by a Search Menu Item located in the Top bar or by the expanding on expanding on the Notebooks Section. Here a list of some basic requirements:
  \begin{itemize}
  
  \item There are should several primary searching/filtering options available: Notebooks name, University/School, Topic/Category and Tags.
@@ -767,7 +763,7 @@ Another newly added element is a Notifications preview. Located on the top part 
  \item When none of searching options are active, empty state must be presented.
   \end{itemize}
 
-The resulting wireframe is shown on Figure \ref{fig:section-search} . This approach is using Top App bar to display active searching options. Each options is represented by Chip action, that can have two states: Chip is either inactive  and displays the name of the search option, or it is active, displaying selected option's values. When there are a lot of values selected, in case of multiple Tags for example, last three selected will be shown. 
+The resulting wireframe is shown in Figure \ref{fig:section-search} . This approach is using Top App bar to display active searching options. Each options is represented by Chip action, that can have two states: Chip is either inactive  and displays the name of the search option, or it is active, displaying selected option's values. When there are a lot of values selected, in case of multiple Tags for example, last three selected will be shown. 
 
 Clicking the Chip will result in showing Modal Bottom Sheet, that will allow user to tweak selection of the active values and every change to a Search options values will result in updating the search results. Search results themselves appear in the scrollable list bellow the Top Bar. 
    
@@ -778,14 +774,11 @@ Clicking the Chip will result in showing Modal Bottom Sheet, that will allow use
   \caption{Search Flow Wireframes}
   \label{fig:section-search}
 \end{figure}
-
-
-
  
 \subsection{Published Notebook Details}
 Published Notebook, as an entity, contains a large amount properties and there are a lot of actions associated with it. This screen will cover all actions regarding user comments (requirements F18-F21) and various Published Notebook actions such as saving, sharing, and copying. Including all these actions and flows into one screen would make UI very crowded, resulting in bad UX. \textit{Tabs} can help solve this issue quite easy.
 
-According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy. \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more responsive.
+According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more user-friendly.
  
 
 Details Tab (Figure \ref{fig:published-details}) features key details about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups.
@@ -794,11 +787,11 @@ Details Tab (Figure \ref{fig:published-details}) features key details about this
 	\item \textbf{Basic details}: This group contains simple properties such as Notebook's name, its author, category/topic, language and associated university.
 	\item  \textbf{Description}: This group contains more dynamic content such as description, that can take multiple lines, and a Chip Group with tags.
 	\item \textbf{Notebook Action:} This view represents a primary action available for this notebook in regards to user Library. This can either act as a Save button, that will save the latest Notebook version to the users Library or as an Update Button, that will result in applying changes from local notebook to the Published one, thus updating its contents. If none of the actions are available, this view will be hidden.
-	 \item \textbf{Suggestions}: This view group serves as preview and an entry point for suggestions left by other users. 
+	 \item \textbf{Suggestions}: This view group serves as preview and an entry point for suggestions screen. 
 	\item \textbf{Notes Preview}: Last view at the bottom of the screen serves as an entry point for notes browsing.
 \end{itemize}
  
-Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scrollable list of the user comments and an Input Field, that will be used to create a new comment, or edit the old one. Also, every comment contains an options button that will trigger either an edit or a delete action.
+Comments tab, as shown in Figure \ref{fig:published-comments}, contains a scrollable list of the user comments and an Input Field, that will be used to create a new comment, or edit the old one. Also, every comment contains an options button that can be used to trigger either an edit or a delete action.
 
 \begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
@@ -815,33 +808,63 @@ Comments tab, as shown on Figure \ref{fig:published-comments}, contains a scroll
 \label{fig:section-published}
 \end{figure}
 
+\subsection{Suggestions Review Flow}
+As mentioned before, one of the actions provided by Published Notebook Detail Screen is to show a list of the suggestions left by other users.  Wireframe of this screen can be seen in Figure \ref{fig:suggestion-preview1}.  Besides the screen itself, there is also a FAB that will start the review flow; hence his button will be visible only to the Author of the Published Notebook.
+
+The wireframe of the review flow is presented in Figure \ref{fig:suggestion-review2}. There are three core parts to this screen. First, there is a list of the suggestions: they appear one by one ,as a part of horizontal lis, covering most of the screen's space. In case if that is a new note it will only show one note card, in case it is an updated note, two cards will be shown: one with notes current data and one with the data suggested by a user. User is able to navigate inside this list using horizontal swipe gesture. Buttons below the suggestion will either mark the suggestion as approved or rejected, thus updating the second part: Review Status Bottom Sheet. 
+
+Review status bottom sheet reflects the current status of the review process displaying how many suggestions are examined (approved or rejected). Expanding the bottom sheet (Figure \ref{fig:suggestion-review3})  will reveal an overview that allowing the user to double check his/her input. This overview contains the same list as in Figure \ref{fig:suggestion-preview1} with the only difference being that it reflects the suggestion status. Scrolling to the end of this list will reveal the button that is used to submit the review.
+
+\flushbottom
+
+\begin{figure}[!htbp]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.4]{review1}
+  \caption{Pending Suggestions List Screen}
+  \label{fig:suggestion-preview1}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[scale=0.4]{review2}
+  \caption{Suggestions Review Screen}
+  \label{fig:suggestion-review2}
+\end{subfigure}
+\begin{subfigure}{1\textwidth}
+\vspace*{5mm}
+\centering
+  \includegraphics[scale=0.4]{review3.png}
+  \caption{Suggestions Review Screen With Expanded Sheet}
+  \label{fig:suggestion-review3}
+\end{subfigure}
+
+\caption{Suggestions Review Flow Wireframes}
+\label{fig:section-published}
+\end{figure}
+
+
 \subsection{Challenges}
-The current iteration of \appname provides a small amount of very straightforward challenges (or tests) where user can test his/her knowledge of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
+The current iteration of \appname\ provides a small amount of very easy challenges (or tests) where user can test his/her knowledge of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
 
 
-
+\subsubsection{Landing Screen}
 Its landing screen (Figure \ref{fig:challenge-start}) features a list of recently completed challenges, including some statistics if available,  and three buttons, that are responsible for launching three distinct challenges with add: Flashcards, Write and Self-check. There is also a button that will navigate the user to a more in-depth configuration of his/her trial - Setup Challenge screen. Clicking one of the recently completed challenges entries will launch this challenge with all the options pre-set automatically. If the user hasn't completed any challenge yet, the empty view will be featured.
 
 
 
+\subsubsection{Challenge Setup Screen}
+
+Besides choosing the type of the challenge and the notebook, Setup Challenge screen (Figure \ref{fig:challenge-setup})  allows the user to select some additional options before generating his test such as order of the question and what will serve as an answer (either title of the note or its content). After all the details required are provided, most importantly challenge type and the notebook, the user will be able to start his/her test.
+
+\subsubsection{Challenges Types}
+Flashcard challenge is one of the simplest tests and requires no validation. Wireframe of this challenge can be seen in Figure \ref{fig:challenge-flash}.  This challenge is just an interactive way to walk through the notes, featuring a scrollable list of notes. User can flip the displayed flashcard to show the answer to a question and back. Navigation here doesn't have any restrictions so that the user can scroll it in any direction.  When reaching the end of the list, the user will see how many notes he/she studied.
 
 
-Besides choosing the type of the challenge and the notebook, Setup Challenge screen (Figure \ref{fig:challenge-setup})  allows the user to select some additional options before generating his test such as order of the question and what will serve as an answer (either title of the note or its content). After all the details required are provided, most importantly challenge type and the notebook, the user will be able to start his test.
+Just like the Flashcards challenge, next test features a list of questions based on one of the users' notebooks. The idea of Self-check challenge (Figure \ref{fig:challenge-check}) is straightforward. Given a list of questions, the user must ask himself a simple question: do I know the answer? Two buttons below the flashcard are then self-explanatory: It's the user answer, either he/she know the answer or not. Clicking will "I know" will reveal the next question and clicking "Study again" will reveal the answer to the current question with the ability to go to the next one once the user is ready.
 
-
-
-Flashcard challenge is one of the simplest tests and requires no validation. Wireframe of this challenge can be seen in Figure \ref{fig:challenge-flash}.  This challenge is just an interactive way to walk through the notes, featuring a scrollable list of notes. User can flip the displayed flashcard to show the answer to a question and back. Navigation here doesn't have any boundaries so that the user can scroll this in any direction.  When reaching the end of the list, the user will see how many notes he/she studied.
-
-
-Just like the Flashcards challenge, next test features a list of questions base on of the users' notebooks. The idea of Self-check challenge \ref{fig:challenge-self} is straightforward. Given a list of questions, the user must ask himself a simple question: do know the answer? Two buttons below the flashcard are then self-explanatory: It's the user answer, either he/she know the answer or not. Clicking will "I know" will reveal the next question and clicking "Study again" will reveal the answer to the current question.
-
-
-
-Write challenge (Figure \ref{fig:challenge-write})  is very similar to the Self-check challenge with the only distinction being that the user must provide his answer using an input field.
+Write challenge (Figure \ref{fig:challenge})  is very similar to the Self-check challenge with the only distinction being that the user must provide his answer using an input field.
 His answer will then be validated, and, depending on how close user was to the correct answer, it will either show next question or will require the user to re-submit his answer, correcting his/her mistake.
 
-\begin{figure}[H]
-\centering
+\begin{figure}[!htbp]
+\caption{Challenges Screens Wireframes}
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.2]{challengesStart}
   \caption{Challenges Landing Screen Wireframe}
@@ -854,17 +877,17 @@ His answer will then be validated, and, depending on how close user was to the c
 \end{subfigure}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{write}
   \caption{Write Challenge Wireframe}
-  \label{fig:challenge-write}
+  \label{fig:challenge}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{selfcheck}
-  \caption{Self-check Challenge Wirefram}
-  \label{fig:challenge-selfcheck}
+  \caption{Self-check Challenge Wireframe}
+  \label{fig:challenge-check}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{flashcards}
@@ -876,16 +899,17 @@ His answer will then be validated, and, depending on how close user was to the c
 
 \subsection{Profile}
 
-\textbf{Profile} is the last top-level destination available from the Navigation bar. As shown on Figure \ref{fig:section-profile}, it features basic information about currently logged-in user and provides buttons to access three more subsections: Profile Edition, Notifications and Settings.
+\textbf{Profile} is the last top-level destination available from the Navigation bar. As shown in Figure \ref{fig:section-profile}, it features basic information about a currently logged-in user and provides buttons to access three more subsections: Profile Edition, Notifications, and Settings.
 
-Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. Screen contains two input fields, that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input field changes. Pressing Save button will try to update information and navigate back to profile screen in case of success.
+Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. The screen contains two input fields that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input fields changes. Pressing the Save button will try to update information and navigate back to profile screen in case of success.
 
-Notifications screen contains a scrollable list of  all previously received notifications. It is the same component used in the Sharing Hub screen.
+Notifications screen contains a scrollable list of all previously received notifications. It is the same component used in the Sharing Hub screen.
 
-Settings screen contains application-relevant information and preferences. On of the key functionalities here is a Logout button (requirement F34).
+Settings screen contains application-relevant information and preferences. One of the key functionalities here is a Logout button (requirement F34).
 
 
 \begin{figure}[H]
+\caption{Profile Screens Wireframes}
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{profile}
   \caption{Profile Screen Wireframe}
@@ -899,24 +923,48 @@ Settings screen contains application-relevant information and preferences. On of
 \end{figure}
 
 
+\newpage 
 \section{Application architecture}
-On the of key requirements for \appname\ development is its architecture scalability. This section describes the approach chosen for its development and patterns in use
+On the of key requirements for \appname\ development is its architecture scalability. This section describes the approach chosen for its development and patterns in use.
 
-\subsection{MVVM}
-MVVM architecture was a rather easy choice for main architecture pattern. It is well supported by Android libraries and recommended by Google. ViewModel serves as glue between Presentation Layer and Data Layer. In example provided by Google (Figure \ref{fig:architecture-final}) Fragments/Activities represents the Presentation Layer and Repository acts as the data layer.
+\subsection{Android Architecture Components}
+Previously, Google, as the leading Android contributor, never cared about the way developers build their applications. It has changed drastically with the introduction of Architecture Components (AAC) at Google I/O in 2017 \cite{android-archguide}.
+Architecture Components are a collection of libraries that can be used to design a robust and maintainable architecture.  LiveData and ViewModel components are the most important.  LiveData is a lifecycle-aware component is used to store data and notify its subscribers if the data changes.  ViewModel can store UI-related data and survive Activity Destruction which is especially useful in case of device rotation for example.
+
+\subsection{Recommended Architecture}
+Introduction of Architecture Components made it clear what approach Google recommends when designing application architecture - MVVM. Figure \ref{fig-arch} demonstrates this approach:
+\begin{itemize}
+	\item Fragments and Activities represent the View
+	\item View is connected to a ViewModel. ViewModel there is represented by a ViewModel Architecture component that stores model data using LiveData, that Fragment or Activity can subscribe to. ViewModel requests data from the repository, without knowing where the data comes from.
+	\item A Repository pattern represents the Model layer. Repository's responsibility is to retrieve and modify the data using one or multiple sources. Typically there is remote data source (API) and the local data source (on-device database).
+\end{itemize}
+
+\begin{figure}
+	\centering
+  \includegraphics[scale=0.4]{final-architecture}
+  \caption{Architecture Example Diagram\cite{android-archcomponents} }
+  \label{fig-arch}
+\end{figure}
+
+
+\subsection{Chosen Architecture}
+The fact that the MVVM  pattern is recommended by the developers of the Android OS and the existence of Architecture Components makes MVVM a solid choice and good starting point for the application architecture. 
+
+
+\appname\ will follow the recommended architecture with the exception of adding of one more clean architecture pattern -- Interactor (or use-case).
 
 
 \subsection{Repository}
 Repository is an abstraction that deals with the Entities. Repository can have one or multiple data sources. One of the main \appname\ data sources is its REST API. In-memory database will act as a secondary data source to allow some offline capabilities. 
 
 \subsection{Interactors}
-Though the repository pattern is a great abstraction for data layer, it would make sense to go even further and apply more Clean architecture principles. Interactor, or a Use-case, is another abstraction that represents single use-case -- one rule of business logic. Interactor is usually talks to the repository and the returns the result to whatever called it in the first place.
+Though the repository pattern is a great abstraction for data layer, it would make sense to go even further and apply more Clean architecture principles. Interactor, or a Use-case, is another abstraction that represents single use-case -- one rule of business logic. Interactor is usually talks to the repository and then returns the result to whatever called it in the first place.
 
 This will even more propagate the separation of concerns as every Interactor will only deal with one particular functionality, which will make code more readable and make uni-testing easier in the future.
 
 
 \subsection{Dependncy Injection}
-Dependency injection (DI) is another technique that will help provide a more clean code and will be great help when providing a test-coverage.
+Dependency injection (DI) is another technique that will help provide cleaner code and will be a great help when providing a test-coverage. 
 
 \subsection{\appname\ Architecture}
 Overall architecture will include following components:
@@ -928,10 +976,12 @@ Overall architecture will include following components:
  
 \chapter{Implementation}
 This chapter describes main pin points of \appname\ implementation, platform-specific technologies and libraries. 
+
+
 \section{Used Libraries and Technologies}
 
 \subsection{DI Framework}
-There are a few DI frameworks available for Android, \texttt{Dagger} being one of the most popular. Dagger is a fully static  Java DI framework that uses annotations for dependencies resolution. Dagger got huge support from the developers' community, mainly because of its performance. All dependencies are resolved and generated during the building phase, thus making the application perform faster. But,  Dagger is pretty old, complex and requires a lot of boilerplate code to function properly. Introduction of Kotlin paved a way for new libraries
+There are a few DI frameworks available for Android, \texttt{Dagger} being one of the most popular. Dagger is a fully static  Java DI framework that uses annotations for dependencies resolution. Dagger got huge support from the developers' community, mainly because of its performance. All dependencies are resolved and generated during the building phase, thus making the application perform faster. But,  Dagger is pretty old, complex and requires a lot of boilerplate code to function properly. Introduction of Kotlin paved a way for new libraries to compete with Dagger.
 
 \texttt{Koin} is a lightweight dependency injection framework written in pure Kotlin. Koin uses DSL (Domain Specific Language) for modules declaration and, as opposed to Dagger, it is very easy to use. And one of its most significant advantages: It provides \texttt{ViewModel} support out of the box us by using just a ViewModel keyword. Listings \ref{code:dagger} and \ref{code:koin} shows the example of declaring and injecting \texttt{ViewModels} using Dagger and Koin respectively. This example shows quite well how easy it to use Koin comparing to Dagger.
 
@@ -970,9 +1020,14 @@ private val viewModel = ViewModelProviders.of(
 
 \subsection{HTTP Client}
 
-Retrofit nowadays is pretty much an industry standard, and it is hard to argue with it. Retrofit provides a type-safe way to describe your HTTP API using Java/Kotlin interface and annotations. Annotations allow to m the requests options and parameters such as Request type, request body or query parameters.
-Retrofit also has support for some popular threading libraries like RxJava, and recently -- Kotlin coroutines.
+Retrofit nowadays is pretty much an industry standard, and it is hard to argue with it. Retrofit provides a type-safe way to describe your HTTP API using Java/Kotlin interface and annotations.
 
+ Annotations allow to modify the requests options and parameters such as request type, body or query parameters. For example, Listing \ref{code:retrofit} demonstrates a call to update a Notebook by id. \texttt{@PATCH} annotation serves to specify the type of the request to be performed, \texttt{@Path} represents the part of the requests path and \texttt{@Body} is a request body that will be converted into JSON.
+
+
+Retrofit also has support for some popular threading libraries like RxJava, and recently -- Kotlin coroutines, allowing to specify the return type as \texttt{Deferred}.
+
+\newpage
 \begin{lstlisting}[caption={Retrofit Call Example}, label={code:retrofit}, language=Kotlin]
 
 
@@ -988,9 +1043,9 @@ Retrofit also has support for some popular threading libraries like RxJava, and 
 \subsection{Threading}
 Threading and background work has always been a problem in the world of Android development.  Google provided some tools and APIs to solve this problem: AsyncTasks and Loaders. Both of them have a lot of issues, mainly because they are not very intuitive and not flexible to use. AsyncTask specifically, when not used properly, was the main cause for memory leaks.
 
-Later on, RxJava gains popularity. RxJava is a library for composing asynchronous and event-based programs by using observable sequences. It is a very powerful tool, but the library itself is quite heavy (almost 2 MB), and when used only for threading it is often described as attempt to kill a spider with the bazooka.
+Later on, RxJava gains popularity. RxJava is a library for composing asynchronous and event-based programs by using observable sequences. It is a very powerful tool, but the library itself is quite heavy (almost 2 MB), and when used only for threading it is often described as an attempt to kill a spider with the bazooka.
 
-Kotlin has its own way to handle background work. Kotlin 1.3 introduced Kotlin Coroutines.   Coroutines can be described as light-weight threads and essentially its a small task that normal thread can execute. Kotlin uses a concept of \texttt{suspending} functions, that is a regular function with the \texttt{suspend} modifier which indicates that the function can suspend the execution of a coroutine.
+Kotlin has its own way to handle background work. Kotlin 1.3 introduced the Kotlin Coroutines.   Coroutines can be described as light-weight threads and essentially its a small task that normal thread can execute. Kotlin uses a concept of \texttt{suspending} functions, that is a regular function with the \texttt{suspend} modifier which indicates that the function can suspend the execution of a coroutine.
 When it comes to \appname, Kotlin Coroutines are mainly used in the applications data layer: in Interactors and Repositories
 
 \subsection{Android Navigation Component}
@@ -1008,7 +1063,7 @@ Navigation is described using XML, Android  Studio also provides a visual editor
 
 \begin{figure}
 	\caption{Navigation Editor}
-	\includegraphics[scale=0.54]{navigationeditor}
+	\includegraphics[width=350pt,height=300pt]{navigationeditor}
 	\label{fig:navigationeditor}
 \end{figure}
 
@@ -1016,13 +1071,13 @@ Navigation is described using XML, Android  Studio also provides a visual editor
 One of the essential parts of AAC is ViewMode. ViewModel is the implementation of the ViewModel pattern provided by Google as a part of AAC.
 One of the key features of the ViewModel -- it can survive configuration changes. 
 
-Activity's lifecycle is on the of most problematic concepts in Android Development, because every configuration change, such as phone rotation for example, destroys Activity and it must be recreated, thus causing a lot of issues. ViewModel lifecycle is different. As shown on Figure \ref{fig:viewmodellf}, the ViewModel remains in memory until the Lifecycle it's scoped to goes away permanently: in the case of an activity, when it finishes, while in the case of a Fragment when it's detached. The fact that ViewModel can survive configuration make ViewModel a perfect view state holder.
+Activity's lifecycle is on the of most problematic concepts in Android Development, because every configuration change, such as phone rotation for example, destroys Activity and it must be recreated, thus causing a lot of issues. ViewModel lifecycle is different. As shown in Figure \ref{fig:1}, the ViewModel remains in memory until the Lifecycle it's scoped to goes away permanently: in the case of an activity, when it finishes, while in the case of a Fragment when it's detached. The fact that ViewModel can survive configuration make ViewModel a perfect view state holder.
 
 \begin{figure}
 	\centering
-	\label{fig:viewmodellf}
-	\caption{ViewModel lifecycle}
+	\caption{ViewModel lifecycle \cite{viewmodel-lc}}
 	\includegraphics[scale=0.7]{viewmodellf}
+	\label{fig:1}
 \end{figure}
 
 \subsection{LiveData}
@@ -1032,8 +1087,7 @@ Because LiveData is lifecycle-aware it allows avoiding memory leaks and can easi
 
 \section{Architecture Implementation}
 There are four three important parts to the architecture implementation:
-ViewModels, Interactors,  Repositories, and Fragments and Activities.
-
+ViewModels, Interactors,  Repositories, and Activities with Fragments.
 \subsection{Repository}
 Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only difference being Notebook repository, which also has a Room dependency.
 
@@ -1066,7 +1120,9 @@ Interactors are used to perform one single use-case, or in other words, one sing
 
 Every Interactor in \appname\ extends \texttt{BaseInteractor} or \newline \texttt{BaseInputInteractor} (when the opearation requires input). BaseInteractor, is an abstract class, it shortened implementation can be seen on Listing \ref{code:interactor}. This implementation fully relies on Kotlin Coroutines to execute the request in the background and provide a result using callback. 
 This implementation of Interactors makes them very easy to declare, the only thing that has to be specified the actual action to be performed. The example of the resulting interactor can be seen on Listing \ref{code:logininteractor}
-\newpage
+
+
+
 \begin{lstlisting}[caption={BaseInteractor Implementaion}, label={code:interactor}, language=Kotlin]
 abstract class BaseInteractor<T> {
 
@@ -1093,6 +1149,7 @@ abstract class BaseInteractor<T> {
  }
 \end{lstlisting}
 
+\newpage
 \begin{lstlisting}[caption={LoginInteractor Example}, label={code:logininteractor}, language=Kotlin]
 class LoginInteractor(private val repo: KeychainRepo) : 
 BaseInputInteractor<LoginInteractor.Input, Unit>() {
@@ -1106,8 +1163,6 @@ BaseInputInteractor<LoginInteractor.Input, Unit>() {
   }
 }\end{lstlisting}
 
-
-\newpage
 \subsection{Applying ViewModel and LiveData}
 \texttt{ViewModel} in \appname\ manages three things:
 \begin{itemize}
@@ -1180,7 +1235,7 @@ class Event<out T>(private val content: T) {
  }
  \end{lstlisting}
 
-\subsection{Present the data in Fragments}
+\subsection{Present Data in Fragments}
 The Activities in \appname\ serves only as a container for Fragments, thats why the actuals screens and flows are represented by Fragments. Just like with the \texttt{BaseViewModel}, I have created a basic definition of Fragment, that others fragments can extend -- \texttt{BaseFragment}
 
 \texttt{BaseFragment} provides a couple of helper methods that are used across the application and automatically subscribes for the two LiveData instances available from the \texttt{BaseViewModel}.
@@ -1204,40 +1259,109 @@ sealed class NavEvent {
 \begin{lstlisting}[caption={NavigationEvent}, label={code:navhandle}, language=Kotlin]
 
  private fun handleNavigationEvent(event: NavEvent) {
-   val navController = view?.findNavController
+   val navControl = view?.findNavController
    when (event) {
-     is NavEvent.NavigateTo -> navController?.navigate(event)
-     is NavEvent.NavigateBack -> navController?.popBackStack()
-  }
+     is NavEvent.NavigateTo -> navControl?.navigate(event)
+     is NavEvent.NavBack-> navControl?.popBackStack()
+  } 
 }
-
 \end{lstlisting}
 
 
-
-\section{Component diagram}
-\section{Installation}
-
+\section{Core Features Implementation}
+This chapters provides an insi
 
 \chapter{Testing}
 
+Testing the application is a crucial step in deploying a finalised product. 
+An application that is unstable or confusing will result in user searching for an alternative. That is why it is important to reveal so-called \enquote{brickwalls} (a situation when the user doesn't know how to approach the application to perform a specific action) and try to catch all of the potential bugs at an early stage. The goal of this chapter is to address these issues. 
+
+\section{Release to the Play Store}
+Google Play store is one of the most popular platforms for Android Apps distribution, provided by Google. Even though the \appname is not yet ready for a large scale release, it is essential to attract a minimal amount of users to ensure application future stability and to acknowledge problems at its early stage.
+Precisely for this case Play Store provides different release tracks:
+\begin{itemize}
+	\item Production track -- Application that is deployed using this track will be available to all users.
+	\item Beta and Alpha track -- Alpha and beta versions of the app are deployed to the users you assign to the alpha and beta test groups. You assign users to these groups using the Google Play Developers Console.
+	\item Internal track -- Internal versions of your app are deployed to your internal test track as configured in the Google Play Developers Console.
+
+\end{itemize}
+The Beta track was chosen for the \appname\ initial release. The application itself will be available for everyone, who has agreed to participate in the app development as a beta-tester. The beta-track also got a couple of restrictions that make sense for an app early release. For example, the application will be missing in the main Play Store listings and will be available in the Early Access section instead, although it is still discoverable when searching the application by its name. Another restriction is that every feedback/rating left by the user is only visible to a developer.
+
+To stay with contact with the \appname\ users, I have also introduced a new screen that provides an easy way for a user to leave a feedback or a feature request without leaving the application. Just like Play Store, it will collect the most vital information about the device like OS version, device vendor and its model and the application version.
+
+
+
+\section{Crash reporting}
+Release to the Play Store opens the doors to a vast user base with all kinds of devices, and OS version installed, providing a perfect way for an application to test its quality.
+
+Crashes are inevitable, especially on the Android Platform due to its fragmentation issue: Android is running on millions of devices from hundreds of vendors, all with different Android OS version, display size, hardware capabilities and so on. Because of this fact, it is almost impossible to build the crash-free application from the ground up. Instead, developers tend to listen to the users' community and fix crashes as they appear.
+Crash reporting services are usually in charge of that.
+As Mentioned in the previous chapters, Firebase Crashalytics provides a crash reporting service for \appname. It will automatically collect all crashes that happened to the users and will include all the important details that led to the crash. This will ensure application stability in the long run, as it will be easy to acknowledge the most common issues and solve them as part of the beta-test program.
+
+
+\section{Usability testing}
+Usability testing in software engineering is a way to see how the application is easy to use by testing it with real users. This will help to recognise "brick-walls" mentioned before so the application UX and overall design could be improved.  This step is also significant as it allows us to observe how the potential user will try to use the application.
+
+\subsection{Preparation}
+The goal of the \appname\ usability test was to test the most significant user interactions and flows. To reflect that I have created three test scenarios to cover most of the application's functionality.  Each scenario consisted of finite number of steps, with no description of how it supposed to be completed, thus simulating the actual usage of the application. The first scenario is based around content importing, collaboration and searching. The second scenario concentrates on content creation and its moderation. And the last one asks the user to find more content for his/her library and is based around learning capabilities. The whole scenario can be found in Appendix B.
+
+Also, the post-test survey was prepared for testers to leave their feedback. The survey was needed to learn some basic information about the users like their experience with educational apps and applications in general. It also asked about the problems they have encountered during the test, which part of the test was the easiest and hard to complete and if there are some feature requests the would like share.
+
+\subsection{The Testing Process}
+Totally seven people participated in the \appname\ usability tests,  all from different age group, with different platform affiliations and four of them being students. 
+The test itself was held for one user at a time.  Firstly the user was presented with a very short application description describing its core features. Next, the scenario introduction was given, and I, as an observer, was there to see how the tester have approached the task given.
+After the test, the post-survey was presented for the user to fill in.
+
+\subsection{The Test's Results}
+ Library Management and all the flows related to it, such as Notebook Publishing, its sharing, notes creation and e.t.c, as well as logging in and account creation, didn't raise any issues with the testers. Searching for something specific using Search Screen was also handled by all the participants. Some of the tasks, however, were revealed to be not very clear about how to complete them, and it took some time for the majority of the testers to realise how to approach it. This section describes these problems and a possible solution that could be implemented to improve the UX. 
+
+
+\subsubsection{The Search Flow}
+
+
+The first problem I have witnessed during the test is that for some users it was not entirely obvious how to perform the search or more specifically, where to start it. Though everyone did found the way to start it by themselves, it took some time for some testers to realise where to look. One of the testers mentioned that he would expect to see the Search Button on the application's main screen.
+
+\subsubsection{The Review Flow}
+The functionality to review the suggestions left by the other users is very important, and the test revealed a couple of design flaws that showed the first "brick-wall" -- most of the testers were not able to complete this flow. And there multiple points to it:
+
+\begin{itemize}
+	\item{The root of all problems with this flow was the behavior of the bottom drawer that is used to confirm the changes. Most of the testers tried to click it, which is this action was not implemented at that point. The fact that it is not clickable made them think that it is just a static element, so they gave up interacting with it.
+	
+	The simplest solution to this problem is to make the bottom sheet clickable, as it was the first interaction performed by a significant number of testers. Another thing that could be done is to add some elements to make the behavior a bit more obvious. This could be either an animation, arrow icon or an additional elevation.}
+	\item The first problem had a significant influence on the whole process as the tester didn't know how to complete the flow. Naturally, some of the tried to leave this screen -- and the application allowed them to, even when the user had already reviewed some suggestions. This led them to think that they have completed the flow.
+	
+	The first thing that must be addressed is to prevent the user from immediately leaving the screen when he/she has already started the review process. This could be done using the confirmation dialog.
+	
+	\item{Another issue was that it was not evident for some users that the list of suggestions there is scrollable. Once the first item was reviewed, it took time for some users to realise it.
+	
+	
+	Here the solution requires two adjustments. Firstly, to make it obvious that the screen is scrollable, it can show the preview of the next/previous element. And lastly, reviewing the suggestion should automatically scroll to the next item in the list. This will not only reveal that the screen is scrollable but also will also handle the swipe gesture.
+	}
+
+\end{itemize}
+\subsubsection{Notes Modifications}
+The Notes modifications flow is core to the collaboration feature of the \appname.  After saving the Published Notebook, some of the users didn't realise what supposed to be done to create a suggestion.  This flow requires the user to navigate to the My Library screen and open the notebook they have just saved (i.e., Notes Screen). 
+The solution would be to either propose to handle this navigation for them or to navigate to the saved notebook straightaway. The Notes Screen should reflect this as well, for example by adding some message to inform the user that it is possible to create a suggestion.
+The solution described is not so trivial as the solutions purposed before, and it will likely require more testing after its implementation.
+
+
+\subsubsection{The Start of The Review Flow}
+One of the steps in the scenario B described the situation of receiving the notification about new suggestion with the following step being to review this suggestion. While the interaction with notification was rather straightforward, when landing on the Published Notebook Detail Screen it took some time for the testers to find the button that will start the flow in question. 
+
+The solution would be to re-organise this screen a bit to reflect its current state when it comes to suggestions.  Another solution to handle the notification clicks a bit more precise. Right now, no matter the notification type (New comment, new suggestion or notebook update) it will open the Published Notebook Detail Screen. While it works fine for a Notebook Update type as the user immediately sees the update button, it would make sense to open the Comments Section or the Review Screen when clicking on new comment notification and suggestion notification respectively.
+
+
+\subsubsection{Results Summary}
+Due to the problems described above the results are quite mixed. While it won't take too much time to address most of these issues, at least one of them requires more in-depth investigation and additional testing. On the other hand, most of the users responded that though it was not obvious how to approach the task at first when they have realised the way to do it, it became obvious for them and made sense why it's implemented the way it is. This leads to the conclusion that these kinds of problems can be addressed by adding short tutorials to onboard new users.
 
 \setsecnumdepth{part}
 \chapter{Conclusion}
 
 The goal of this thesis was to develop a StudyPad client for Android OS, which involved domain, requirements and existing solutions analysis as the first step. Next, the application UI and architecture was designed to support the requirements established in the previous step. Finally, the application was developed applying best practices from the world of the modern Android application development.
-All requirements specified in the Analysis were implemented along with the  couple new functionalities that were not a part  of the requirements specifications:
-\begin{itemize}
-	\item A screen to view latest notifications received.
-	\item Introduction of real-time features when receiving.
-push-notifications when the application is in the foreground.
-	\item The functionality that allows users to send feedback about the application.
-	\item Offline functionality that covers Challenges and Local Notebooks.
-\end{itemize}
+All requirements specified in the Analysis were implemented along with the  couple new functionalities that were not a part  of the requirements specification.
 
-The application has not been uploaded to the Play Store yet; hence it has not been tested by the broader set of users.
-Testing the application will be the last step to this thesis and it will give me more insight into what was done right and can be improved in the future.
-
+Once the implementation step was completed, the application was uploaded to the Play Store as the part of Early Access program for beta-testing. Next the 
+	usability test were performed which revealed certain problems with the initial UX implementation and ways to handle them were proposed. As for time of writing this chapter the application got fifteen downloads on the Play Store, which is not a lot, but I am sure that with the incoming feedback from the existing user base and with help of other students willing to be a part of \appname\ development, the application will be discovered by a larger amount of users.
 \subsection{Future development}
 \appname\ development is far from over.  The current iteration of the application had an emphasis on content creation, sharing, and collaboration, with just a few tests available for users to study and learn. The real process of studying has yet to be researched and executed.
 This could be a main focus for the future development of \appname.
@@ -1263,6 +1387,7 @@ There also some small changes that could be  addressed such as:
 \chapter{Acronyms}
 % \printglossaries
 \begin{description}
+	\item[AAC] Android Architecture Components
 	\item[GUI] Graphical user interface
 	\item[XML] Extensible markup language
 	\item[FAB] Floating Action Button
@@ -1275,8 +1400,72 @@ There also some small changes that could be  addressed such as:
 	\item[IoC] Inversion of Control
 \end{description}
 
+\chapter{Testing Scenarios}
+
+\section{Scenario A}
+Login using following credentials: test2studypad.com  12345678
+
+Notice that you don't have any notebooks imported
+
+You'd like to learn some Czech 
+ 
+   Open Search Screen
+   
+   
+   Find all notebooks relevant your category (i.e Learn some Czech)
+   
+   Select the notebook named Czech Me and import it to you library
+
+ Look through notebook you've just saved
+ 
+ Notice That data inside looks wrong or incomplete
+  Choose two notes and modify them
+   Add new note with some content
+   Open published version of this notebook and make suggestion.
+   Leave a comment :)
+   Delete a notebook you've saved
+    
+\section{Scenario B}
+
+Scenario B - Moderation
+
+Login using following credentials: test1studypad.com  12345678
+ 
+ Notice that you have some unread notifications 
+   
+   
+     Someone  have just asked to to update one of your notebooks
+   
+     Review the changes made
+   
+    Find the changes your changes and approve them, reject 1 change from user named Buggy Jack
+   
+     Respond to the recent comments 
+ 
+ You'd like to create more study materials and share them with others
+ 
+    Create new notebook
+ 
+     Create a couple of notes inside
+ 
+     Publish this notebook
+ 
+     Make some changes to a notes and update the published version
+ 
+     Send the link to this notebook somewhere
+\section{Scenario C}
+Scenario C
+You'd like to recall your high school program
+ 
+     Find notebooks from related to  algebra
+ 
+    Explore the notebooks, choose one and save it.
+     Start one of the challenges using this notebook and complete it
+
+
 
 \chapter{Contents of enclosed CD}
+
 
 %change appropriately
 
@@ -1292,5 +1481,4 @@ There also some small changes that could be  addressed such as:
 		.2 thesis.ps\DTcomment{the thesis text in PS format}.
 	}
 \end{figure}
-
 \end{document}
