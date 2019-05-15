@@ -827,8 +827,10 @@ Comments tab, as shown in Figure \ref{fig:published-comments}, contains a scroll
 \subsection{Suggestions Review Flow}
 As mentioned before, one of the actions provided by Published Notebook Detail Screen is to show a list of the suggestions left by other users.  Wireframe of this screen can be seen in Figure \ref{fig:suggestion-preview1}.  Besides the screen itself, there is also a FAB that will start the review flow; hence his button will be visible only to the Author of the Published Notebook.
 
+\subsubsection{Review Process}
 The wireframe of the review screen is presented in Figure \ref{fig:suggestion-review2}. There are three core parts to this screen. First, there is a list of the suggestions: they appear one by one, as a part of horizontal list, covering most of the screen's space. In case it is a new note it will only show one note card, in case it is an updated note, two cards will be shown: one with notes current data and one with the data suggested by a user. User is able to navigate inside this list using horizontal swipe gesture. Buttons below the suggestion will either mark the suggestion as approved or rejected, thus updating the second part: Review Status Bottom Sheet. 
 
+\subsubsection{Review Confirmation}
 Review status bottom sheet reflects the current status of the review process displaying how many suggestions are examined (approved or rejected). Expanding the bottom sheet (Figure \ref{fig:suggestion-review3})  will reveal an overview allowing the user to double check his/her input. This overview contains the same list as in Figure \ref{fig:suggestion-preview1} with the only difference being that it reflects the suggestion status. Scrolling to the end of this list will reveal the button that is used to submit the review. User will be navigated back to the suggestions list after the review submission.
 
 \flushbottom
@@ -856,7 +858,7 @@ Review status bottom sheet reflects the current status of the review process dis
 \label{fig:section-published}
 \end{figure}
 
-
+\newpage
 \subsection{Challenges}
 The current iteration of \appname\ provides a small amount of very easy challenges (or tests) where user can test his/her knowledge of one of the notebooks. \textbf{Challenges} section serves as an entry point for setting up these different tests.
 
@@ -879,7 +881,7 @@ Just like the Flashcards challenge, next test features a list of questions based
 Write challenge (Figure \ref{fig:challenge})  is very similar to the Self-check challenge with the only distinction being that the user must provide his answer using an input field.
 His answer will then be validated, and, depending on how close user was to the correct answer, it will either show next question or will require the user to re-submit his answer, correcting his/her mistake.
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
 \caption{Challenges Screens Wireframes}
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.2]{challengesStart}
@@ -893,7 +895,9 @@ His answer will then be validated, and, depending on how close user was to the c
 \end{subfigure}
 \end{figure}
 
-\begin{figure}[!htbp]
+\newpage
+
+\begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
   \includegraphics[scale=0.45]{write}
@@ -919,9 +923,7 @@ His answer will then be validated, and, depending on how close user was to the c
 
 Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. The screen contains two input fields that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input fields changes. Pressing the Save button will try to update the information and navigate back to profile screen in case of success.
 
-Notifications screen contains a scrollable list of all previously received notifications. It is the same component used in the Sharing Hub screen.
-
-Settings screen contains application-relevant information and preferences. One of the key functionalities there is a Logout button (requirement F34).
+Notifications screen contains a scrollable list of all previously received notifications. It is the same component used in the Sharing Hub screen. Settings screen contains application-relevant information and preferences. One of the key functionalities there is a Logout button (requirement F34).
 
 
 \begin{figure}[H]
