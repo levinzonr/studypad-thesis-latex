@@ -148,7 +148,7 @@ This chapter serves as an introduction of what StudyPad is trying to achieve and
 \appname\ is a combination of a note-taking service and a social network. It is intended for students and everyone who wishes to learn something new. The primary focus of this version of  \appname\ is on content creation, its sharing and discovery. 
 
 
-Currently \appname\ service consists of four components and each and every one of them originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). I have developed the very first iteration of the backend service as a semestral project for subject Enterprise Java (BI-EJA). Another subject, Programming for the Android Operating System (BI-AND) taught me the basics of the Android Development which then resulted in developing the first Android prototype. Recently added iOS client is the output of my semestral project for subject Fundamentals of iOS Application Development for iPhone and iPad (BI-IOS). Most important components will be described more thoroughly in Chapter 2.
+Currently \appname\ service consists of four components and each and every one of them originated from several subjects on Faculty of Information Technology (FIT) in Czech Technical University (CTU). I have developed the very first iteration of the backend service as a semestral project for subject Enterprise Java (BI-EJA). Another subject, Programming for the Android Operating System (BI-AND), taught me the basics of the Android Development which then resulted in developing the first Android prototype. Recently added iOS client is the output of my semestral project for subject Fundamentals of iOS Application Development for iPhone and iPad (BI-IOS). Most important components will be described more thoroughly in Chapter 2.
 
 \begin{figure}[H]
 \centering
@@ -201,7 +201,7 @@ It is important to establish all functional and non-functional requirements for 
 	\item \textbf{F12: Note edition} The user will be able to edit an existing note, or completely delete it.
 	\item \textbf{F13: Show Notebooks} The user will be able to view all the notebooks he/she created.
 	\item \textbf{F14: Show Notes} By clicking on notebook item, the user will be able to view the list of notes that are assigned to this notebook.
-	\item \textbf{F15: Mathematical Expressions Support} User will be able to use complex mathematical expressions as notes content
+	\item \textbf{F15: Mathematical Expressions Support} User will be able to use complex mathematical expressions as notes content.
 \end{itemize}
 
 \bigskip
@@ -213,7 +213,7 @@ It is important to establish all functional and non-functional requirements for 
 	\item \textbf{F19: View comments} User will be able to view others users comments discussing a notebook that have been published.
 	\item \textbf{F20: Leave a comment} The user can comment on an other user published notebook.
 	\item \textbf{F21: Delete a comment} The application will allow the user to delete his/her comment.
-	\item \textbf{F22: Edit a Comment} The application will allow the user to edit his/her comment
+	\item \textbf{F22: Edit a Comment} The application will allow the user to edit his/her comment.
 	\item \textbf{F23: Save published notebook} User will be able to save published notebook to his/her library.
 	\item \textbf{F24: Publish notebook} User will be able to publish his/her notebook.
 	\item \textbf{F25: Update published notebook} The Author of the published notebook will be able to update its information.
@@ -225,7 +225,7 @@ It is important to establish all functional and non-functional requirements for 
  \end{itemize}
 
 \bigskip
-\textbf{Study Hub}
+\textbf{Challenges}
 \begin{itemize}
 	\item \textbf{F31: Start a Flashcards walkthrough} The user will be able to use an interactive method of looking through his/her notes.
 	\item \textbf{F32: Start a written test} The user will be able to participate in a written test based on one of the notebooks to test his/her knowledge.
@@ -311,7 +311,7 @@ F28-F28: User Suggestions                                          & \present   
 \end{table}
 
 \begin{itemize}
-	\item \textbf{Library management:} The main difference in library management comes with the fact that each deck must be associated with an Interest or Class, moreover, it is not possible just to create a deck, the user has to create at least two cards first. Because of that, library management not only includes managing your decks and card, but also interests and classes. Everything the user has saved or created, whether class, interest or a deck can be accessed via \textit{Backpack} -- User's personal library.
+	\item \textbf{Library management:} The main difference in library management comes with the fact that each deck must be associated with an Interest or Class, moreover, it is not possible just to create a deck, the user has to create at least two cards first. Because of that, library management not only includes managing your decks and cards, but also interests and classes. Everything the user has saved or created, whether class, interest or a deck can be accessed via \textit{Backpack} -- User's personal library.
 	\item \textbf{Publishing:} The Publishing process is quite different compared  to what \appname\ is trying to achieve. When creating a deck, the user can choose whether they want to make his/her deck visible for other users in this Class/Interest or to make it private. It is not possible to collaborate on a deck or suggest a change.
 	
 	\item \textbf{Importing}: As mentioned before, user can save a deck from an existing Interest/Class to their personal space, but they will not be able to make any edits without making a copy.
@@ -329,7 +329,7 @@ F28-F28: User Suggestions                                          & \present   
 \hline
 \multicolumn{1}{|c|}{\textbf{Requirements / Application name}} & \multicolumn{1}{l|}{\textbf{StudyPad}} & \multicolumn{1}{l|}{\textbf{Quizlet}} \\ \hline
 F6: University Selection                                       & \present                                & \absent                                \\ \hline
-F14: Show Notes                                                & \present                                                                & \absent                                \\ \hline
+F14: Show Notes                                                & \present                                                                & \limited                                \\ \hline
 F15: Mathematical Expressions Support                               & \present                                                                & \absent                                \\ \hline
 F16: Browse Published Notebooks                         & \present                                                                & \present                               \\ \hline
 F17: Search For Published Notebooks                    & \present                                                                & \limited                               \\ \hline
@@ -452,16 +452,16 @@ Resources are the additional files and static content that your code uses, such 
 Android Studio is an official IDE for Android development. Out of the box it provides a lot of essential tools, like visual Layout editor, emulator and more.
 
 \section{Gradle}
-Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries.\cite{android-gradle}
+Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries \cite{android-gradle}.
 
 \section{Kotlin}
-\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa.\cite{kotlin} Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box.\cite{kotlin-android}. 
+\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa \cite{kotlin}. Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box \cite{kotlin-android}. 
 
 
 \subsection{Kotlin Extensions}
-Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend.\cite{kotlin-exts}
+Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend \cite{kotlin-exts}.
 
-When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code. \cite{kotlin-androidexts}
+When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code \cite{kotlin-androidexts}.
 
 
  \begin{lstlisting}[caption={Kotlin View Binding example}, label={code:viewbinding}, language=Kotlin]
@@ -479,9 +479,9 @@ Application Architecture defines the way different application elements interact
 
 \subsection{Clean Architecture}
 Clean architecture is a set of ideas derived from different kinds of other approaches with the main principle being the separation of concerns \cite{cleanarch}. 
-Separation of concerns ensures that all the application's components are easily replaceable and as less independent as possible. When it comes to Android and every software that contains UI, it is essential that the UI does not contain any business logic and serves only as a way to show information.
+Separation of concerns ensures that all the application's components are easily replaceable and as much independent as possible. When it comes to Android and every software that contains UI, it is essential that the UI does not contain any business logic and serves only as a way to show information.
 
- This approach will be as the main guideline during application architecture design and implementation.
+ This approach will be used as the main guideline during application architecture design and implementation.
 
 
 \subsection{MVP}
@@ -549,7 +549,7 @@ The detailed structure of the Android client and how it is connected with other 
 \begin{figure}[H]
 \centering
   \includegraphics[scale=0.3]{androiddiagram}
-  \caption{Android component Diagram}
+  \caption{Android Component Diagram}
   \label{fig:android-component}
 \end{figure}
 
@@ -623,8 +623,8 @@ This section contains a list of Material Design specific Components (not includi
 
 \begin{itemize}
 	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center} \cite{material-fab}. FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
-		\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action} \cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed in the ChipGroup -- a special container to store dynamic amount of Chips
-	\item \textbf{Bottom Sheets}: \quoting{Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.}. The most common Bottom Sheet type used in \appname\ is Modal Bottom Sheet, that allows user to provide certain kind of input, like Topic, Univerisity selection e.t.c
+		\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action} \cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed inside the ChipGroup -- a special container to store dynamic amount of Chips
+	\item \textbf{Bottom Sheets}: \quoting{Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.}. The most common Bottom Sheet type used in \appname\ is Modal Bottom Sheet, that allows user to provide certain kind of input, like Topic, Tag selection and e.t.c.
 	\end{itemize}
 
 \section{UI \& UX}
@@ -632,11 +632,11 @@ This section contains a list of Material Design specific Components (not includi
 This section contains most important screens description from UI \& UX standpoint, wireframes and its iterations.
 
 \subsection{Library Management}
-Library management requirements (F7-F14) are covered by the first top-level destination: \textbf{My Library}. This part of the application serves as the main entry point for the returning users. Wireframes of this sections can be viewed in Figure \ref{fig:section-library}.
+Library management requirements (F8-F15) are covered by the first top-level destination: \textbf{My Library}. This part of the application serves as the main entry point for the returning users. Wireframes of this sections can be viewed in Figure \ref{fig:section-library}.
 	
 	Its first screen, as shown in Figure \ref{fig:notebooks}, contains a scrollable list of Notebooks and provides access to the various notebook-management related actions such as: Notebook creation(triggered by FAB), edition, deletion and sharing (triggered by options menu button).
 		
-	By clicking on one of the notebooks in the list, user will be transferred to the Notes List Screen (Figure \ref{fig:notes}). Similar to Notebooks List Screen, this screen contains a scrollable list of notes from this notebook and  covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger a create action. Options button, in turn, will reveal 
+	By clicking on one of the notebooks in the list, user will be transferred to the Notes List Screen (Figure \ref{fig:notes}). Similar to Notebooks List Screen, this screen contains a scrollable list of notes from this notebook and  covers all the note management related actions and interactions such as Note creation, edition and deletion. Once again, FAB is used for to trigger a create action.
 	
 	Finally, by choosing a note, the user will be able to view its details. As shown of Figure \ref{fig:detail}, this screen utilises top app bar to provide access for the delete action. FAB is used to trigger the edit action.
 	
@@ -679,9 +679,9 @@ The fact the all the content in \appname\ is made by its community makes Noteboo
 
 
 
-Considering an amount of input needed, its variety, the decision was made to split this form into several steps. It will allow make the form more dynamic and put more emphasis on some inputs by grouping them.
+Considering an amount of input needed, its variety, the decision was made to split this form into several steps. It will make the form more dynamic and put more emphasis on some inputs by grouping them.
 
-First step will include all fields that can be pre-filled: Notebook's name, language and University. This will allow to skip this step in most cases, making it only about controlling pre-filled information.
+First step will include all fields that can be pre-filled: Notebook's name, language and University. This will allow to skip first step in most cases, making it only about controlling pre-filled information.
 Second step will require users to provide search-relevant information, such as Tags and Topic/Category, topic being a required option. Third step will allow user to provide a message or a more detailed of description of the Notebook. Fourth step will be all about confirmation, in which the user can double-check information he/she entered and submit it.
 
 Though the choice of UI elements in different steps is well defined, they way we present these steps is not. Simplified wireframes with different approaches of how the steps can be presented are shown in Figure \ref{fig:publishing-sketches}. In the end, I made the decision to go with the Stepper solution as it gives a number of advantages:
@@ -757,7 +757,7 @@ Another newly added element is a Notifications preview. Located on the top part 
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[scale=0.2]{sharingHubV2.jpg}
+  \includegraphics[scale=0.054]{sharingHubV2.jpg}
   \caption{Landing Page v2}
   \label{fig:section-sharinghubv2sletch}
 \end{subfigure}
@@ -769,8 +769,8 @@ Another newly added element is a Notifications preview. Located on the top part 
 
 \newpage
 \subsection{Searching Flow}
- One of the main responsibilities of SharingHub screen is to start the Search flow. Search flow is either launched by a Search Menu Item located in the Top bar or by the expanding on expanding on the Notebooks Section. Here a list of some basic requirements that were taken into consideration 
-:
+ One of the main responsibilities of SharingHub screen is to start the Search flow. Search flow is either launched by a Search Menu Item located in the Top bar or by the expanding on expanding on the Notebooks Section. Here a list of some basic requirements that were taken into consideration:
+ 
  \begin{itemize}
  
  \item There are should several primary searching/filtering options available: Notebooks name, University/School, Topic/Category and Tags.
@@ -778,7 +778,7 @@ Another newly added element is a Notifications preview. Located on the top part 
  \item When none of searching options are active, empty state must be presented.
   \end{itemize}
 
-The resulting wireframe is shown in Figure \ref{fig:section-search} . This approach is using a Top App bar to display active searching options. Each options is represented by Chip action, that can have two states: Chip is either inactive  and displays the name of the search option, or it is active, displaying selected option's values. When there are a lot of values selected, in case of multiple Tags for example, last three selected will be shown. 
+The resulting wireframe is shown in Figure \ref{fig:section-search}. This approach is using a Top App bar to display active searching options. Each option is represented by a Chip action, that can have two states: Chip is either inactive  and displays the name of the search option, or it is active, displaying selected option's values. When there are a lot of values selected, in case of multiple Tags for example, last three selected will be shown. 
 
 Clicking the Chip will result in showing Modal Bottom Sheet that will allow user to tweak selection of the active values and every change to a Search options values will result in updating the search results. Search results themselves appear in the scrollable list bellow the Top Bar. 
    
@@ -796,12 +796,13 @@ Published Notebook, as an entity, contains a large amount properties and there a
 According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more user-friendly.
  
 
-Details Tab (Figure \ref{fig:published-details}) features key details about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups.
+Details Tab (Figure \ref{fig:published-details}) features key details about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups:
+
 
 \begin{itemize}
 	\item \textbf{Basic details}: This group contains simple properties such as Notebook's name, its author, category/topic, language and associated university.
 	\item  \textbf{Description}: This group contains more dynamic content such as description, that can take multiple lines, and a Chip Group with tags.
-	\item \textbf{Primary Notebook Action:} This view represents a primary action available for this notebook in regards to user Library. This can either act as a Save button, that will save the latest Notebook version to the users Library or as an Update Button, that will result in applying changes from local notebook to the Published one, thus updating its contents. If none of the actions are available, this view will be hidden.
+	\item \textbf{Primary Notebook Action:} This view represents a primary action available for this notebook in regards to user Library. This can either act as a Save button, that will save the latest Notebook version to the user's Library or as an Update Button, that will result in applying changes from local notebook to the Published one, thus updating its contents. If none of the actions are available, this view will be hidden.
 	 \item \textbf{Suggestions}: This view group serves as preview and an entry point for the suggestions screen. 
 	\item \textbf{Notes Preview}: Last view at the bottom of the screen serves as an entry point for notes browsing.
 \end{itemize}
@@ -826,9 +827,9 @@ Comments tab, as shown in Figure \ref{fig:published-comments}, contains a scroll
 \subsection{Suggestions Review Flow}
 As mentioned before, one of the actions provided by Published Notebook Detail Screen is to show a list of the suggestions left by other users.  Wireframe of this screen can be seen in Figure \ref{fig:suggestion-preview1}.  Besides the screen itself, there is also a FAB that will start the review flow; hence his button will be visible only to the Author of the Published Notebook.
 
-The wireframe of the review flow is presented in Figure \ref{fig:suggestion-review2}. There are three core parts to this screen. First, there is a list of the suggestions: they appear one by one, as a part of horizontal list, covering most of the screen's space. In case it is a new note it will only show one note card, in case it is an updated note, two cards will be shown: one with notes current data and one with the data suggested by a user. User is able to navigate inside this list using horizontal swipe gesture. Buttons below the suggestion will either mark the suggestion as approved or rejected, thus updating the second part: Review Status Bottom Sheet. 
+The wireframe of the review screen is presented in Figure \ref{fig:suggestion-review2}. There are three core parts to this screen. First, there is a list of the suggestions: they appear one by one, as a part of horizontal list, covering most of the screen's space. In case it is a new note it will only show one note card, in case it is an updated note, two cards will be shown: one with notes current data and one with the data suggested by a user. User is able to navigate inside this list using horizontal swipe gesture. Buttons below the suggestion will either mark the suggestion as approved or rejected, thus updating the second part: Review Status Bottom Sheet. 
 
-Review status bottom sheet reflects the current status of the review process displaying how many suggestions are examined (approved or rejected). Expanding the bottom sheet (Figure \ref{fig:suggestion-review3})  will reveal an overview allowing the user to double check his/her input. This overview contains the same list as in Figure \ref{fig:suggestion-preview1} with the only difference being that it reflects the suggestion status. Scrolling to the end of this list will reveal the button that is used to submit the review.
+Review status bottom sheet reflects the current status of the review process displaying how many suggestions are examined (approved or rejected). Expanding the bottom sheet (Figure \ref{fig:suggestion-review3})  will reveal an overview allowing the user to double check his/her input. This overview contains the same list as in Figure \ref{fig:suggestion-preview1} with the only difference being that it reflects the suggestion status. Scrolling to the end of this list will reveal the button that is used to submit the review. User will be navigated back to the suggestions list after the review submission.
 
 \flushbottom
 
@@ -861,7 +862,7 @@ The current iteration of \appname\ provides a small amount of very easy challeng
 
 
 \subsubsection{Landing Screen}
-Its landing screen (Figure \ref{fig:challenge-start}) features a list of recently completed challenges, including some statistics if available,  and three buttons, that are responsible for launching three distinct challenges: Flashcards, Write and Self-check. There is also a button that will navigate the user to a more in-depth configuration of his/her trial - Setup Challenge screen. Clicking one of the recently completed challenges entries will launch this challenge with all the options pre-set automatically. If the user hasn't completed any challenge yet, the empty view will be featured.
+Its landing screen (Figure \ref{fig:challenge-start}) features a list of recently completed challenges, including some statistics if available,  and three buttons, that are responsible for launching three distinct challenges: Flashcards, Write and Self-check. There is also a button that will navigate the user to a more in-depth configuration of his/her trial - Setup Challenge screen. Clicking one of the recently completed challenges entries will launch this challenge with all the options pre-set automatically. If the user hasn't completed any challenge yet, the empty view will be shown.
 
 
 
@@ -916,7 +917,7 @@ His answer will then be validated, and, depending on how close user was to the c
 
 \textbf{Profile} is the last top-level destination available from the Navigation bar. As shown in Figure \ref{fig:section-profile}, it features basic information about a currently logged-in user and provides buttons to access three more subsections: Profile Edition, Notifications, and Settings.
 
-Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. The screen contains two input fields that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input fields changes. Pressing the Save button will try to update information and navigate back to profile screen in case of success.
+Profile edition screen (Figure \ref{fig:section-editprofile}) allows user to change his/her name and university. The screen contains two input fields that will be automatically populated with user information, and a Save button, that will only be enabled if one of the input fields changes. Pressing the Save button will try to update the information and navigate back to profile screen in case of success.
 
 Notifications screen contains a scrollable list of all previously received notifications. It is the same component used in the Sharing Hub screen.
 
@@ -949,9 +950,9 @@ Architecture Components are a collection of libraries that can be used to design
 \subsection{Recommended Architecture}
 Introduction of Architecture Components made it clear what approach Google recommends when designing application architecture - MVVM. Figure \ref{fig-arch} demonstrates this approach:
 \begin{itemize}
-	\item Fragments and Activities represent the View
+	\item Fragments and Activities represent the View.
 	\item View is connected to a ViewModel. ViewModel there is represented by a ViewModel Architecture component that stores model data using LiveData, that Fragment or Activity can subscribe to. ViewModel requests data from the repository, without knowing where the data comes from.
-	\item A Repository pattern represents the Model layer. Repository's responsibility is to retrieve and modify the data using one or multiple sources. Typically there is remote data source (API) and the local data source (on-device database).
+	\item A Repository pattern represents the Model layer. Repository's responsibility is to retrieve and modify the data using one or multiple sources. Typically there is remote data source (API) and the local data source (in-memory database).
 \end{itemize}
 
 \begin{figure}
@@ -979,7 +980,7 @@ This will even more propagate the separation of concerns as every Interactor wil
 
 
 \subsection{Dependncy Injection}
- Dependency injection (DI) is basically providing the objects that an object needs (its dependencies) instead of having to construct the manually.
+ Dependency injection (DI) is basically providing the objects that an object needs (its dependencies) instead of having to construct them manually.
 DI is another technique that will help provide cleaner code and will be a great help when providing a test-coverage. 
 
 \subsection{\appname\ Architecture}
@@ -1061,7 +1062,7 @@ Threading and background work has always been a problem in the world of Android 
 Later on, RxJava gains popularity. RxJava is a library for composing asynchronous and event-based programs by using observable sequences. It is a very powerful tool, but the library itself is quite heavy (almost 2 MB), and when used only for threading it is often described as an attempt to kill a spider with the bazooka.
 
 Kotlin has its own way to handle background work. Kotlin 1.3 introduced the Kotlin Coroutines.   Coroutines can be described as light-weight threads and essentially its a small task that normal thread can execute. Kotlin uses a concept of \texttt{suspending} functions, that is a regular function with the \texttt{suspend} modifier which indicates that the function can suspend the execution of a coroutine. This essentially allows to write asynchronous code that looks like synchronous making the code far more understandable and easy to read.
-When it comes to \appname, Kotlin Coroutines are mainly used in the applications data layer: in Interactors and Repositories
+When it comes to \appname, Kotlin Coroutines are mainly used in the applications data layer: in Interactors and Repositories.
 
 \subsection{Android Navigation Component}
 Navigation in Android can be done either by using Activities or Fragment transactions. Android Architecture Components introduced a new way to solve navigation -- Navigation Component.
@@ -1104,9 +1105,9 @@ Because LiveData is lifecycle-aware it allows avoiding memory leaks and can easi
 There are four three important parts to the architecture implementation:
 ViewModels, Interactors,  Repositories, and Activities with Fragments.
 \subsection{Repository}
-Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only difference being Notebook repository, which also has a database dependency.
+Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only exception  being Notebook repository, which also has a database dependency.
 
-Listing \ref{code:repo} demonstrates implementation of th \texttt{getNotebooks()} function, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing use of generic   \texttt{Defered} class as a return type, that is then used to wait for the result.
+Listing \ref{code:repo} demonstrates implementation of the \texttt{getNotebooks()} method, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing use of generic   \texttt{Defered} class as a return type, that is then used to wait for the result.
 
 \begin{lstlisting}[caption={Repository Implementation Example}, label={code:repo}, language=Kotlin]
 class NotebookRepositoryImpl(
@@ -1125,7 +1126,7 @@ override suspend fun getNotebooks(): List<Notebook> {
   	.putAll(list.map { it.toDomain() })
   return list
  }
- // other functions
+ // other methods
 
 
 \end{lstlisting}
@@ -1134,7 +1135,7 @@ override suspend fun getNotebooks(): List<Notebook> {
 Interactors are used to perform one single use-case, or in other words, one single business logic operation. There are a lot of ways an interactor can be implemented. Sometimes it makes sense to make the interactor return LiveData, some times it is easier to handle the operation result via callbacks. Interactors in StudyPad mostly  relies on callbacks.
 
 Every Interactor in \appname\ extends \texttt{BaseInteractor} or \newline \texttt{BaseInputInteractor} (when the opearation requires input). BaseInteractor, is an abstract class, it shortened implementation can be seen on Listing \ref{code:interactor}. This implementation fully relies on Kotlin Coroutines to execute the request in the background and provide a result using callback. 
-This implementation of Interactors makes them very easy to declare, the only thing that has to be specified the actual action to be performed. The example of the resulting interactor can be seen on Listing \ref{code:logininteractor}
+This implementation of Interactors makes them very easy to declare, the only thing that has to be specified the actual action to be performed. The example of the resulting interactor can be seen on Listing \ref{code:logininteractor}.
 
 
 
@@ -1252,7 +1253,7 @@ class Event<out T>(private val content: T) {
  \end{lstlisting}
 
 \subsection{Present Data in Fragments}
-The Activity in \appname\ serves only as a container for Fragments, thats why the actuals screens and flows are represented by Fragments. Just like with the \texttt{BaseViewModel}, I have created a basic definition of Fragment, that others fragments can extend -- \texttt{BaseFragment}
+The Activity in \appname\ serves only as a container for Fragments, thats why the actuals screens and flows are represented by Fragments. Just like with the \texttt{BaseViewModel}, I have created a basic definition of Fragment, that others fragments can extend -- \texttt{BaseFragment}.
 
 \texttt{BaseFragment} provides a couple of helper methods that are used across the application and automatically subscribes for the two LiveData instances available from the \texttt{BaseViewModel}. Listing  \ref{code:sub} demonstrates how the Fragment handles the ViewModel subscription on the example of BaseFragment. 
 
@@ -1462,6 +1463,8 @@ There also some small changes that could be  addressed such as:
 	\item[BI-EJA] Enterprise Java
 	\item[BI-AND] Programming for the Android Operating System
 	\item[BI-IOS] Fundamentals of iOS Application Development for iPhone and iPad
+	\item[BI-SP1] Team Software Project 1
+	\item[BI-SP2] Team Software Project 2
 	\item[XML] Extensible markup language
 	\item[FAB] Floating Action Button
 	\item[UI] User Interface
@@ -1479,7 +1482,7 @@ There also some small changes that could be  addressed such as:
 
 \section{Scenario A}
 \begin{enumerate}
-	\item Login using following credentials: test2studypad.com  12345678
+	\item Login using following credentials: test2@studypad.com  12345678
 	\item Notice that you don't have any notebooks saved
 	\item You'd like to learn Czech language.
 	\item Open Search Screen.
@@ -1501,7 +1504,7 @@ There also some small changes that could be  addressed such as:
 \section{Scenario B}
 
 \begin{enumerate}
-	\item Login using following credentials: test1studypad.com  12345678.
+	\item Login using following credentials: test1@studypad.com  12345678.
 	\item  Notice that you have some unread notifications -- someone  have just asked to to update one of your notebooks.
 	\item  Look through the changes made.
 	\item  Find the changes your changes and approve them, reject 1 change from user named Buggy Jack
