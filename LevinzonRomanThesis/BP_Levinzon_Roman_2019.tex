@@ -1114,7 +1114,7 @@ Because LiveData is lifecycle-aware it allows avoiding memory leaks and can easi
 There are four three important parts to the architecture implementation:
 ViewModels, Interactors,  Repositories, and Activities with Fragments.
 \subsection{Repository}
-Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source -  API class provided by Retrofit, with the only exception  being Notebook repository, which also has a database dependency.
+Repository acts as a single source of truth for the Interactors. Almost all of them are dependent on the remote data source --  API class provided by Retrofit, with the only exception  being Notebook repository, which also has a database dependency.
 
 Listing \ref{code:repo} demonstrates implementation of the \texttt{getNotebooks()} method, which is marked as suspend. This allows using all the power of the Kotlin Coroutines. Retrofit got a Kotlin Coroutines support, allowing use of generic   \texttt{Defered} class as a return type, that is then used to wait for the result.
 
