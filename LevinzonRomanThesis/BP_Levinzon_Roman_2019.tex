@@ -105,7 +105,7 @@ during the whole period of my study.}
 \abstractEN{StudyPad is a combination of a note-taking service and a social network, aimed at helping students to memorise different pieces of information.  The goal of this thesis is to develop an application for Android OS that will serve as the client. This text acknowledges existing solutions, contains domain and requirements analysis, description and the choice of application's architecture its implementation and testing.}
 
 
-\abstractCS{StudyPad je kombinace slu{\v z}by pro pori{\v z}ovan{\' i} pozn{\'a}mek a soc{\'i}{\'a}ln{\'i} s{\'i}t{\v e} s c{\'i}lem  pomoci student{\r u}m zapamatovat si r{\r u}zn{\'e} informace. C{\'i}lem pr{\'a}ce je vyvinout aplikaci pro OS Android, kter{\'a} bude slou{\v z}it jako klient. Tento text uv{\'a}d{\' i} p{\v r}ehled st{\'a}vaj{\' i}c{\'i}ch {\v r}e{\v s}en{\'i}, obsahuje anal{\'y}zu dom{\'e}ny a po{\v z}adavku, popis a v{\'y}b{\v e}r architektury aplikace, jej{\'i} implementace a testov{\' a}n{\' i}}
+\abstractCS{StudyPad je kombinace slu{\v z}by pro po{\v r}izov{\'a}n{\' i} pozn{\'a}mek a soc{\'i}{\'a}ln{\'i} s{\'i}t{\v e} s c{\'i}lem  pomoci student{\r u}m zapamatovat si r{\r u}zn{\'e} informace. C{\'i}lem pr{\'a}ce je vyvinout aplikaci pro OS Android, kter{\'a} bude slou{\v z}it jako klient. Tento text uv{\'a}d{\' i} p{\v r}ehled st{\'a}vaj{\' i}c{\'i}ch {\v r}e{\v s}en{\'i}, obsahuje anal{\'y}zu dom{\'e}ny a po{\v z}adavku, popis a v{\'y}b{\v e}r architektury aplikace, jej{\'i} implementace a testov{\' a}n{\' i}}
 \placeForDeclarationOfAuthenticity{Prague}
 \keywordsCS{Mobilní aplikace, Android, Kotlin, MVVM, Clean architecture, vzd{\v e}lávání}
 \keywordsEN{Mobile application, Android, Kotlin, MVVM, Clean architecture, education}
@@ -192,6 +192,7 @@ It is important to establish all functional and non-functional requirements for 
 	\item \textbf{F7: University Addition} The user will be able to add his/her school, in case of not finding it in a \appname\ database.
 \end{itemize}
 \bigskip
+\newpage
 \textbf{Library Management (Notes \& Notebooks)}
 \begin{itemize}
 	\item \textbf{F8: Notebook creation} The user will be able to create new notebooks with the name he/she choose.
@@ -295,6 +296,7 @@ Notebooks here are called \textit{decks} and notes are represented by \textit{ca
 
 
 \begin{table}[H]
+\centering
 \caption{\appname\ \& StudyBlue requirements comparison}
 \label{tab:studyblue}
 \begin{tabular}{|l|c|c|}
@@ -323,6 +325,7 @@ F28-F28: User Suggestions                                          & \present   
 \textbf{Quizlet} is primarily used for learning languages, from where most of the limitations come from. The closest analogy to a Notebook here is a Study set with Terms inside. Being an application for language learners makes the process of generating different tests and quizzes quite easy, and this is where this application shines the most. Table \ref{tab:quizlet} shows requirements comparison between \appname\ and Quizlet.
 
 \begin{table}[H]
+\centering
 \caption{\appname\ \& Quizlet requirements comparison}
 \label{tab:quizlet}
 \begin{tabular}{|l|c|c|}
@@ -351,6 +354,7 @@ F28-F28: User Suggestions                                           & \present  
 
 
 \begin{table}[H]
+\centering
 \caption{\appname\ \& Cram requirements comparison}
 \label{tab:cram}
 \begin{tabular}{|l|c|c|}
@@ -378,6 +382,7 @@ F28-F28: User Suggestions                                          & \present   
 \textbf{TinyCards} is a flash-card application made the same developer that created Duolingo --  one of the biggest language-learning applications on the market. TinyCard is meant to be more generic as it alows users to create custom study sets, often not limited to languages. Table \ref{tab:tinycards} shows how the \appname\ requirements compare to the TinyCards functionalities.
 
 \begin{table}[H]
+\centering
 \caption{\appname\ \& TinyPads requirements comparison}
 \label{tab:tinycards}
 \begin{tabular}{|l|c|c|}
@@ -408,43 +413,45 @@ F27: User Suggestions                                          & \present       
 This chapter serves as an introduction to Android development and gives an overview of the core technologies and tools used. Also, it provides a domain and requirements analysis and overall system description.
 
 \section{Android Platform}
-Android is a mobile operating system developed by Google. It is based on a modified version of the Linux kernel and other open source software, and is designed primarily for touchscreen mobile devices such as smartphones and tablets \cite{android-platform}.
+Android is a mobile operating system developed by Google. It is based on a modified version of the Linux kernel and other open source software, and is designed primarily for touchscreen mobile devices such as smartphones and tablets\cite{android-platform}.
 
 
 
 \subsection{Android SDK Versions}
-Since its inception, several versions have been released, with the latest one being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions \cite{android-sdks}. Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was the case until AndroidX was introduced.
+Since its inception, several versions have been released, with the latest one  (by the time of writing this thesis) being 9.0, codenamed \enquote{Pie}. Every new version provides new and improved APIs to work with and backward compatibility for applications running on older versions\cite{android-sdks}. Originally, the Support Libraries were used to provide backward compatibility while targeting newer versions. This was the case until AndroidX was introduced.
 
-AndroidX, in essence, is a refactored version of the Support Libraries. Just like Support Libraries it ensures backward-compatibility and is shipped separately from the Android OS. Additionally, it provides more clear and convenient package names and uses a strict semantic versioning system \cite{androix-overview}.
+AndroidX, in essence, is a refactored version of the Support Libraries. Just like Support Libraries it ensures backward-compatibility and is shipped separately from the Android OS. Additionally, it provides more clear and convenient package names and uses a strict semantic versioning system\cite{androix-overview}.
 
-When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the \texttt{minSdkVersion} and \texttt{targetSdkVersion} attributes are used to identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 89\% and Material Design Support, which is one of the non-functional requirements.
+When developing applications for Android, the developer has to consider which OS versions the application will support. Specifically, the \texttt{minSdkVersion} and \texttt{targetSdkVersion} attributes are used to identify the lowest API level with which your application is compatible and the highest API level against which you have designed and tested your application. 
+
+\newpage \noindent \appname\ will target the latest Android version available, with the minimal version set to 5.0, codenamed Android Lollipop. This will ensure a high compatibility rate of 89\% and Material Design Support, which is one of the non-functional requirements.
 
 
 \begin{figure}[H]
 \center
   \includegraphics[scale=0.5]{androidversion.png}
-  \caption{Android Versions distribution \cite{android-distribution}}
+  \caption{Android Versions distribution\cite{android-distribution}}
   \label{fig:androidversions}
 \end{figure}
 
 \subsection{Android High-level Framework Elements}
 Android SDK provides multiple elements and APIs for developers to help them build their applications.
 \begin{itemize}
-	\item \textbf{Activity}: \texttt{Activity} represents a single window where the UI elements can be placed. Android OS managing the creation and destruction of the \texttt{Activities}, that is why \texttt{Intents} are used to start/launch them \cite{android-activity}. 
-	\item \textbf{Fragment}: \texttt{Fragments} were introduced in Android 3.0, primarily to support more flexible UI designs for larger screens (like Tablets). In such designs, \texttt{Activity} serves as container for one or more \texttt{Fragments}, and because each \texttt{Fragment} defines its own layout with its own lifecycle, it can be used in multiple  \texttt{Activities} \cite{android-fragment}.
-	\item \textbf{Broadcast Receiver}: \texttt{Broadcast Receiver} allows the application to receive and send local and system-wide broadcasts similar to the publish-subscribe design pattern. By using \texttt{Broadcast Receiver} application can act upon receiving various kind of events, like the change of internet connectivity or charging status \cite{android-br}.
-	\item \textbf{Service}: \texttt{Service} is the application component that does not require UI and is used to perform long-running operations, even if the user stops interacting with the application \cite{android-service}.
-	\item \textbf{Intent}: \quoting{An intent is an abstract description of an operation to be performed}. \texttt{Intent} can be used to launch an \texttt{Activity}, start a \texttt{Service} or a \texttt{BroadcastReceiver}. \texttt{Intent} can either start a specific component (explicit Intent) or try to find a component that can complete certain actions (implicit Intent) \cite{android-intent}. For example,  there could be several applications available on the device with the image viewing functionality, implicit intent, in this case, will allow the user to choose which application will handle this action. Explicit intent, on the other hand, is used to launch specific components using its class name.
+	\item \textbf{Activity}: \texttt{Activity} represents a single window where the UI elements can be placed. Android OS managing the creation and destruction of the \texttt{Activities}, that is why \texttt{Intents} are used to start/launch them\cite{android-activity}. 
+	\item \textbf{Fragment}: \texttt{Fragments} were introduced in Android 3.0, primarily to support more flexible UI designs for larger screens (like Tablets). In such designs, \texttt{Activity} serves as container for one or more \texttt{Fragments}, and because each \texttt{Fragment} defines its own layout with its own lifecycle, it can be used in multiple  \texttt{Activities}\cite{android-fragment}.
+	\item \textbf{Broadcast Receiver}: \texttt{Broadcast Receiver} allows the application to receive and send local and system-wide broadcasts similar to the publish-subscribe design pattern. By using \texttt{Broadcast Receiver} application can act upon receiving various kind of events, like the change of internet connectivity or charging status\cite{android-br}.
+	\item \textbf{Service}: \texttt{Service} is the application component that does not require UI and is used to perform long-running operations, even if the user stops interacting with the application\cite{android-service}.
+	\item \textbf{Intent}: \quoting{An intent is an abstract description of an operation to be performed}. \texttt{Intent} can be used to launch an \texttt{Activity}, start a \texttt{Service} or a \texttt{BroadcastReceiver}. \texttt{Intent} can either start a specific component (explicit Intent) or try to find a component that can complete certain actions (implicit Intent)\cite{android-intent}. For example,  there could be several applications available on the device with the image viewing functionality, implicit intent, in this case, will allow the user to choose which application will handle this action. Explicit intent, on the other hand, is used to launch specific components using its class name.
 	\end{itemize}
 	
 	
 	\subsection{Resources}
-Resources are the additional files and static content that your code uses, such as bitmaps, layout definitions, and user interface strings. Resources are stored in the separated package called \texttt{/res} and can be referenced in the application using ids. Also, depending on the current configuration, Android can choose appropriate resource version (if multiple are provided) at run-time. For example, it can be used for localisation support by providing different strings resources for different languages \cite{android-resources}.
+Resources are the additional files and static content that your code uses, such as bitmaps, layout definitions, and user interface strings. Resources are stored in the separated package called \texttt{/res} and can be referenced in the application using ids. Also, depending on the current configuration, Android can choose appropriate resource version (if multiple are provided) at run-time. For example, it can be used for localisation support by providing different strings resources for different languages\cite{android-resources}.
 	
 	\subsection{Views} 
 	
-	\texttt{View} is a fundamental building block for all the UI components. It serves as a base class for \texttt{Widgets}, which are the interactive elements and \texttt{ViewGroups}, that acts as a container for other Views \cite{android-views}.     
-    \texttt{ViewGroup}, as mentioned before, is an invisible container that holds other views. Android provides different ViewGroup subclasses, each with its own purpose and a way to structure its children \cite{android-viewgroup}. \texttt{LinearLayout}, for example, allows to align widgets horizontally or vertically \cite{android-linear}. Another important ViewGroup that has received a lot of attention and support during the last couple of years is ConstraintLayout. Using constraints allows the developer to create more complex layouts without using nested ViewGroups (i.e., LinearLayout inside another Linear Layout) \cite{android-constraints}.
+	\texttt{View} is a fundamental building block for all the UI components. It serves as a base class for \texttt{Widgets}, which are the interactive elements and \texttt{ViewGroups}, that acts as a container for other Views\cite{android-views}.     
+    \texttt{ViewGroup}, as mentioned before, is an invisible container that holds other views. Android provides different ViewGroup subclasses, each with its own purpose and a way to structure its children\cite{android-viewgroup}. \texttt{LinearLayout}, for example, allows to align widgets horizontally or vertically\cite{android-linear}. Another important ViewGroup that has received a lot of attention and support during the last couple of years is ConstraintLayout. Using constraints allows the developer to create more complex layouts without using nested ViewGroups (i.e., LinearLayout inside another Linear Layout)\cite{android-constraints}.
     
     Android uses Extensible Markup Language (XML) for declaring the UI for Activities and Fragments. XML is then converted to the View object using \texttt{LayoutInfalter}.  Views can also be added programmatically via Java/Kotlin code.    
 
@@ -452,16 +459,16 @@ Resources are the additional files and static content that your code uses, such 
 Android Studio is an official IDE for Android development. Out of the box it provides a lot of essential tools, like visual Layout editor, emulator and more.
 
 \section{Gradle}
-Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries \cite{android-gradle}.
+Gradle is a build toolkit, that is used to automate and manage the build process, while allowing you to define flexible custom build configurations using Groovy-based DSL (Domain Specific Language). Android plugin, shipped alongside the Android Studio, allows to modify and control various build parameters such as \texttt{buildVariant}, dependencies, artifacts signings, and manifest entries\cite{android-gradle}.
 
 \section{Kotlin}
-\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa \cite{kotlin}. Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box \cite{kotlin-android}. 
+\quoting{Kotlin is a pragmatic programming language for JVM and Android that combines OO and functional features and is focused on interoperability, safety, clarity and tooling support.} Kotlin is a general purpose language developed by JetBrains and it works everywhere Java works and is fully interoperable with it, meaning every Java code can be converted to Kotlin and vice-versa\cite{kotlin}. Since May 17th 2018, Kotlin became the official language for Android development with all the tools and libraries required shipped with Android Studio out of the box\cite{kotlin-android}. 
 
 
 \subsection{Kotlin Extensions}
-Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend \cite{kotlin-exts}.
+Similar to some other languages, Kotlin provides a way to extend any class with new functionality without inheritance. There are two types of extensions: Functions and Properties. All the extensions are resolved statically and do not modify the class they extend\cite{kotlin-exts}.
 
-When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code \cite{kotlin-androidexts}.
+When it comes to Android, a  plugin developed by JetBrains provides a lot of useful extensions that enhance the experience of Android development. For example, it is possible to reference Views from Activity/Fragments directly using its ids. Previously it was required to call \texttt{findViewById<View>()} (Listing \ref{code:viewbinding}) to obtain a view reference, which resulted in a lot of boiler-plate code\cite{kotlin-androidexts}.
 
 
  \begin{lstlisting}[caption={Kotlin View Binding example}, label={code:viewbinding}, language=Kotlin]
@@ -478,7 +485,7 @@ Due to its official support and features, Kotlin was chosen as a primary languag
 Application Architecture defines the way different application elements interact with each other and how the application is designed and organised. This section aims to address different ways to approach the application architecture.
 
 \subsection{Clean Architecture}
-Clean architecture is a set of ideas derived from different kinds of other approaches with the main principle being the separation of concerns \cite{cleanarch}. 
+Clean architecture is a set of ideas derived from different kinds of other approaches with the main principle being the separation of concerns\cite{cleanarch}. 
 Separation of concerns ensures that all the application's components are easily replaceable and as much independent as possible. When it comes to Android and every software that contains UI, it is essential that the UI does not contain any business logic and serves only as a way to show information.
 
  This approach will be used as the main guideline during application architecture design and implementation.
@@ -488,23 +495,23 @@ Separation of concerns ensures that all the application's components are easily 
 MVP or Model-View-Presenter is an architecture pattern that is very common in Android development. 
 Model represents the data layer
 View is the UI layer, which in the Android worlds are Fragments and Activities. 
-Presenter - is the layer between the View and the Model. It receives events from the View and updates the Model layer and applies the result to the UI layer.
-The View and Presenter both are abstracted to Interfaces, thus making all the layers easily testable \cite{arch-mvp}. However, one of the main disadvantages is that Presenter must hold a reference to a View, which can lead to memory leaks and other problems around Android lifecycle.
+Presenter -- is the layer between the View and the Model. It receives events from the View and updates the Model layer and applies the result to the UI layer.
+The View and Presenter both are abstracted to Interfaces, thus making all the layers easily testable\cite{arch-mvp}. However, one of the main disadvantages is that Presenter must hold a reference to a View, which can lead to memory leaks and other problems around Android lifecycle.
 
 \subsection{MVVM}
 MVVM or Model-View-ViewModel is another pattern to apply Clean Architecture principles. It is very similar to MVP  when it comes to View and Model layers, with the only difference being ViewModel.
-ViewModel, as oppose to Presenter, is not aware of the View -- it does not hold the reference to it. Instead, View subscribes to ViewModel events and updates its state accordingly. ViewModel handles UI interactions, updates the Model layer and then post changes so that the View can present these changes to the user \cite{arch-mvvm}.
+ViewModel, as oppose to Presenter, is not aware of the View -- it does not hold the reference to it. Instead, View subscribes to ViewModel events and updates its state accordingly. ViewModel handles UI interactions, updates the Model layer and then post changes so that the View can present these changes to the user\cite{arch-mvvm}.
 
 
 
 \section{Firebase}
 
-\quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure} \cite{firebase}. Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
+\quoting{Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure}\cite{firebase}. Firebase provides a high number of services, some of which are a necessity in today's world of software development. \\\appname\ will be using the following services:
 \begin{itemize}
-	\item \textbf{Firebase Analytics} Firebase Analytics provides free application measurement solution, that allows you analyse how the users interact with your application based  on up to 500 distinct events \cite{firebase-analytics}.
-		\item \textbf{Firebase Cloud Messaging} \quoting{Firebase Cloud Messaging (FCM) provides a reliable and battery-efficient connection between your server and devices that allows you to deliver and receive messages and notifications on iOS, Android, and the web at no cost} \cite{firebase-messaging}.
-	\item \textbf{Firebase Auth} \quoting{Firebase Auth  provides an end-to-end identity solution, supporting email and password accounts, phone auth, and Google, Twitter, Facebook, and GitHub login, and more} \cite{firebase-auth}.
-	\item \textbf{Crashlytics} Crash Reporting allows you track detailed reports of the errors and crashes in the application. All the issues experienced by the users are then grouped into clusters of similar stack traces and triaged by the severity of impact on application users \cite{firebase-crash}.
+	\item \textbf{Firebase Analytics} Firebase Analytics provides free application measurement solution, that allows you analyse how the users interact with your application based  on up to 500 distinct events\cite{firebase-analytics}.
+		\item \textbf{Firebase Cloud Messaging} \quoting{Firebase Cloud Messaging (FCM) provides a reliable and battery-efficient connection between your server and devices that allows you to deliver and receive messages and notifications on iOS, Android, and the web at no cost}\cite{firebase-messaging}.
+	\item \textbf{Firebase Auth} \quoting{Firebase Auth  provides an end-to-end identity solution, supporting email and password accounts, phone auth, and Google, Twitter, Facebook, and GitHub login, and more}\cite{firebase-auth}.
+	\item \textbf{Crashlytics} Crash Reporting allows you track detailed reports of the errors and crashes in the application. All the issues experienced by the users are then grouped into clusters of similar stack traces and triaged by the severity of impact on application users\cite{firebase-crash}.
 
 \end{itemize}.
 
@@ -533,7 +540,7 @@ The User role is a default one and will be assigned automatically to everyone wh
 Admin role is the only one that have the access to the admin panel and an ability to view and modify certain data.
 
 \subsection{\appname\ API}
-\appname\ has its own REST API that is represented by the Spring Boot application using JSON as a data-interchange response format \cite{studypad-backend}. The Spring Framework is a Java-based framework that enhances the developing of Java EE applications. It has a modular architecture and supports Dependency Injection and using Inversion of Control principles \cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced \cite{spring-kotlin}.
+\appname\ has its own REST API that is represented by the Spring Boot application using JSON as a data-interchange response format\cite{studypad-backend}. The Spring Framework is a Java-based framework that enhances the developing of Java EE applications. It has a modular architecture and supports Dependency Injection and using Inversion of Control principles\cite{wiki-spring}. In Spring 5.0 official support for Kotlin has been introduced\cite{spring-kotlin}.
 
 I've developed the first iteration of the API as a semestral project for subject BI-EJA and back then in only supported the library management features (working with Notes and Notebooks). I will still continue to work on it in order to support requirements for the client application.
 
@@ -622,8 +629,8 @@ This section contains a list of Material Design specific Components (not includi
 
 
 \begin{itemize}
-	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center} \cite{material-fab}. FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
-		\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action} \cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed inside the ChipGroup -- a special container to store dynamic amount of Chips
+	\item \textbf{Floating Action Button (FAB)}: According to Material Design Guidelines: \quoting{A floating action button (FAB) performs the primary, or most common, action on a screen. It appears in front of all screen content, typically as a circular shape with an icon in its center}\cite{material-fab}. FAB is widely used in creating content, hence it found its place in the note-taking part of the application.
+		\item \textbf{Chips}: \quoting{Chips are compact elements that represent an input, attribute, or action}\cite{material-chips}. In \appname\ it is used mainly for displaying Tags and in Searching flow. In most of the cases it will be placed inside the ChipGroup -- a special container to store dynamic amount of Chips
 	\item \textbf{Bottom Sheets}: \quoting{Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.}. The most common Bottom Sheet type used in \appname\ is Modal Bottom Sheet, that allows user to provide certain kind of input, like Topic, Tag selection and e.t.c.
 	\end{itemize}
 
@@ -793,7 +800,7 @@ Clicking the Chip will result in showing Modal Bottom Sheet that will allow user
 \subsection{Published Notebook Details}
 Published Notebook, as an entity, contains a large amount properties and there are a lot of actions associated with it. This screen will cover all actions regarding user comments (requirements F19-F22) and various Published Notebook actions such as saving, sharing, and copying. Including all these actions and flows into one screen would make UI very crowded, resulting in bad UX. \textit{Tabs} can help solve this issue quite easy.
 
-According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy \cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more user-friendly.
+According to Material Design Guidelines, Tabs can organise content across different screens, data sets, and allow navigation between groups of content that are related and at the same level of hierarchy\cite{material-tabs}. By using Tabs, this screen can be split into two distinct sections: Detail Tab and Comments Tab, thus dividing responsibilities and making this screen more user-friendly.
  
 
 Details Tab (Figure \ref{fig:published-details}) features key details about this Notebook. Due to the fact that there are a lot of details to display, all the properties are  divided into several groups:
@@ -946,11 +953,11 @@ Notifications screen contains a scrollable list of all previously received notif
 On the of key requirements for \appname\ development is its architecture scalability. This section describes the approach chosen for its development and patterns in use.
 
 \subsection{Android Architecture Components}
-Previously, Google, as the leading Android contributor, never cared about the way developers build their applications. It has changed drastically with the introduction of Android Architecture Components (AAC) at Google I/O in 2017 \cite{android-archguide}.
+Previously, Google, as the leading Android contributor, never cared about the way developers build their applications. It has changed drastically with the introduction of Android Architecture Components (AAC) at Google I/O in 2017\cite{android-archguide}.
 Architecture Components are a collection of libraries that can be used to design a robust and maintainable architecture.  LiveData and ViewModel components are the most important.  LiveData is a lifecycle-aware component is used to store data and notify its subscribers if the data changes.  ViewModel can store UI-related data and survive Activity Destruction which is especially useful in case of device rotation for example.
 
 \subsection{Recommended Architecture}
-Introduction of Architecture Components made it clear what approach Google recommends when designing application architecture - MVVM. Figure \ref{fig-arch} demonstrates this approach:
+Introduction of Architecture Components made it clear what approach Google recommends when designing application architecture -- MVVM. Figure \ref{fig-arch} demonstrates this approach:
 \begin{itemize}
 	\item Fragments and Activities represent the View.
 	\item View is connected to a ViewModel. ViewModel there is represented by a ViewModel Architecture component that stores model data using LiveData, that Fragment or Activity can subscribe to. ViewModel requests data from the repository, without knowing where the data comes from.
@@ -960,7 +967,7 @@ Introduction of Architecture Components made it clear what approach Google recom
 \begin{figure}
 	\centering
   \includegraphics[scale=0.4]{final-architecture}
-  \caption{Architecture Example Diagram \cite{android-archcomponents} }
+  \caption{Architecture Example Diagram\cite{android-archcomponents} }
   \label{fig-arch}
 \end{figure}
 
@@ -1089,11 +1096,11 @@ Navigation is described using XML, Android  Studio also provides a visual editor
 One of the essential parts of AAC is ViewModel. \texttt{ViewModel} is the implementation of the ViewModel pattern provided by Google as a part of AAC.
 One of the key features of the ViewModel -- it can survive configuration changes. 
 
-Activity's lifecycle is on the of most problematic concepts in Android Development: because every configuration change, such as phone rotation for example, destroys shown Activity and it must be recreated, thus causing a lot of issues due to the lost UI state. ViewModel lifecycle is different. As shown in Figure \ref{fig:1}, the ViewModel remains in memory until the Lifecycle it's scoped to goes away permanently: in the case of an activity, when it finishes, while in the case of a Fragment when it's detached. The fact that ViewModel can survive configuration make ViewModel a perfect view state holder.
+Activity's lifecycle is on the of most problematic concepts in Android Development: because every configuration change, such as phone rotation for example, destroys shown Activity and it must be recreated, thus causing a lot of issues due to the lost UI state. ViewModel lifecycle is different. As shown in Figure \ref{fig:1}, the ViewModel remains in memory until the Lifecycle it's scoped to goes away permanently: in the case of an activity, when it finishes, while in the case of a Fragment when it's detached. The fact that ViewModel can survive configuration changes make ViewModel a perfect view state holder.
 
 \begin{figure}
 	\centering
-	\caption{ViewModel lifecycle \cite{viewmodel-lc}}
+	\caption{ViewModel lifecycle\cite{viewmodel-lc}}
 	\includegraphics[scale=0.7]{viewmodellf}
 	\label{fig:1}
 \end{figure}
