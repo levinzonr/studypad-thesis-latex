@@ -1,0 +1,262 @@
+\documentclass[a4paper]{beamer}
+%
+% Josef Hlavac & Tomas Zahradnicky (21.10.2010)
+%
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+%\pgfpagesuselayout{resize}[a4paper,border shrink=5mm,landscape]
+%\usepackage[czech]{babel}
+\usepackage[latin2]{inputenc}
+\usepackage{color}
+\usetheme{Boadilla}
+\usecolortheme{whale}
+\useinnertheme{circles}
+\usepackage{subfigure}
+\usepackage[czech,slovak,english]{babel}%\useinnertheme{rounded}
+%\useinnertheme{rectangles}
+%\useinnertheme{balls}
+\usefonttheme{professionalfonts}
+%
+
+
+
+\definecolor{BLUE}{HTML}{1976d2} % App primary color (primary)
+
+\setbeamercolor{palette primary}{bg=BLUE,fg=white}
+\setbeamercolor{structure}{fg=BLUE} % itemize, enumerate, etc
+
+\def\uv#1{\char92\relax #1\char34\relax}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\FirstName{Roman}
+\newcommand\FirstNameAbbreviated{R}
+\newcommand\LastName{Levinzon}
+\newcommand\Email{levinrom@fit.cvut.cz}
+\newcommand\DissertationTitle{StudyPad -- Android Client}
+%\newcommand\Department{Department of Theoretical Computer Science}
+%\newcommand\Department{Department of Digital Design}
+%\newcommand\Department{Department of Software Engineering}
+\newcommand\Department{Department of Software Ingeeneering}
+\newcommand\Faculty{Faculty of Information Technology}
+\newcommand\University{Czech Technical University in Prague}
+\newcommand\FacultyAndUniversityAbbr{FIT CTU}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subtitle{BBB}
+\subject{SUBJECT}
+\author[\FirstNameAbbreviated. \LastName]{\FirstName{} \LastName}
+\title{\DissertationTitle}
+\titlegraphic{\includegraphics[width=1.5cm]{pic/LogoCVUT.pdf}}
+\institute[\FacultyAndUniversityAbbr]{\Department\\ \Faculty\\ \University}
+\date{\today}
+%
+\begin{document}
+\begin{frame}
+%\begin{center}
+%\includegraphics[width=1.5cm]{pic/LogoCVUT.pdf}
+%\end{center}
+\titlepage
+\end{frame}
+
+\section{Outline}
+\subsection*{Outline}
+\begin{frame}[allowframebreaks]
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection*{Introduction}
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+\item ...
+\item ...
+\item ...
+\item ...
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contributions of the Thesis}
+\begin{enumerate}
+\item Contribution 1
+\begin{itemize}
+\item ...
+\item ...
+\item ...
+\end{itemize}
+\vspace*{.5cm}
+\item Contribution 2
+\begin{itemize}
+\item ...
+\item ...
+\item ...
+\end{itemize}
+\vspace*{.5cm}
+\item Contribution 3
+\begin{itemize}
+\item ...
+\item ...
+\item ...
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{Main Contents}
+\subsection*{Contribution 1}
+\begin{frame}
+\frametitle{Contribution 1}
+\framesubtitle{Colored Block Demonstration}
+Find below a demonstration of {\tt alertblock} environment that makes a red emphasized box. Use {\tt block} environment to get a blue one, or {\tt exampleblock} for a green one.
+\begin{alertblock}{Amdahl's law}
+\begin{equation}
+s=\frac{1}{1-F_E+\displaystyle\frac{F_E}{S_E}}\quad {\rm for}\quad 0\leq F_E\leq 1,\;S_E>0.
+\end{equation}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contribution 2}
+\framesubtitle{Columns Demonstration}
+\begin{columns}
+\begin{column}[t]{4cm}
+\begin{enumerate}
+\item first column content
+\item first column content
+\item first column content
+\item first column content
+\item first column content
+\item first column content
+\end{enumerate}
+\end{column}
+\begin{column}[t]{6cm}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2cm]{pic/LogoCVUT.pdf}
+\end{center}
+\caption{Logo \v{C}VUT.}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Contribution 3}
+\framesubtitle{Other Demonstrations}
+\begin{enumerate}
+\item Use {\tt \char92 alert\char123emphasized\char125} to get \alert{emphasized} text.
+\item Use {\tt \char92 begin\char123frame\char125\char91allowframebreaks\char93} to get a slide where {\tt\char92pagebreak} starts a new slide with the same name, such as this one. Note that the enumeration continues on the second page.
+\pagebreak
+\item This item continues from the previous slide.
+\end{enumerate}
+\end{frame}
+
+\section{Summary}
+\subsection*{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{enumerate}
+\item Briefly summarize your results here.
+\end{enumerate}
+\end{frame}
+
+\subsection*{Contributions}
+\begin{frame}
+\frametitle{Contributions of the Thesis}
+Brifly remind your contributions AGAIN!
+\bigskip
+\begin{enumerate}
+\item Contribution 1
+\begin{itemize}
+\item ...
+\item ...
+\end{itemize}
+\vspace*{.5cm}
+\item Contribution 2
+\begin{itemize}
+\item ...
+\item ...
+\end{itemize}
+\vspace*{.5cm}
+\item Contribution 3
+\begin{itemize}
+\item ...
+\item ...
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+\section*{Discussion}
+\subsection*{Discussion}
+\begin{frame}
+\begin{center}
+\vspace*{1cm}
+{\bf Thank you for your attention!}\\
+\vspace*{2cm}
+{\bf\Large \FirstName{} \LastName{}}\\
+{\tt \Email}
+\vspace*{1cm}
+\end{center}
+\vfill
+{\tiny {\bf Acknowledgement:} This research has been partially supported by the Ministry of Education, Youth, and Sport of the Czech Republic under research program MSM 6840770014. \fcolorbox{black}{green}{IF \the\day.\the\month.\the\year{} $\geq$ 31.12.2011 UPDATE MSM 6840770014}.}
+\end{frame}
+%
+\appendix
+\section{Opponent 1}
+\subsection{Remark 1}
+\begin{frame}
+\begin{block}{Remark 1}
+\begin{otherlanguage}{slovak}
+Za urèitý nedostatok \uv{rozhµadu} dizertanta pova¾ujem, ¾e ... Èo vie o tejto oblasti dizertant?
+\end{otherlanguage}
+\end{block}
+\begin{exampleblock}{Comment}
+\begin{otherlanguage}{czech}
+V práci není rozebírána ... S panem prof. souhlasím, ¾e oblast ... mù¾e být inspirující pro dal¹í práci a dìkuji za tuto pøipomínku.
+\end{otherlanguage}
+\end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+\subsection{Remark 2}
+\begin{frame}
+\begin{block}{Remark 2}
+\begin{otherlanguage}{slovak}
+Predpokladal som, ¾e ..., ich prehµad a posúdenie vhodnos»i chýbalo v práci.
+\end{otherlanguage}
+\end{block}
+\begin{exampleblock}{Comment}
+\begin{otherlanguage}{czech}
+Takový pøehled metod opravdu v práci není... Toto je jedna z vìcí, kterou mám na seznamu vìcí pro dal¹í výzkum.
+\end{otherlanguage}
+\end{exampleblock}
+\end{frame}
+
+
+\section{Opponent 2}
+\subsection{Remark 1}
+\begin{frame}
+\begin{block}{Remark 1}
+\begin{otherlanguage}{czech}
+Citovaný standard IEEE 754 z roku 1985 je zastaralý, v roce 2008 byl nahrazen novým, který pou¾ívá mj. i ponìkud jinou terminologii.
+\end{otherlanguage}
+\end{block}
+\begin{exampleblock}{Comment}
+\begin{otherlanguage}{czech}
+Dìkuji mnohokrát za upozornìní. Uniklo mi, ¾e ji¾ vy¹el nový standard IEEE 754-2008.
+\end{otherlanguage}
+\end{exampleblock}
+\end{frame}
+
+\section{Opponent 3}
+\subsection{Remark 1}
+\begin{frame}
+\begin{block}{Remark 1}
+...
+\end{block}
+\begin{exampleblock}{Odpovìï}
+\begin{otherlanguage}{czech}
+...
+\end{otherlanguage}
+\end{exampleblock}
+\end{frame}
+\end{document}
