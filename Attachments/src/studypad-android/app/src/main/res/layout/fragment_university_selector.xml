@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cz.levinzonr.studypad.presentation.screens.selectors.university.UniversitySelectorFragment">
+
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_margin="@dimen/space_big"
+            android:layout_width="0dp"
+            app:cardCornerRadius="@dimen/space_normal"
+            app:cardElevation="4dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/materialCardView3">
+
+        <androidx.appcompat.widget.SearchView
+                app:iconifiedByDefault="false"
+                android:queryHint="@string/default_search"
+                android:queryBackground="@android:color/transparent"
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/universitiesRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"/>
+
+
+    <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3"/>
+
+
+    <cz.levinzonr.studypad.presentation.common.EmptyStateView
+            android:id="@+id/emptyView"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LanguageSelectorViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.screens.selectors.language</a>&nbsp;/&nbsp;<a href="./index.html">LanguageSelectorViewModel</a><br/>
+<br/>
+<h1>LanguageSelectorViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">LanguageSelectorViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">LanguageSelectorViewModel</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.selectors.language.LanguageSelectorViewModel$<init>(cz.levinzonr.studypad.domain.interactors.GetAvailableLanguagesInteractor)/getAvailableLanguagesInteractor">getAvailableLanguagesInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors/-get-available-languages-interactor/index.html"><span class="identifier">GetAvailableLanguagesInteractor</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="language-live-data.html">languageLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">languageLiveData</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-locale/index.html"><span class="identifier">Locale</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigation-live-data.html">navigationLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">navigationLiveData</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.events/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens/-navigation-event/index.html"><span class="identifier">NavigationEvent</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/view-state-observalbe.html">viewStateObservalbe</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">viewStateObservalbe</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-state/index.html"><span class="identifier">BaseViewState</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/change-flow.html">changeFlow</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">changeFlow</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$changeFlow(cz.levinzonr.studypad.presentation.screens.Flow)/flow">flow</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens/-flow/index.html"><span class="identifier">Flow</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/handle-application-error.html">handleApplicationError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleApplicationError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$handleApplicationError(cz.levinzonr.studypad.domain.models.ApplicationError)/applicationError">applicationError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Converts Application Error in to View Error that can be presented by Fragmetns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-back.html">navigateBack</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateBack</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post a navigate back event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-to.html">navigateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateTo</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$navigateTo(androidx.navigation.NavDirections)/navDirections">navDirections</span><span class="symbol">:</span>&nbsp;<span class="identifier">NavDirections</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to perform a navigation event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post an error  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-network-unavailabe.html">showNetworkUnavailabe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showNetworkUnavailabe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to reflect bad connectivity  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/string.html">string</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">string</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$string(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/toggle-loading.html">toggleLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toggleLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$toggleLoading(kotlin.Boolean)/loading">loading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to toggle loading by updating base view state</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

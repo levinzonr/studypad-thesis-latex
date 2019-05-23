@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CommentsRepository - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.repository</a>&nbsp;/&nbsp;<a href="./index.html">CommentsRepository</a><br/>
+<br/>
+<h1>CommentsRepository</h1>
+<code><span class="keyword">interface </span><span class="identifier">CommentsRepository</span></code>
+<p>Comments reposiory interface to operate on Cooment model</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-comment.html">createComment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">createComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$createComment(kotlin.String, kotlin.String)/notebookId">notebookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$createComment(kotlin.String, kotlin.String)/body">body</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-comment.html">deleteComment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">deleteComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$deleteComment(kotlin.Long)/commentId">commentId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="edit-comment.html">editComment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">editComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$editComment(kotlin.Long, kotlin.String)/commentId">commentId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$editComment(kotlin.Long, kotlin.String)/body">body</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-comments.html">getComments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getComments</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.CommentsRepository$getComments(kotlin.String)/notebookId">notebookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.rest.repository/-comments-repository-impl/index.html">CommentsRepositoryImpl</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CommentsRepositoryImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">CommentsRepository</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

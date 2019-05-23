@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UserManager - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.managers</a>&nbsp;/&nbsp;<a href="./index.html">UserManager</a><br/>
+<br/>
+<h1>UserManager</h1>
+<code><span class="keyword">interface </span><span class="identifier">UserManager</span></code>
+<p>An interface that contains helper methods related to current user session</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-successful-login.html">afterSuccessfulLogin</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterSuccessfulLogin</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.managers.UserManager$afterSuccessfulLogin(cz.levinzonr.studypad.domain.models.UserProfile, kotlin.String)/userProfile">userProfile</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.managers.UserManager$afterSuccessfulLogin(cz.levinzonr.studypad.domain.models.UserProfile, kotlin.String)/token">token</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Convenience method to handle the user that has successfully started his session</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-current-user-info.html">getCurrentUserInfo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCurrentUserInfo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-current-user-info/index.html"><span class="identifier">CurrentUserInfo</span></a><span class="symbol">?</span></code>
+<p>Allows to access basic information about current user</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-preferences.html">getPreferences</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPreferences</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-preferences/index.html"><span class="identifier">Preferences</span></a></code>
+<p>Allows to access current user preferences</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-logged-in.html">isLoggedIn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isLoggedIn</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determines it there is an active user session</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="logout.html">logout</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">logout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Method that allows to finish current user session, thus loggin them out of the application</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-locale.html">setLocale</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setLocale</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.managers.UserManager$setLocale(cz.levinzonr.studypad.domain.models.Locale)/locale">locale</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-locale/index.html"><span class="identifier">Locale</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Allow to set new locale for the current user, as apposed to default one</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-notifications-enabled.html">setNotificationsEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setNotificationsEnabled</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.managers.UserManager$setNotificationsEnabled(kotlin.Boolean)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a new value for notifications preference</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-user-manager-impl/index.html">UserManagerImpl</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">UserManagerImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">UserManager</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

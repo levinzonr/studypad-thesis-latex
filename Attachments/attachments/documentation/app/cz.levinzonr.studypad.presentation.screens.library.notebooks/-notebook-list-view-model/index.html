@@ -1,0 +1,197 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NotebookListViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.screens.library.notebooks</a>&nbsp;/&nbsp;<a href="./index.html">NotebookListViewModel</a><br/>
+<br/>
+<h1>NotebookListViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">NotebookListViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">NotebookListViewModel</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/deleteNotebookInteractor">deleteNotebookInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.library/-delete-notebook-interactor/index.html"><span class="identifier">DeleteNotebookInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/updateNotebookInteractor">updateNotebookInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.library/-update-notebook-interactor/index.html"><span class="identifier">UpdateNotebookInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/notebookRepository">notebookRepository</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.repository/-notebook-repository/index.html"><span class="identifier">NotebookRepository</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/getNotebooksInteractor">getNotebooksInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.library/-get-notebooks-interactor/index.html"><span class="identifier">GetNotebooksInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/refreshFirebaseTokenInteractor">refreshFirebaseTokenInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-refresh-firebase-token-interactor/index.html"><span class="identifier">RefreshFirebaseTokenInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/quiclPublishInteractor">quiclPublishInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-quicl-publish-interactor/index.html"><span class="identifier">QuiclPublishInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/librarySyncInteractor">librarySyncInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.library/-library-sync-interactor/index.html"><span class="identifier">LibrarySyncInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$<init>(cz.levinzonr.studypad.domain.interactors.library.DeleteNotebookInteractor, cz.levinzonr.studypad.domain.interactors.library.UpdateNotebookInteractor, cz.levinzonr.studypad.domain.repository.NotebookRepository, cz.levinzonr.studypad.domain.interactors.library.GetNotebooksInteractor, cz.levinzonr.studypad.domain.interactors.keychain.RefreshFirebaseTokenInteractor, cz.levinzonr.studypad.domain.interactors.sharinghub.QuiclPublishInteractor, cz.levinzonr.studypad.domain.interactors.library.LibrarySyncInteractor, cz.levinzonr.studypad.domain.interactors.library.PostNotebookInteractor)/postNoteookInteractor">postNoteookInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.library/-post-notebook-interactor/index.html"><span class="identifier">PostNotebookInteractor</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="data-source.html">dataSource</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">dataSource</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="notebook-published-even.html">notebookPublishedEven</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">notebookPublishedEven</span><span class="symbol">: </span><span class="identifier">MutableLiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.events/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-feed/index.html"><span class="identifier">Feed</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigation-live-data.html">navigationLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">navigationLiveData</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.events/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens/-navigation-event/index.html"><span class="identifier">NavigationEvent</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/view-state-observalbe.html">viewStateObservalbe</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">viewStateObservalbe</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-state/index.html"><span class="identifier">BaseViewState</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-new-notebook.html">createNewNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">createNewNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$createNewNotebook(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-notebook.html">deleteNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$deleteNotebook(cz.levinzonr.studypad.domain.models.Notebook)/notebook">notebook</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-notebook-selected.html">onNotebookSelected</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onNotebookSelected</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$onNotebookSelected(cz.levinzonr.studypad.domain.models.Notebook)/notebook">notebook</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-show-published-notebook.html">onShowPublishedNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onShowPublishedNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$onShowPublishedNotebook(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="publish-notebook.html">publishNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">publishNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$publishNotebook(cz.levinzonr.studypad.domain.models.Notebook)/notebook">notebook</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="refresh-notebooks.html">refreshNotebooks</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">refreshNotebooks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="start-publish-notebook-flow.html">startPublishNotebookFlow</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">startPublishNotebookFlow</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$startPublishNotebookFlow(cz.levinzonr.studypad.domain.models.Notebook)/notebook">notebook</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="update-notebook.html">updateNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">updateNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$updateNotebook(cz.levinzonr.studypad.domain.models.Notebook, kotlin.String)/notebook">notebook</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.library.notebooks.NotebookListViewModel$updateNotebook(cz.levinzonr.studypad.domain.models.Notebook, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/change-flow.html">changeFlow</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">changeFlow</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$changeFlow(cz.levinzonr.studypad.presentation.screens.Flow)/flow">flow</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens/-flow/index.html"><span class="identifier">Flow</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/handle-application-error.html">handleApplicationError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleApplicationError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$handleApplicationError(cz.levinzonr.studypad.domain.models.ApplicationError)/applicationError">applicationError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Converts Application Error in to View Error that can be presented by Fragmetns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-back.html">navigateBack</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateBack</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post a navigate back event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-to.html">navigateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateTo</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$navigateTo(androidx.navigation.NavDirections)/navDirections">navDirections</span><span class="symbol">:</span>&nbsp;<span class="identifier">NavDirections</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to perform a navigation event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post an error  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-network-unavailabe.html">showNetworkUnavailabe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showNetworkUnavailabe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to reflect bad connectivity  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/string.html">string</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">string</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$string(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/toggle-loading.html">toggleLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toggleLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$toggleLoading(kotlin.Boolean)/loading">loading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to toggle loading by updating base view state</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PublishedNotebookCommentsViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.screens.sharinghub.comments</a>&nbsp;/&nbsp;<a href="./index.html">PublishedNotebookCommentsViewModel</a><br/>
+<br/>
+<h1>PublishedNotebookCommentsViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookCommentsViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PublishedNotebookCommentsViewModel</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$<init>(kotlin.String, cz.levinzonr.studypad.domain.interactors.comments.CreateCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.EditCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.DeleteCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.GetCommentsInteractor)/notebookId">notebookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$<init>(kotlin.String, cz.levinzonr.studypad.domain.interactors.comments.CreateCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.EditCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.DeleteCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.GetCommentsInteractor)/createCommentInteractor">createCommentInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.comments/-create-comment-interactor/index.html"><span class="identifier">CreateCommentInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$<init>(kotlin.String, cz.levinzonr.studypad.domain.interactors.comments.CreateCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.EditCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.DeleteCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.GetCommentsInteractor)/editCommentInteractor">editCommentInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.comments/-edit-comment-interactor/index.html"><span class="identifier">EditCommentInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$<init>(kotlin.String, cz.levinzonr.studypad.domain.interactors.comments.CreateCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.EditCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.DeleteCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.GetCommentsInteractor)/deleteCommentInteractor">deleteCommentInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.comments/-delete-comment-interactor/index.html"><span class="identifier">DeleteCommentInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$<init>(kotlin.String, cz.levinzonr.studypad.domain.interactors.comments.CreateCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.EditCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.DeleteCommentInteractor, cz.levinzonr.studypad.domain.interactors.comments.GetCommentsInteractor)/getCommentsInteractor">getCommentsInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.comments/-get-comments-interactor/index.html"><span class="identifier">GetCommentsInteractor</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="notebook-id.html">notebookId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">notebookId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigation-live-data.html">navigationLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">navigationLiveData</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.events/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens/-navigation-event/index.html"><span class="identifier">NavigationEvent</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/view-state-observalbe.html">viewStateObservalbe</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">viewStateObservalbe</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-state/index.html"><span class="identifier">BaseViewState</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-comment.html">createComment</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">createComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$createComment(kotlin.String)/body">body</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-comment.html">deleteComment</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$deleteComment(cz.levinzonr.studypad.domain.models.PublishedNotebook.Comment)/comment">comment</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="edit-comment.html">editComment</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">editComment</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$editComment(cz.levinzonr.studypad.domain.models.PublishedNotebook.Comment, kotlin.String)/comment">comment</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.sharinghub.comments.PublishedNotebookCommentsViewModel$editComment(cz.levinzonr.studypad.domain.models.PublishedNotebook.Comment, kotlin.String)/newBody">newBody</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-comments-live-data.html">getCommentsLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getCommentsLiveData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="load-comments.html">loadComments</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">loadComments</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/change-flow.html">changeFlow</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">changeFlow</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$changeFlow(cz.levinzonr.studypad.presentation.screens.Flow)/flow">flow</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens/-flow/index.html"><span class="identifier">Flow</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/handle-application-error.html">handleApplicationError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleApplicationError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$handleApplicationError(cz.levinzonr.studypad.domain.models.ApplicationError)/applicationError">applicationError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Converts Application Error in to View Error that can be presented by Fragmetns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-back.html">navigateBack</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateBack</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post a navigate back event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-to.html">navigateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateTo</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$navigateTo(androidx.navigation.NavDirections)/navDirections">navDirections</span><span class="symbol">:</span>&nbsp;<span class="identifier">NavDirections</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to perform a navigation event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post an error  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-network-unavailabe.html">showNetworkUnavailabe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showNetworkUnavailabe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to reflect bad connectivity  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/string.html">string</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">string</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$string(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/toggle-loading.html">toggleLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toggleLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$toggleLoading(kotlin.Boolean)/loading">loading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to toggle loading by updating base view state</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

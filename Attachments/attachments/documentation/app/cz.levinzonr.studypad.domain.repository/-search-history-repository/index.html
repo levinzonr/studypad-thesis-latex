@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SearchHistoryRepository - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.repository</a>&nbsp;/&nbsp;<a href="./index.html">SearchHistoryRepository</a><br/>
+<br/>
+<h1>SearchHistoryRepository</h1>
+<code><span class="keyword">interface </span><span class="identifier">SearchHistoryRepository</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="clear.html">clear</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-search-entries.html">getAllSearchEntries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllSearchEntries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-search-entry/index.html"><span class="identifier">SearchEntry</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="save-search-entry.html">saveSearchEntry</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">saveSearchEntry</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.SearchHistoryRepository$saveSearchEntry(cz.levinzonr.studypad.domain.models.SearchEntry)/searchEntry">searchEntry</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-search-entry/index.html"><span class="identifier">SearchEntry</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.rest.repository/-search-history-repository-impl/index.html">SearchHistoryRepositoryImpl</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SearchHistoryRepositoryImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SearchHistoryRepository</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

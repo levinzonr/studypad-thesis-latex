@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KeychainRepositoryImpl - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.rest.repository</a>&nbsp;/&nbsp;<a href="./index.html">KeychainRepositoryImpl</a><br/>
+<br/>
+<h1>KeychainRepositoryImpl</h1>
+<code><span class="keyword">class </span><span class="identifier">KeychainRepositoryImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.repository/-keychain-repository/index.html"><span class="identifier">KeychainRepository</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">KeychainRepositoryImpl</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$<init>(cz.levinzonr.studypad.rest.Api, cz.levinzonr.studypad.domain.managers.UserManager)/api">api</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.rest/-api/index.html"><span class="identifier">Api</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$<init>(cz.levinzonr.studypad.rest.Api, cz.levinzonr.studypad.domain.managers.UserManager)/userManager">userManager</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.managers/-user-manager/index.html"><span class="identifier">UserManager</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-account.html">createAccount</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">createAccount</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$createAccount(kotlin.String, kotlin.String, kotlin.String, kotlin.String)/email">email</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$createAccount(kotlin.String, kotlin.String, kotlin.String, kotlin.String)/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$createAccount(kotlin.String, kotlin.String, kotlin.String, kotlin.String)/firstName">firstName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$createAccount(kotlin.String, kotlin.String, kotlin.String, kotlin.String)/lasName">lasName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="login.html">login</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$login(kotlin.String, kotlin.String)/email">email</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$login(kotlin.String, kotlin.String)/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="login-via-facebook.html">loginViaFacebook</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">loginViaFacebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$loginViaFacebook(kotlin.String)/token">token</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="login-via-google.html">loginViaGoogle</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">loginViaGoogle</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.rest.repository.KeychainRepositoryImpl$loginViaGoogle(kotlin.String)/token">token</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

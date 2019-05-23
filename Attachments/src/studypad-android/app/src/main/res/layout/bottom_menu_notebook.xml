@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notebookOpenShared"
+        app:icon="@drawable/ic_round_open_in_browser_24px"
+        android:text="@string/library_openshared"
+        style="@style/Button.TextMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notebookPublishBtn"
+        app:icon="@drawable/ic_round_publish_24px"
+        android:text="@string/library_publish"
+        style="@style/Button.TextMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notebookShareBtn"
+        app:icon="@drawable/ic_round_share_24px"
+        android:text="@string/default_share"
+        style="@style/Button.TextMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.google.android.material.button.MaterialButton
+            style="@style/Button.TextMenu"
+            android:id="@+id/notebookCopyBtn"
+            app:icon="@drawable/ic_content_copy_black_24dp"
+            android:text="@string/library_action_copy_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notebookEditBtn"
+        app:icon="@drawable/ic_edit"
+        android:text="@string/default_edit"
+        style="@style/Button.TextMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notebookDeleteBtn"
+        app:icon="@drawable/ic_outline_delete_24px"
+        android:text="@string/default_delete"
+        style="@style/Button.TextMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
+</LinearLayout>

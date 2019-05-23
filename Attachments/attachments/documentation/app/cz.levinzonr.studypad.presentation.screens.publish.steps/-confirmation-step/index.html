@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConfirmationStep - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.screens.publish.steps</a>&nbsp;/&nbsp;<a href="./index.html">ConfirmationStep</a><br/>
+<br/>
+<h1>ConfirmationStep</h1>
+<code><span class="keyword">class </span><span class="identifier">ConfirmationStep</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-step/index.html"><span class="identifier">BaseStep</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens.publish/-publish-models/-step-four-result/index.html"><span class="identifier">StepFourResult</span></a><span class="symbol">&gt;</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ConfirmationStep</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.ConfirmationStep$<init>(cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep.StepViewClickListener, kotlin.String, kotlin.String)/stepViewClickListener">stepViewClickListener</span><span class="symbol">:</span>&nbsp;<a href="../-base-step/-step-view-click-listener/index.html"><span class="identifier">StepViewClickListener</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.ConfirmationStep$<init>(cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep.StepViewClickListener, kotlin.String, kotlin.String)/title">title</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.ConfirmationStep$<init>(cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep.StepViewClickListener, kotlin.String, kotlin.String)/content">content</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-base-step/listener.html">listener</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">listener</span><span class="symbol">: </span><a href="../-base-step/-step-view-click-listener/index.html"><span class="identifier">StepViewClickListener</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/step-view.html">stepView</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">stepView</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-step-data.html">getStepData</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getStepData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.presentation.screens.publish/-publish-models/-step-four-result/index.html"><span class="identifier">StepFourResult</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-step-resource-id.html">getStepResourceId</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getStepResourceId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-step-view-created.html">onStepViewCreated</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onStepViewCreated</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-default-data.html">setDefaultData</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setDefaultData</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.ConfirmationStep$setDefaultData(cz.levinzonr.studypad.presentation.screens.publish.PublishModels.StepFourResult)/stepData">stepData</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens.publish/-publish-models/-step-four-result/index.html"><span class="identifier">StepFourResult</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-base-step/create-step-content-layout.html">createStepContentLayout</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">createStepContentLayout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/get-step-data-as-human-readable-string.html">getStepDataAsHumanReadableString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getStepDataAsHumanReadableString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/is-step-data-valid.html">isStepDataValid</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isStepDataValid</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$isStepDataValid(cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep.T)/stepData">stepData</span><span class="symbol">:</span>&nbsp;<a href="../-base-step/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">IsDataValid</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/on-step-closed.html">onStepClosed</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStepClosed</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$onStepClosed(kotlin.Boolean)/animated">animated</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/on-step-marked-as-completed.html">onStepMarkedAsCompleted</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStepMarkedAsCompleted</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$onStepMarkedAsCompleted(kotlin.Boolean)/animated">animated</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/on-step-marked-as-uncompleted.html">onStepMarkedAsUncompleted</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStepMarkedAsUncompleted</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$onStepMarkedAsUncompleted(kotlin.Boolean)/animated">animated</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/on-step-opened.html">onStepOpened</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStepOpened</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$onStepOpened(kotlin.Boolean)/animated">animated</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-step/restore-step-data.html">restoreStepData</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">restoreStepData</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep$restoreStepData(cz.levinzonr.studypad.presentation.screens.publish.steps.BaseStep.T)/data">data</span><span class="symbol">:</span>&nbsp;<a href="../-base-step/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

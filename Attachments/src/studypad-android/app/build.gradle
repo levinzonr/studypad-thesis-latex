@@ -1,0 +1,194 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+apply plugin: 'org.jetbrains.dokka-android'
+
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "cz.levinzonr.studypad"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 4
+        versionName "0.1.3"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dokka {
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/javadoc"
+    }
+
+    signingConfigs {
+
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file('../studypad.keystore')
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+
+    buildTypes {
+
+        release {
+            signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        production {
+            dimension "default"
+            resValue "string", "facebook_app_id", "1207464616087822"
+            resValue "string", "fb_login_protocol_scheme", "1207464616087822"
+
+            buildConfigField "String", "API_URL", "\"https://studypad.herokuapp.com\""
+            signingConfig signingConfigs.release
+            // buildConfigField "String", "API_URL", "\"http://10.0.2.2:8080\""
+
+        }
+
+        staging {
+            dimension "default"
+            applicationIdSuffix ".staging"
+
+            resValue "string", "facebook_app_id", "329358501112026"
+            resValue "string", "fb_login_protocol_scheme", "fb329358501112026"
+
+            buildConfigField "String", "API_URL", "\"https://studypad.herokuapp.com\""
+            // buildConfigField "String", "API_URL", "\"http://10.0.2.2:8080\""
+        }
+    }
+
+
+}
+
+dependencies {
+    def koin_version = '1.0.2',
+        nav_version = '2.1.0-alpha02',
+        retrofit_version = "2.5.0",
+        okhttp_version = '3.14.1',
+        room_version = '2.1.0-alpha03'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version" // For Kotlin use navigation-fragment-ktx
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version" // For Kotlin use navigation-ui-ktx
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+
+    api "com.android.support:design:28.0.0"
+    implementation "com.android.support:support-v4:28.0.0"
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'q.rorbin:badgeview:1.1.3'
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
+    implementation 'com.github.cmfsotelo:fliplayout:1.1.1'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version") {
+        exclude module: "retrofit:$retrofit_version"
+    }
+
+    implementation 'com.github.frhnfrq:MathView:1.1'
+    compile 'io.github.kexanie.library:MathView:0.0.6'
+    implementation 'com.github.kobakei:MaterialFabSpeedDial:2.0.0-RC1'
+
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    implementation 'com.github.ibrahimsn98:android-particles:1.6'
+    implementation 'com.ernestoyaquello.stepperform:vertical-stepper-form:2.1.1'
+
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha04'
+    kapt "androidx.room:room-compiler:$room_version" // use kapt for Kotlin
+
+    // optional - Coroutines support for Room
+    implementation "androidx.room:room-coroutines:$room_version"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    // DI
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    implementation 'joda-time:joda-time:2.10.1'
+    implementation "com.tyro.oss:arbitrater:0.0.6"
+
+
+    implementation 'com.github.Nishant-Pathak:MathView:v1.1'
+    implementation 'com.github.gregcockroft:AndroidMath:ALPHA'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-auth:16.2.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.0'
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+
+    // Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:4.36.0'
+    implementation 'com.facebook.android:facebook-login:4.36.0'
+
+    //Google Auth
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+
+    implementation 'dk.nodes.utils:okhttp:0.11'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha04'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-beta01'
+    implementation 'com.google.android.material:material:1.1.0-alpha05'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha04'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha03'
+    implementation 'com.google.android.gms:play-services-oss-licenses:16.0.2'
+    implementation 'com.lmntrx.android.library.livin.missme:missme:0.1.5'
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'

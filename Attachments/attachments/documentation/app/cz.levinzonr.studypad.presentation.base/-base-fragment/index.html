@@ -1,0 +1,377 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseFragment - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.base</a>&nbsp;/&nbsp;<a href="./index.html">BaseFragment</a><br/>
+<br/>
+<h1>BaseFragment</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Fragment</span></code>
+<p>Base Fragment for the others to extend
+It provides number of helper methods to address most common actions like dialogs e.t.c</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BaseFragment</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base Fragment for the others to extend
+It provides number of helper methods to address most common actions like dialogs e.t.c</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="progress-dialog.html">progressDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">progressDialog</span><span class="symbol">: </span><span class="identifier">ProgressDialog</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="view-model.html">viewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">viewModel</span><span class="symbol">: </span><a href="../-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="copy-to-clipboard.html">copyToClipboard</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">copyToClipboard</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$copyToClipboard(kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to copy text to clipboard</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-activity-created.html">onActivityCreated</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onActivityCreated</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$onActivityCreated(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-lose-focus.html">onLoseFocus</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onLoseFocus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-view-created.html">onViewCreated</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onViewCreated</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$onViewCreated(android.view.View, android.os.Bundle)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$onViewCreated(android.view.View, android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="share-message.html">shareMessage</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">shareMessage</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$shareMessage(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$shareMessage(kotlin.String, kotlin.String)/link">link</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to share notebook deeplink</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Default method that will show an error</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show-loading.html">showLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$showLoading(kotlin.Boolean)/isLoading">isLoading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Default method to reflect the loading state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show-network-unavailable-error.html">showNetworkUnavailableError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showNetworkUnavailableError</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Default implementation of the method that provides the info about bad connectivity</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show-simple-dialog.html">showSimpleDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showSimpleDialog</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$showSimpleDialog(kotlin.String, kotlin.String)/title">title</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$showSimpleDialog(kotlin.String, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to show simple info dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show-toast.html">showToast</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showToast</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseFragment$showToast(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="subscribe.html">subscribe</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">subscribe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Method where all the other fragments manage their subscription</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad/base-activity.html">baseActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">.</span><span class="identifier">baseActivity</span><span class="symbol">: </span><a href="../-base-activity/index.html"><span class="identifier">BaseActivity</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad/support-action-bar.html">supportActionBar</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">.</span><span class="identifier">supportActionBar</span><span class="symbol">: </span><span class="identifier">ActionBar</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad/androidx.fragment.app.-fragment/get-quantaty-string.html">getQuantatyString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Fragment</span><span class="symbol">.</span><span class="identifier">getQuantatyString</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad$getQuantatyString(androidx.fragment.app.Fragment, kotlin.Int, kotlin.Int)/stirngRes">stirngRes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad$getQuantatyString(androidx.fragment.app.Fragment, kotlin.Int, kotlin.Int)/quantaty">quantaty</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.onboarding.signup/-account-created-fragment/index.html">AccountCreatedFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">AccountCreatedFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.onboarding.signup/-account-info-fragment/index.html">AccountInfoFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">AccountInfoFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.challenge/-challenge-complete-fragment/index.html">ChallengeCompleteFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ChallengeCompleteFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges/-challenges-fragment/index.html">ChallengesFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ChallengesFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.challenges/-challenges-overview-adapter/-challenges-list-item-listener/index.html"><span class="identifier">ChallengesListItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.onboarding.signup/-credentials-info-fragment/index.html">CredentialsInfoFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CredentialsInfoFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.profile.edit/-edit-profile-fragment/index.html">EditProfileFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">EditProfileFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.flashcards/-flashcard-challenge-fragment/index.html">FlashcardChallengeFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">FlashcardChallengeFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.flashcards/-flashcard-challenge-adapter/-learning-challenge-adapter-listener/index.html"><span class="identifier">LearningChallengeAdapterListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.learning/-learning-challenge-fragment/index.html">LearningChallengeFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LearningChallengeFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.onboarding.login/-login-fragment/index.html">LoginFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LoginFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.library.notes/-note-detail-fragment/index.html">NoteDetailFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NoteDetailFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.common/-note-edit-view/-note-edit-view-listener/index.html"><span class="identifier">NoteEditViewListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.library.notebooks/-notebook-list-fragment/index.html">NotebookListFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotebookListFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.library.notebooks/-notebooks-adapter/-notebook-item-listener/index.html"><span class="identifier">NotebookItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions/-notebook-suggestions-fragment/index.html">NotebookSuggestionsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotebookSuggestionsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions/-suggestions-adapter/-suggestion-item-listener/index.html"><span class="identifier">SuggestionItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.search/-notebooks-search-fragment/index.html">NotebooksSearchFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotebooksSearchFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.feed/-published-notebooks-adapter/-published-notebook-item-listener/index.html"><span class="identifier">PublishedNotebookItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.library.notes/-notes-list-fragment/index.html">NotesListFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotesListFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.library.notes/-notes-adapter/-notes-item-listener/index.html"><span class="identifier">NotesItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.notifications/-notifications-fragment/index.html">NotificationsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotificationsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.notifications/-notifications-adapter/-notification-items-listener/index.html"><span class="identifier">NotificationItemsListener</span></a><span class="symbol">, </span><a href="../-notification-handler/index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.profile/-profile-fragment/index.html">ProfileFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ProfileFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.publish/-publish-notebook-fragment/index.html">PublishNotebookFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishNotebookFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><span class="identifier">StepperFormListener</span><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.publish.steps/-base-step/-step-view-click-listener/index.html"><span class="identifier">StepViewClickListener</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.comments/-published-notebook-comments-fragment/index.html">PublishedNotebookCommentsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookCommentsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.comments/-comments-adapter/-comments-item-listener/index.html"><span class="identifier">CommentsItemListener</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a><span class="symbol">, </span><a href="../-notification-handler/index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-published-notebook-description-fragment/index.html">PublishedNotebookDescriptionFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookDescriptionFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-note-preview-adapter/-note-preview-listener/index.html"><span class="identifier">NotePreviewListener</span></a><span class="symbol">, </span><a href="../-notification-handler/index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-published-notebook-detail-fragment/index.html">PublishedNotebookDetailFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookDetailFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../-notification-handler/index.html"><span class="identifier">NotificationHandler</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-published-notes-list-fragment/index.html">PublishedNotesListFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotesListFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.library.notes/-notes-adapter/-notes-item-listener/index.html"><span class="identifier">NotesItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions.review/-review-suggestions-fragment/index.html">ReviewSuggestionsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ReviewSuggestionsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions.review/-review-suggestions-adapter/-review-suggestions-listener/index.html"><span class="identifier">ReviewSuggestionsListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.about.feedback/-send-feedback-fragment/index.html">SendFeedbackFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SendFeedbackFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.settings/-settings-fragment/index.html">SettingsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SettingsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.setup/-setup-challenge-fragment/index.html">SetupChallengeFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SetupChallengeFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.feed/-sharing-hub-fragment/index.html">SharingHubFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SharingHubFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../-notification-handler/index.html"><span class="identifier">NotificationHandler</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.feed/-published-notebooks-adapter/-published-notebook-item-listener/index.html"><span class="identifier">PublishedNotebookItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.university/-university-selector-fragment/index.html">UniversitySelectorFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">UniversitySelectorFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.challenges.write/-write-challenge-fragment/index.html">WriteChallengeFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">WriteChallengeFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseFragment</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

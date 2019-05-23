@@ -1,0 +1,341 @@
+<resources>
+    <string translatable="false" name="app_name">StudyPad</string>
+
+
+    <string name="error_network_title">You\'re offline</string>
+    <string name="error_network_message">You seem to be offline. Please check your internet connection and try again</string>
+
+    <string name="error_unknown_title">Unknown error</string>
+    <string name="error_unknown_message">An unknown error has occurred</string>
+
+    <string name="error_login_title">Error Logging In</string>
+    <string name="error_login_credentials_message">We haven\'t find any user with such Email/Password combination.\nPlease check your credentials and try again</string>
+    <string name="error_login_provider_message">Looks like you\'ve already signed up with another provider. Please choose the provider you\'ve used during registration</string>
+    <string name="error_signup_title">Error creating account</string>
+
+
+    <string name="error_publish_title">Error publishing</string>
+    <string name="error_publish_message">There was an error while making this notebook public. Please make sure this notebook is not published already and all details provided are valid</string>
+
+
+    <string name="navigation_library">My Library</string>
+    <string name="navigation_sharing_hub">Sharing Hub</string>
+    <string name="navigation_profile">Profile</string>
+    <string name="navigation_challenges">Challenges</string>
+
+    <!-- Default Section -->
+    <string name="default_edit">Edit</string>
+    <string name="default_delete">Delete</string>
+    <string name="default_send">Send</string>
+    <string name="default_share">Share</string>
+    <string name="default_copy">Copy</string>
+    <string name="default_cancel">Cancel</string>
+    <string name="default_try_again">Try Again</string>
+    <string name="default_confirm">Confirm</string>
+    <string name="default_continue">Continue</string>
+    <string name="default_see_all">See All</string>
+    <string name="default_share_with">Share via…</string>
+    <string name="default_reload">Reload</string>
+    <string name="default_copied">Copied to clipboard</string>
+    <string name="default_show_all">Show all</string>
+    <string name="default_or">Or</string>
+    <string name="default_exit">Exit</string>
+    <string name="default_submit">Submit</string>
+    <string name="default_search">Search</string>
+    <string name="defautl_share_message">Checkout this notebook %1$s \n %2$s</string>
+
+    <string name="progress_default">Loading…</string>
+    <string name="progress_login">Logging in…</string>
+    <string name="progress_signup">Creating an account…</string>
+    <string name="progress_publishing">Publishing your notebook…</string>
+    <string name="progress_review">Submitting review</string>
+
+    <!-- My Library Section -->
+    <string name="library_notebooks_title">My Notebooks</string>
+    <plurals name="library_notescount_published">
+        <item quantity="zero">No notes ∙ published</item>
+        <item quantity="one">%d note ∙ published</item>
+        <item quantity="other">%d notes ∙ published</item>
+    </plurals>
+
+    <plurals name="library_notescount_imported">
+        <item quantity="zero">No notes ∙ imported</item>
+        <item quantity="one">%d note ∙ imported</item>
+        <item quantity="other">%d notes ∙ imported</item>
+    </plurals>
+
+    <string name="library_notescount_0">No notes</string>
+    <string name="library_notescount_0_imported">No notes ∙ imported</string>
+    <string name="library_notescount_0_published">No notes ∙ published</string>
+
+    <plurals name="library_notescount">
+        <item quantity="zero">No notes</item>
+        <item quantity="one">%d note</item>
+        <item quantity="other">%d notes</item>
+    </plurals>
+
+    <string name="library_note_title_hint">Title</string>
+    <string name="library_note_content_hint">Enter your note..</string>
+
+    <string name="library_publish">Publish</string>
+    <string name="library_openshared">Open published version</string>
+    <string name="library_notebook_create_title">New notebook</string>
+    <string name="library_notebook_create_message">Enter new notebook name</string>
+    <string name="library_notebook_edit_title">Edit notebook</string>
+    <string name="library_notebook_edit_message">Choose new name for your notebook</string>
+    <string name="library_notebook_create_hint">Notebook name</string>
+    <string name="library_notes_title">Notes</string>
+    <string name="library_notes_empty_title">No notes</string>
+    <string name="library_notes_empty_message">There are no notes in this notebook</string>
+    <string name="library_notebooks_empty_title">No notebooks</string>
+    <string name="library_notebooks_empty_message">There are no notebooks in your library yet</string>
+    <string name="library_note_detail">Note details</string>
+    <!-- Publishing Section -->
+
+    <string name="publish_step1_title">Basic details</string>
+    <string name="publish_step1_message">Here is what we already know, check if everything is OK</string>
+    <string name="publish_step1_notebook_hint">Name of the notebook</string>
+    <string name="publish_step1_language_hint">Language</string>
+    <string name="publish_step1_language_message">The language of the main content</string>
+    <string name="publish_step1_uni_hint">Associated school or university</string>
+
+    <string name="publish_step2_title">Notebook\'s topic</string>
+    <string name="publish_step2_message">Help others to find this notebooks by providing some additional details</string>
+    <string name="publish_step2_topic_hint">Subject</string>
+    <string name="publish_step2_topic_message">Main subject of your notebook</string>
+    <string name="publish_step2_tags_title">Associated tags</string>
+    <string name="publish_step2_tags_add">Add tags</string>
+
+    <string name="publish_step3_title">Description</string>
+    <string name="publish_step3_message">Feel free to provide any other info you think is relevant, or just leave a message for your fellow students :)</string>
+    <string name="publish_step3_hint">Your message…</string>
+
+    <string name="publish_step4_title">Confirmation</string>
+    <string name="publish_step4_message">You\'re good to go and just one click away from publishing</string>
+
+    <!--Profile Section -->
+
+    <string name="profile_title">Profile</string>
+    <string name="profile_edit">Edit Profile</string>
+    <string name="profile_notifications">Notifications</string>
+    <string name="profile_settings">Settings</string>
+    <string name="profile_about">About</string>
+    <string name="profile_edit_name_hint">Display name</string>
+    <string name="profile_edit_uni_hint">Choose university</string>
+
+    <!-- Settings Section -->
+    <string name="settings_notifications_title">Notifications</string>
+    <string name="settings_notifications_value">Enable push-notifications</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_account_title">Account</string>
+    <string name="settings_account_delete">Delete account</string>
+    <string name="settings_account_logout">Logout</string>
+
+    <!-- About Section -->
+    <string name="about_licenses">Open sourced licenses</string>
+    <string name="about_privacy">Privacy policy</string>
+    <string name="about_feedback">Send feedback</string>
+    <string name="about_feedback_hint">Your feedback</string>
+    <string name="about_feedback_success">Thank you for your feedback</string>
+    <string name="about_feedback_title">Send Feedback</string>
+    <string name="about_feedback_message">We will automatically collect basic information such as the app version, OS version and device information</string>
+    <string name="about_version">Version %1$s (%2$d)</string>
+
+    <!-- Notifications Section -->
+    <string name="notifications_empty_title">It\'s quite here…</string>
+    <string name="notifications_empty_message">You haven\'t receive any notifications yet</string>
+    <string name="notifications_mark_read">Mark as Read</string>
+
+    <string name="notification_comment_title">New comment</string>
+    <string name="notification_comment_message">%1$s left a new comment on your %2$s notebook</string>
+    <string name="notification_suggestion_title">Suggestion Added</string>
+    <string name="notification_suggestion_message">%1$s notebook got a new suggestion, take a look!</string>
+    <string name="notification_update_title">Notebook update</string>
+    <string name="notification_update_message">New version of the %1$s notebook is available</string>
+
+
+    <string name="university_default_title">Start by typing schools name</string>
+    <string name="university_empty_title">No universities found</string>
+    <string name="university_add_title">Missing school</string>
+    <string name="university_add_message">Provide the school name you think is missing</string>
+    <string name="university_add_action">Suggest missing school</string>
+    <string name="university_hint">School name</string>
+
+
+    <!-- Sharing hub Section -->
+    <string name="sharinghub_title">Sharing Hub</string>
+    <string name="sharinghub_recent_notifications">Recent notifications</string>
+    <string name="sharinghub_section_uni">From your school</string>
+    <string name="sharinghub_section_popular">Popular</string>
+    <string name="sharinghub_section_recent">Recently updated</string>
+    <string name="sharinghub_dets_lastupdated">last updated: %1$s</string>
+    <string name="sharinghub_dets_title">Details</string>
+    <string name="sharinghub_dets_comments">Comments</string>
+    <string name="sharinghub_dets_more_title">More information</string>
+    <string name="sharinghub_success_import">Notebook saved</string>
+    <string name="sharinghub_success_import_copy">Notebook copied</string>
+    <string name="sharinghub_success_import_updated">Notebook updated</string>
+
+
+    <string name="sharinghub_dets_desc_title">Description</string>
+    <string name="sharinghub_dets_tags_title">Associated tags</string>
+    <string name="sharinghub_dets_notes_title">Notes inside</string>
+    <string name="sharinghub_dets_syggestions_empty">There are no pending suggestions yet</string>
+    <plurals name="sharinghub_dets_suggestions_message">
+        <item quantity="one">There is one pending suggestion</item>
+        <item quantity="other">There are %d pending suggestions</item>
+    </plurals>
+
+    <string name="sharinhub_dets_suggestions_add">Propose a suggestion</string>
+    <string name="sharinghub_dets_suggestions_view">Show suggestions</string>
+
+    <string name="sharinghub_dets_comment_hint">Comment…</string>
+    <string name="sharinghub_dets_comment_edit">Edit comment</string>
+
+    <string name="sharinghub_excluded_title">This notebook is only accessible by a link. Provide additional details for others to find it</string>
+    <string name="sharinghub_excluded_btn">Make public</string>
+
+    <string name="sharinghub_version_none_action">Import</string>
+    <string name="sharinghub_version_none_message">Looks like you don\'t have this notebook yet</string>
+    <string name="sharinghub_version_update_action">Update</string>
+    <string name="sharinghub_version_update_message">There is a newer version of this notebook</string>
+    <string name="sharinghub_version_modify_action">Apply changes</string>
+    <string name="sharinghub_version_modify_message">Your local notebook have derived from it\'s published version. Tap to apply the changes</string>
+    <string name="sharinghub_version_suggest_message">Looks like you\'ve applied some changes to on your local notebook. Do you want to purpose a suggestion?</string>
+    <string name="sharinghub_version_suggest_action">Propose my suggestions</string>
+
+
+    <!-- Sharing Search Section -->
+    <string name="sharinghub_search_default_title">Explore!</string>
+    <string name="sharinghub_search_default_message">Start searching for new notebooks by selecting on of the search options</string>
+    <string name="sharinghub_search_options_uni">University</string>
+    <string name="sharinghub_search_options_category">Category</string>
+    <string name="sharinghub_search_options_tags">Tags</string>
+    <string name="sharinghub_search_empty_title">Nothing found</string>
+    <string name="sharinghub_search_empty_message">There are no notebooks like that yet</string>
+    <string name="sharinghub_search_error_title">Error loading notebooks</string>
+
+    <!-- Challenges Section -->
+    <string name="challenges_title">Challenges</string>
+    <string name="challenges_recently">Recently completed</string>
+    <string name="challenges_type_write">Write</string>
+    <string name="challenges_type_flashcards">Flashcards</string>
+    <string name="challenges_type_selfcheck">Self-check</string>
+    <string name="challenges_quick_title">Quick challenge</string>
+    <string name="challenges_configure">Configure challenge</string>
+    <string name="challenges_empty_title">No recent challenges</string>
+    <string name="challenges_empty_message">Time to start studying! Select on the pre-set challenges or configure your own!</string>
+
+    <string name="challenges_setup_title">Setup challenge</string>
+    <string name="challenges_setup_type_default">Select challenge to continue</string>
+    <string name="challenges_setup_type_flashcards">Walk through your notes one by one and try to learn as much as you can</string>
+    <string name="challenges_setup_type_selfcheck">Check yourself if you know every note in the book</string>
+    <string name="challenges_setup_type_write">Written challenge, best suited when learning a new language</string>
+    <string name="challenges_setup_notebook_title">Notebook</string>
+    <string name="challenges_setup_notebook_subtitle">Select a notebook to study</string>
+    <string name="challenges_setup_shuffle_title">Shuffle</string>
+    <string name="challenges_setup_shuffle_subtitle">Randomize notes order</string>
+    <string name="challenges_setup_revers_title">Title</string>
+    <string name="challenges_setup_reverse_subtitle">Use note\'s content as an answer</string>
+    <string name="challenges_setup_start">Start challenge</string>
+    <string name="challenges_leave_title">Leave challenge</string>
+    <string name="challenges_leave_message">Are you sure you want to leave this challenge, progress won\'t be saved</string>
+
+    <string name="challenge_selfcheck_know">I know that!</string>
+    <string name="challenge_selfcheck_dontknow">Study again</string>
+    <string name="challenge_write_hint">Your answer…</string>
+
+    <string name="challenge_completed_start_again">Start again</string>
+    <string name="challenge_completed_percentage">%1$d%%</string>
+    <string name="challenge_completed_flashcards_title">Well done!</string>
+    <string name="challenge_completed_message">%1$s challenge is completed!</string>
+    <plurals name="challenge_completed_flashcards_message">
+        <item quantity="one">%d note studied</item>
+        <item quantity="other">%d notes studied</item>
+    </plurals>
+
+
+    <string name="suggestions_title">Pending suggestions</string>
+    <string name="suggestions_review">Review</string>
+    <string name="suggestion_body_update">%1$s suggested to update the %2$s note</string>
+    <string name="suggestion_body_add">%1$s suggested to add new note: %2$s</string>
+    <string name="suggestions_reject">Reject</string>
+    <string name="suggestions_approve">Approve</string>
+    <string name="suggestion_type_add">New note %s</string>
+    <string name="suggestion_type_upd">Updated note %s</string>
+    <string name="suggestion_upd_new">Updated version</string>
+    <string name="suggestion_upd_old">Current version</string>
+    <string name="suggestion_author">∙ by %1$s</string>
+    <string name="suggestions_review_state">%1$d approved ∙ %2$d rejected</string>
+    <string name="suggestions_review_count">%1$d/%2$d reviewed</string>
+    <string name="suggestion_conflict">Suggestions conflict</string>
+    <string name="suggestion_conflict_message">Both %1$s and %2$s have suggested to update this note, casing a conflict. Only one must be applied</string>
+    <string name="suggestion_empty">No new suggestions yet</string>
+    <string name="suggestions_info_title">Collaboration in StudyPad</string>
+    <string name="suggestions_info_message">When you have published notebook saved in your library, you can help others users build perfect study materials\n\n Every modification and change you make to you local version can be made into suggestion, allowing author of the notebook either approve or reject it \n\n
+        When you\'re the author of published notebook, you can apply these changes (i.e changes from your local notebook) straight away, and, being the author of a notebook, it is your responsibility
+        to review suggestions you receive from your other users. Just remember: No conflicts :)
+    </string>
+
+
+    <!-- Login  -->
+
+    <string name="login_login_button">Login</string>
+    <string name="login_create_account">Create Account</string>
+    <string name="login_continue_with">Continue with</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_email_hint">E-mail</string>
+
+    <string name="signup_firstname_hint">First name</string>
+    <string name="signup_lastname_hint">Last name</string>
+    <string name="signup_firstname_error">Invalid first name</string>
+    <string name="signup_lastname_error">Invalid last name</string>
+    <string name="signup_password_error">Invalid password</string>
+    <string name="signup_email_error">Invalid e-mail</string>
+
+    <string name="signup_completed_title">Are you a student?</string>
+    <string name="signup_completed_message">Connect with your fellow students by choosing a University or a School. This help us to show you more relevant content and keep you in touch with your friends. You can always do it later ;)</string>
+    <string name="signup_completed_choose">Choose University</string>
+    <string name="signup_completed_later">Not right now</string>
+    <string name="selector_tag_lastlyused">Lastly used</string>
+
+    <string name="time_just_now">just now</string>
+    <string name="suggestion_info_btn">Learn more</string>
+    <string name="library_action_copy_link">Copy link</string>
+    <string name="not_logged_in">Please login in to be able to view this content</string>
+    <string name="login_welcome_msg">Welcome to StudyPad!</string>
+    <string name="not_logged_in_title">Welcome</string>
+    <string name="login_introduce_yourself">Introduce yourself...</string>
+    <string name="signup_credentials_message">Which email and password do you want to use to login?</string>
+    <string name="univerisity_created_message">University suggested</string>
+    <string name="notifications_uptodate">You\'re up to date</string>
+    <string name="import_a_copy">Import a copy</string>
+    <string name="notes">Notes</string>
+    <string name="library_notebooks_empty_action">Find new notebooks</string>
+    <string name="error_required_field">This field is required</string>
+    <string name="no_notes_to_study">Unavailable, no notes to study</string>
+    <string name="suggestions_review_leave_title">Leaving Review</string>
+    <string name="suggestions_review_leave_message">You didn\'t finish your review. Are you sure you want to leave now?</string>
+
+    <plurals name="time_minutes">
+        <item quantity="zero">just now</item>
+        <item quantity="one">One minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+
+    <plurals name="time_hours">
+        <item quantity="one">One hour ago</item>
+        <item quantity="other">%d hours ago</item>
+    </plurals>
+
+    <plurals name="time_days">
+        <item quantity="one">One day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
+
+    <plurals name="time_month">
+        <item quantity="one">One month ago</item>
+        <item quantity="other">%d months ago</item>
+    </plurals>
+
+</resources>

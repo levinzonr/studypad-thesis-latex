@@ -1,0 +1,83 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="cz.levinzonr.studypad.presentation.screens.challenges.challenge.ChallengeCompleteFragment">
+
+
+
+
+    <ProgressBar
+            android:id="@+id/challengeCompletePBB"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:padding="0dp"
+            android:layout_marginBottom="@dimen/space_large"
+            android:progressDrawable="@drawable/background_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/challengeCompleteTv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <TextView
+            android:text="25%"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/challengeCompletePBB"
+            app:layout_constraintEnd_toEndOf="@+id/challengeCompletePBB"
+            app:layout_constraintStart_toStartOf="@+id/challengeCompletePBB"
+            app:layout_constraintBottom_toBottomOf="@+id/challengeCompletePBB"
+            android:id="@+id/challengeCompleteProgressTv"/>
+
+
+    <TextView
+            android:textStyle="normal"
+            style="@style/TextStyle.Header"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/challengeCompleteTv"/>
+
+    <com.google.android.material.button.MaterialButton
+            style="@style/Button.Primary"
+            android:id="@+id/challengeCompleteBtnRepeat"
+            android:layout_width="match_parent"
+            app:iconGravity="textStart"
+            app:icon="@drawable/ic_refresh_black_24dp"
+            android:text="@string/challenge_completed_start_again"
+            android:layout_margin="@dimen/space_large"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/challengeCompleteTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <com.google.android.material.button.MaterialButton
+            app:layout_constraintTop_toBottomOf="@id/challengeCompleteBtnRepeat"
+            android:id="@+id/challengeCompleteExitBtn"
+            style="@style/Button.Text"
+            android:layout_marginTop="@dimen/space_big"
+            android:text="@string/default_exit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NotificationHandler - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.base</a>&nbsp;/&nbsp;<a href="./index.html">NotificationHandler</a><br/>
+<br/>
+<h1>NotificationHandler</h1>
+<code><span class="keyword">interface </span><span class="identifier">NotificationHandler</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="handle-notification.html">handleNotification</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">handleNotification</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.NotificationHandler$handleNotification(cz.levinzonr.studypad.presentation.screens.notifications.NotificationType, cz.levinzonr.studypad.notifications.NotificationPayload)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens.notifications/-notification-type/index.html"><span class="identifier">NotificationType</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.NotificationHandler$handleNotification(cz.levinzonr.studypad.presentation.screens.notifications.NotificationType, cz.levinzonr.studypad.notifications.NotificationPayload)/notificationPayload">notificationPayload</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.notifications/-notification-payload/index.html"><span class="identifier">NotificationPayload</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.notifications/-notifications-fragment/index.html">NotificationsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotificationsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fragment/index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.notifications/-notifications-adapter/-notification-items-listener/index.html"><span class="identifier">NotificationItemsListener</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.comments/-published-notebook-comments-fragment/index.html">PublishedNotebookCommentsFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookCommentsFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fragment/index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.comments/-comments-adapter/-comments-item-listener/index.html"><span class="identifier">CommentsItemListener</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-published-notebook-description-fragment/index.html">PublishedNotebookDescriptionFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookDescriptionFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fragment/index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-note-preview-adapter/-note-preview-listener/index.html"><span class="identifier">NotePreviewListener</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NotificationHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.details/-published-notebook-detail-fragment/index.html">PublishedNotebookDetailFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishedNotebookDetailFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fragment/index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NotificationHandler</span></a><span class="symbol">, </span><a href="../-back-button-handler/index.html"><span class="identifier">BackButtonHandler</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.feed/-sharing-hub-fragment/index.html">SharingHubFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SharingHubFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fragment/index.html"><span class="identifier">BaseFragment</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NotificationHandler</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.sharinghub.feed/-published-notebooks-adapter/-published-notebook-item-listener/index.html"><span class="identifier">PublishedNotebookItemListener</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

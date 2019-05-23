@@ -1,0 +1,296 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseInputInteractor - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.interactors</a>&nbsp;/&nbsp;<a href="./index.html">BaseInputInteractor</a><br/>
+<br/>
+<h1>BaseInputInteractor</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseInputInteractor</span><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">I</span><span class="symbol">, </span><span class="identifier">O</span><span class="symbol">&gt;</span></code>
+<p>Similar to BaseInteractor, but provides a  better way to handle the input</p>
+<p><strong>Parameters</strong><br/>
+</p>
+<p><strong>Parameters</strong><br/>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BaseInputInteractor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Similar to BaseInteractor, but provides a  better way to handle the input</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="background-context.html">backgroundContext</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">backgroundContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="foreground-context.html">foregroundContext</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">foregroundContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="execute-on-background.html">executeOnBackground</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">executeOnBackground</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$executeOnBackground(cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.I)/input">input</span><span class="symbol">:</span>&nbsp;<a href="index.html#I"><span class="identifier">I</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#O"><span class="identifier">O</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="execute-with-input.html">executeWithInput</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">executeWithInput</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$executeWithInput(cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.I, kotlin.Function1((cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.O)), kotlin.Unit)))/input">input</span><span class="symbol">:</span>&nbsp;<a href="index.html#I"><span class="identifier">I</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$executeWithInput(cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.I, kotlin.Function1((cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.O)), kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../-completion-block.html"><span class="identifier">CompletionBlock</span></a><span class="symbol">&lt;</span><a href="index.html#O"><span class="identifier">O</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes interactor with specified Input and provides the result via callback</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="run-async.html">runAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">X</span><span class="symbol">&gt;</span> <span class="identifier">runAsync</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$runAsync(kotlin.coroutines.CoroutineContext, kotlin.SuspendFunction0((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.runAsync.X)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;backgroundContext<span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$runAsync(kotlin.coroutines.CoroutineContext, kotlin.SuspendFunction0((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.runAsync.X)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="run-async.html#X"><span class="identifier">X</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="run-async.html#X"><span class="identifier">X</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="unsubscribe.html">unsubscribe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">unsubscribe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-apply-local-changes-interactor/index.html">ApplyLocalChangesInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ApplyLocalChangesInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-create-comment-interactor/index.html">CreateCommentInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CreateCommentInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-create-comment-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor To Create a new Comment on Published Notebook</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-delete-comment-interactor/index.html">DeleteCommentInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeleteCommentInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to delete a comment</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.library/-delete-note-interactor/index.html">DeleteNoteInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeleteNoteInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-edit-comment-interactor/index.html">EditCommentInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">EditCommentInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-edit-comment-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to edit a comment by id</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-facebook-login-interactor/index.html">FacebookLoginInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">FacebookLoginInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to authenticate user using facebook</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.comments/-get-comments-interactor/index.html">GetCommentsInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetCommentsInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-comment/index.html"><span class="identifier">Comment</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Interactor to retrieve the comments of the notebook</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.library/-get-notebook-version-state-interactor/index.html">GetNotebookVersionStateInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetNotebookVersionStateInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-state/index.html"><span class="identifier">State</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.library/-get-notes-interactor/index.html">GetNotesInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetNotesInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-get-pending-suggestions-interactor/index.html">GetPendingSuggestionsInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetPendingSuggestionsInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-modification/index.html"><span class="identifier">Modification</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-get-published-notebook-detail/index.html">GetPublishedNotebookDetail</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetPublishedNotebookDetail</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-get-tags-by-name-interactor/index.html">GetTagsByNameInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetTagsByNameInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.tag/-tags-models/-tag-section/index.html"><span class="identifier">TagSection</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-get-topics-interactor/index.html">GetTopicsInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetTopicsInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-topic/index.html"><span class="identifier">Topic</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-get-universities-interactor/index.html">GetUniversitiesInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetUniversitiesInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-university/index.html"><span class="identifier">University</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-google-login-interactor/index.html">GoogleLoginInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GoogleLoginInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to auth the user using Google</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-import-copy-interactor/index.html">ImportCopyInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ImportCopyInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-import-published-notebook-interactor/index.html">ImportPublishedNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ImportPublishedNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-leave-feedback-interactor/index.html">LeaveFeedbackInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LeaveFeedbackInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-login-interactor/index.html">LoginInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LoginInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-login-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to login the user using email and password</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-mark-notification-as-read/index.html">MarkNotificationAsRead</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">MarkNotificationAsRead</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.library/-post-notebook-interactor/index.html">PostNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PostNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-publish-notebook-interactor/index.html">PublishNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PublishNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-publish-notebook-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-feed/index.html"><span class="identifier">Feed</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-quicl-publish-interactor/index.html">QuiclPublishInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">QuiclPublishInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-feed/index.html"><span class="identifier">Feed</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-save-challenge-interactor/index.html">SaveChallengeInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SaveChallengeInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../-save-challenge-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-signup-interactor/index.html">SignupInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SignupInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-signup-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-user-profile/index.html"><span class="identifier">UserProfile</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor that creates a new User</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-submit-review-interactor/index.html">SubmitReviewInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SubmitReviewInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors.sharinghub/-submit-review-interactor/-input/index.html"><span class="identifier">Input</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-suggest-university-interactor/index.html">SuggestUniversityInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SuggestUniversityInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-university/index.html"><span class="identifier">University</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

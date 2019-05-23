@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BottomSheetDialog - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.base</a>&nbsp;/&nbsp;<a href="./index.html">BottomSheetDialog</a><br/>
+<br/>
+<h1>BottomSheetDialog</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BottomSheetDialog</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BottomSheetDialogFragment</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BottomSheetDialog</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="view-model.html">viewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">viewModel</span><span class="symbol">: </span><a href="../-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="on-activity-created.html">onActivityCreated</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onActivityCreated</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$onActivityCreated(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-create.html">onCreate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-create-view.html">onCreateView</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onCreateView</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/inflater">inflater</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/LayoutInflater.html"><span class="identifier">LayoutInflater</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/container">container</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="setup-dialog.html">setupDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setupDialog</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$setupDialog(android.app.Dialog, kotlin.Int)/dialog">dialog</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Dialog.html"><span class="identifier">Dialog</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$setupDialog(android.app.Dialog, kotlin.Int)/style">style</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="show-loading.html">showLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$showLoading(kotlin.Boolean)/isLoading">isLoading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="show-network-unavailable-error.html">showNetworkUnavailableError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">showNetworkUnavailableError</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="show-simple-dialog.html">showSimpleDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showSimpleDialog</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$showSimpleDialog(kotlin.String, kotlin.String)/title">title</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$showSimpleDialog(kotlin.String, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="show-toast.html">showToast</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showToast</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BottomSheetDialog$showToast(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad/androidx.fragment.app.-fragment/get-quantaty-string.html">getQuantatyString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Fragment</span><span class="symbol">.</span><span class="identifier">getQuantatyString</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad$getQuantatyString(androidx.fragment.app.Fragment, kotlin.Int, kotlin.Int)/stirngRes">stirngRes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad$getQuantatyString(androidx.fragment.app.Fragment, kotlin.Int, kotlin.Int)/quantaty">quantaty</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.language/-language-selector-dialog/index.html">LanguageSelectorDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LanguageSelectorDialog</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BottomSheetDialog</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.language/-languages-adapter/-language-item-listener/index.html"><span class="identifier">LanguageItemListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.topic/-multiple-topics-selector/index.html">MultipleTopicsSelector</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">MultipleTopicsSelector</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BottomSheetDialog</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.topic/-topics-selection-adapter/-topic-selection-listener/index.html"><span class="identifier">TopicSelectionListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors/-notebook-selector-dialog/index.html">NotebookSelectorDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotebookSelectorDialog</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BottomSheetDialog</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.selectors/-notebook-selection-adapter/-notebook-selection-listener/index.html"><span class="identifier">NotebookSelectionListener</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.tag/-tag-search-dialog/index.html">TagSearchDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TagSearchDialog</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BottomSheetDialog</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.topic/-topic-search-dialog/index.html">TopicSearchDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TopicSearchDialog</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BottomSheetDialog</span></a><span class="symbol">, </span><a href="../../cz.levinzonr.studypad.presentation.screens.selectors.topic/-topics-adapter/-topic-listener/index.html"><span class="identifier">TopicListener</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

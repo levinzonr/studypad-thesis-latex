@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseInteractor.Request - app</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">app</a>&nbsp;/&nbsp;<a href="../../index.html">cz.levinzonr.studypad.domain.interactors</a>&nbsp;/&nbsp;<a href="../index.html">BaseInteractor</a>&nbsp;/&nbsp;<a href="./index.html">Request</a><br/>
+<br/>
+<h1>Request</h1>
+<code><span class="keyword">class </span><span class="identifier">Request</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Request</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$invoke(cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request.T)/result">result</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$invoke(cz.levinzonr.studypad.domain.models.ApplicationError)/error">error</span><span class="symbol">:</span>&nbsp;<a href="../../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$invoke(java.util.concurrent.CancellationException)/error">error</span><span class="symbol">:</span>&nbsp;<span class="identifier">CancellationException</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-cancel.html">onCancel</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onCancel</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$onCancel(kotlin.Function1((java.util.concurrent.CancellationException, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">CancellationException</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-complete.html">onComplete</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onComplete</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$onComplete(kotlin.Function1((cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request.T, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-error.html">onError</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request$onError(kotlin.Function1((cz.levinzonr.studypad.domain.models.ApplicationError, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

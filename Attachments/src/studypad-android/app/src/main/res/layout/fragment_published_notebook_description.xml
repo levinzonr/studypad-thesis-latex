@@ -1,0 +1,165 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:animateLayoutChanges="true">
+
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"
+            tools:context="cz.levinzonr.studypad.presentation.screens.sharinghub.details.PublishedNotebookDetailFragment">
+
+
+
+        <LinearLayout
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookExcludedLayout"
+                    layout="@layout/include_notebook_excluded_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookInfoLayout"
+                    layout="@layout/include_notebook_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+
+            <cz.levinzonr.studypad.presentation.common.EmptyStateView
+                    android:id="@+id/emptyView"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookVersionLayout"
+                    layout="@layout/include_notebook_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookDescriptionLayout"
+                    layout="@layout/include_notebook_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookInfoActionsLayout"
+                    layout="@layout/inlcude_published_actions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <include
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notebookSuggestionsLayout"
+                    layout="@layout/include_notebook_suggestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:id="@+id/notesPreviewLayout"
+                    android:layout_marginStart="@dimen/space_small"
+                    android:layout_marginBottom="@dimen/space_normal"
+                    android:layout_marginEnd="@dimen/space_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/space_small"
+                    app:contentPadding="@dimen/space_big">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    <TextView
+                            android:textColor="#000"
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Notes"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            tools:listitem="@layout/item_note_preview"
+                            android:id="@+id/publishedBookNotesRv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:focusable="false"
+                            android:nestedScrollingEnabled="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4"
+                            app:layout_constraintVertical_bias="1.0"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

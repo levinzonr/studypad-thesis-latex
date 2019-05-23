@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoginViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.presentation.screens.onboarding.login</a>&nbsp;/&nbsp;<a href="./index.html">LoginViewModel</a><br/>
+<br/>
+<h1>LoginViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">LoginViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">LoginViewModel</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$<init>(cz.levinzonr.studypad.domain.managers.UserManager, cz.levinzonr.studypad.domain.interactors.keychain.FacebookLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.GoogleLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.LoginInteractor)/userManager">userManager</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.managers/-user-manager/index.html"><span class="identifier">UserManager</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$<init>(cz.levinzonr.studypad.domain.managers.UserManager, cz.levinzonr.studypad.domain.interactors.keychain.FacebookLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.GoogleLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.LoginInteractor)/facebookLoginInteractor">facebookLoginInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-facebook-login-interactor/index.html"><span class="identifier">FacebookLoginInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$<init>(cz.levinzonr.studypad.domain.managers.UserManager, cz.levinzonr.studypad.domain.interactors.keychain.FacebookLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.GoogleLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.LoginInteractor)/googleLoginInteractor">googleLoginInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-google-login-interactor/index.html"><span class="identifier">GoogleLoginInteractor</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$<init>(cz.levinzonr.studypad.domain.managers.UserManager, cz.levinzonr.studypad.domain.interactors.keychain.FacebookLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.GoogleLoginInteractor, cz.levinzonr.studypad.domain.interactors.keychain.LoginInteractor)/loginInteractor">loginInteractor</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors.keychain/-login-interactor/index.html"><span class="identifier">LoginInteractor</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-p-e-r-m-i-s-s-i-o-n-s.html">PERMISSIONS</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">PERMISSIONS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="email.html">email</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">email</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="password.html">password</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">password</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="validation-view-state.html">validationViewState</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">validationViewState</span><span class="symbol">: </span><span class="identifier">MutableLiveData</span><span class="symbol">&lt;</span><a href="../-login-view-state/index.html"><span class="identifier">LoginViewState</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigation-live-data.html">navigationLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">navigationLiveData</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.events/-event/index.html"><span class="identifier">Event</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.screens/-navigation-event/index.html"><span class="identifier">NavigationEvent</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/view-state-observalbe.html">viewStateObservalbe</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">viewStateObservalbe</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-state/index.html"><span class="identifier">BaseViewState</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="handle-facebook-login-result.html">handleFacebookLoginResult</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">handleFacebookLoginResult</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$handleFacebookLoginResult(kotlin.Int, kotlin.Int, android.content.Intent)/requestCode">requestCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$handleFacebookLoginResult(kotlin.Int, kotlin.Int, android.content.Intent)/resultCode">resultCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$handleFacebookLoginResult(kotlin.Int, kotlin.Int, android.content.Intent)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Intent.html"><span class="identifier">Intent</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="handle-google-signin-result.html">handleGoogleSigninResult</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">handleGoogleSigninResult</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$handleGoogleSigninResult(com.google.android.gms.tasks.Task((com.google.android.gms.auth.api.signin.GoogleSignInAccount)))/task">task</span><span class="symbol">:</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&lt;</span><span class="identifier">GoogleSignInAccount</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="login.html">login</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="login-via-facebook.html">loginViaFacebook</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">loginViaFacebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginViewModel$loginViaFacebook(cz.levinzonr.studypad.presentation.screens.onboarding.login.LoginFragment)/fragment">fragment</span><span class="symbol">:</span>&nbsp;<a href="../-login-fragment/index.html"><span class="identifier">LoginFragment</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="start-account-creation.html">startAccountCreation</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">startAccountCreation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/change-flow.html">changeFlow</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">changeFlow</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$changeFlow(cz.levinzonr.studypad.presentation.screens.Flow)/flow">flow</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.presentation.screens/-flow/index.html"><span class="identifier">Flow</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/handle-application-error.html">handleApplicationError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">handleApplicationError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$handleApplicationError(cz.levinzonr.studypad.domain.models.ApplicationError)/applicationError">applicationError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-application-error/index.html"><span class="identifier">ApplicationError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Converts Application Error in to View Error that can be presented by Fragmetns</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-back.html">navigateBack</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateBack</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post a navigate back event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/navigate-to.html">navigateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">navigateTo</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$navigateTo(androidx.navigation.NavDirections)/navDirections">navDirections</span><span class="symbol">:</span>&nbsp;<span class="identifier">NavDirections</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to perform a navigation event</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-error.html">showError</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showError</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$showError(cz.levinzonr.studypad.domain.models.ViewError)/viewError">viewError</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-view-error/index.html"><span class="identifier">ViewError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to post an error  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/show-network-unavailabe.html">showNetworkUnavailabe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">showNetworkUnavailabe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to reflect bad connectivity  by updating base view state</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/string.html">string</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">string</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$string(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.presentation.base/-base-view-model/toggle-loading.html">toggleLoading</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toggleLoading</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.base.BaseViewModel$toggleLoading(kotlin.Boolean)/loading">loading</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Helper method to toggle loading by updating base view state</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

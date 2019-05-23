@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NotebookRepository - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.repository</a>&nbsp;/&nbsp;<a href="./index.html">NotebookRepository</a><br/>
+<br/>
+<h1>NotebookRepository</h1>
+<code><span class="keyword">interface </span><span class="identifier">NotebookRepository</span></code>
+<p>Repository to deal with the notebook entitiy</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-notebook.html">createNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">createNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$createNotebook(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a></code>
+<p>Create a new notebooks with the given name</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-locally.html">deleteLocally</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteLocally</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$deleteLocally(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-notebook.html">deleteNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">deleteNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$deleteNotebook(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Deletes a notebook by id</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-notebooks.html">getNotebooks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getNotebooks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.data/-notebooks-response/index.html"><span class="identifier">NotebooksResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Retrieves the notebooks from the local library</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-stored-notebooks.html">getStoredNotebooks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStoredNotebooks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="import-as-copy.html">importAsCopy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">importAsCopy</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$importAsCopy(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a></code>
+<p>Creates the independent local notebook from the published version</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="import-notebook.html">importNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">importNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$importNotebook(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a></code>
+<p>Creates/Updates the local notebook from the published version</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="notebooks-live-data.html">notebooksLiveData</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notebooksLiveData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="update-notebook.html">updateNotebook</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">updateNotebook</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$updateNotebook(kotlin.String, kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.repository.NotebookRepository$updateNotebook(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a></code>
+<p>Updates the notebook's name by ID</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.rest.repository/-notebook-repository-impl/index.html">NotebookRepositoryImpl</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NotebookRepositoryImpl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">NotebookRepository</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

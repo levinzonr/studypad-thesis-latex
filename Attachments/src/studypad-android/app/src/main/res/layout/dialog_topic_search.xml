@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+
+
+    <SearchView
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/default_search"
+            android:queryBackground="@android:color/transparent"
+            android:id="@+id/topicSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topicRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    <cz.levinzonr.studypad.presentation.common.EmptyStateView
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+</LinearLayout>

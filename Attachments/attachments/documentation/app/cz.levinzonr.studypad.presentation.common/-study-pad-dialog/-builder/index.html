@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StudyPadDialog.Builder - app</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">app</a>&nbsp;/&nbsp;<a href="../../index.html">cz.levinzonr.studypad.presentation.common</a>&nbsp;/&nbsp;<a href="../index.html">StudyPadDialog</a>&nbsp;/&nbsp;<a href="./index.html">Builder</a><br/>
+<br/>
+<h1>Builder</h1>
+<code><span class="keyword">class </span><span class="identifier">Builder</span></code>
+<p>Builder that is used to build the dialog</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Builder</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">?</span><span class="symbol">)</span></code>
+<p>Builder that is used to build the dialog</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/app/Dialog.html"><span class="identifier">Dialog</span></a></code>
+<p>Build dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-cancelable.html">setCancelable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setCancelable</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setCancelable(kotlin.Boolean)/cancelable">cancelable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Define with the dialog will be cancellable</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-input-field.html">setInputField</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setInputField</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setInputField(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)))/hint">hint</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setInputField(kotlin.String, kotlin.Function1((kotlin.String, kotlin.Unit)))/onConffrm">onConffrm</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Add an input fied the get the text input from the user</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-message.html">setMessage</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setMessage</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setMessage(kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Set message for the dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-negative-button.html">setNegativeButton</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setNegativeButton</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setNegativeButton(kotlin.String, kotlin.Function1((android.app.Dialog, kotlin.Unit)))/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setNegativeButton(kotlin.String, kotlin.Function1((android.app.Dialog, kotlin.Unit)))/onClick">onClick</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://developer.android.com/reference/android/app/Dialog.html"><span class="identifier">Dialog</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Add a negative button to dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-on-cancel-listener.html">setOnCancelListener</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setOnCancelListener</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setOnCancelListener(kotlin.Function0((kotlin.Unit)))/onCancel">onCancel</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Specify a callback when dialog is cancelled</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-positive-button.html">setPositiveButton</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setPositiveButton</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setPositiveButton(kotlin.String, kotlin.Function1((android.app.Dialog, kotlin.Unit)))/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setPositiveButton(kotlin.String, kotlin.Function1((android.app.Dialog, kotlin.Unit)))/onClick">onClick</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://developer.android.com/reference/android/app/Dialog.html"><span class="identifier">Dialog</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Sets a positive button to the dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-title.html">setTitle</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setTitle</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.presentation.common.StudyPadDialog.Builder$setTitle(kotlin.String)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Set title of the dialog</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="show.html">show</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">show</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Build &amp; show the dialog</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.screens.publish.BasicInfoFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/space_normal"
+        android:layout_width="match_parent"
+        android:hint="@string/publish_step1_notebook_hint"
+        app:helperTextEnabled="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notebookNameEt"
+            android:maxLines="1"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:helperText="Language of your notes"
+        android:hint="@string/publish_step1_language_hint"
+        android:layout_marginTop="@dimen/space_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notebookLanguageEt"
+            style="@style/TextInputButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/space_normal"
+        android:hint="@string/publish_step1_uni_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notebookSchoolEt"
+            style="@style/TextInputButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="@dimen/space_big"
+            android:id="@+id/nextStepBtn"
+            android:text="@string/default_continue"
+            style="@style/Button.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

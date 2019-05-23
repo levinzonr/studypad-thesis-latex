@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SquareButton">
+        <attr name="buttonIcon" format="reference" />
+        <attr name="buttonText" format="string" localization="suggested" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxLinesChipGroup">
+        <attr name="maxLines" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="NoteContentView">
+        <attr name="alignment" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

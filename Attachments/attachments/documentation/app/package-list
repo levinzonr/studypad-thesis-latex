@@ -1,0 +1,96 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:cz.levinzonr.studypad$asSequence(android.view.ViewGroup)cz.levinzonr.studypad/android.view.-view-group/as-sequence.html
+$dokka.location:cz.levinzonr.studypad$buildTags(kotlin.collections.Collection((kotlin.String)), android.content.Context)cz.levinzonr.studypad/kotlin.collections.-collection/build-tags.html
+$dokka.location:cz.levinzonr.studypad$call(androidx.lifecycle.MutableLiveData((cz.levinzonr.studypad.presentation.events.Event((cz.levinzonr.studypad.call.T)))), cz.levinzonr.studypad.call.T)cz.levinzonr.studypad/androidx.lifecycle.-mutable-live-data/call.html
+$dokka.location:cz.levinzonr.studypad$call(androidx.lifecycle.MutableLiveData((cz.levinzonr.studypad.presentation.events.SingleLiveEvent)))cz.levinzonr.studypad/androidx.lifecycle.-mutable-live-data/call.html
+$dokka.location:cz.levinzonr.studypad$callIf(androidx.lifecycle.MutableLiveData((cz.levinzonr.studypad.presentation.events.SingleLiveEvent)), kotlin.Boolean)cz.levinzonr.studypad/androidx.lifecycle.-mutable-live-data/call-if.html
+$dokka.location:cz.levinzonr.studypad$dp#kotlin.Floatcz.levinzonr.studypad/kotlin.-float/dp.html
+$dokka.location:cz.levinzonr.studypad$dp#kotlin.Intcz.levinzonr.studypad/kotlin.-int/dp.html
+$dokka.location:cz.levinzonr.studypad$first(kotlin.collections.List((cz.levinzonr.studypad.first.T)), kotlin.Int)cz.levinzonr.studypad/kotlin.collections.-list/first.html
+$dokka.location:cz.levinzonr.studypad$formatTime(kotlin.Long, android.content.Context)cz.levinzonr.studypad/kotlin.-long/format-time.html
+$dokka.location:cz.levinzonr.studypad$fromJson(com.google.gson.Gson, kotlin.String)cz.levinzonr.studypad/com.google.gson.-gson/from-json.html
+$dokka.location:cz.levinzonr.studypad$getQuantatyString(androidx.fragment.app.Fragment, kotlin.Int, kotlin.Int)cz.levinzonr.studypad/androidx.fragment.app.-fragment/get-quantaty-string.html
+$dokka.location:cz.levinzonr.studypad$getQuantityString(android.content.Context, kotlin.Int, kotlin.Int)cz.levinzonr.studypad/android.content.-context/get-quantity-string.html
+$dokka.location:cz.levinzonr.studypad$hideKeyboard(android.view.View)cz.levinzonr.studypad/android.view.-view/hide-keyboard.html
+$dokka.location:cz.levinzonr.studypad$indexOfFirstOrNull(kotlin.collections.List((cz.levinzonr.studypad.indexOfFirstOrNull.T)), kotlin.Function1((cz.levinzonr.studypad.indexOfFirstOrNull.T, kotlin.Boolean)))cz.levinzonr.studypad/kotlin.collections.-list/index-of-first-or-null.html
+$dokka.location:cz.levinzonr.studypad$isValidEmail(kotlin.String)cz.levinzonr.studypad/kotlin.-string/is-valid-email.html
+$dokka.location:cz.levinzonr.studypad$isValidName(kotlin.String)cz.levinzonr.studypad/kotlin.-string/is-valid-name.html
+$dokka.location:cz.levinzonr.studypad$isValidPassword(kotlin.String)cz.levinzonr.studypad/kotlin.-string/is-valid-password.html
+$dokka.location:cz.levinzonr.studypad$layoutInflater#android.content.Contextcz.levinzonr.studypad/android.content.-context/layout-inflater.html
+$dokka.location:cz.levinzonr.studypad$loadAuthorImage(android.widget.ImageView, kotlin.String)cz.levinzonr.studypad/android.widget.-image-view/load-author-image.html
+$dokka.location:cz.levinzonr.studypad$observeNonNull(androidx.lifecycle.LiveData((cz.levinzonr.studypad.observeNonNull.T)), androidx.lifecycle.LifecycleOwner, kotlin.Function1((cz.levinzonr.studypad.observeNonNull.T, kotlin.Unit)))cz.levinzonr.studypad/androidx.lifecycle.-live-data/observe-non-null.html
+$dokka.location:cz.levinzonr.studypad$onHandle(androidx.lifecycle.MutableLiveData((cz.levinzonr.studypad.presentation.events.Event((cz.levinzonr.studypad.onHandle.T)))), androidx.lifecycle.LifecycleOwner, kotlin.Function1((cz.levinzonr.studypad.onHandle.T, kotlin.Unit)))cz.levinzonr.studypad/androidx.lifecycle.-mutable-live-data/on-handle.html
+$dokka.location:cz.levinzonr.studypad$onHandle(androidx.lifecycle.MutableLiveData((cz.levinzonr.studypad.presentation.events.SingleLiveEvent)), androidx.lifecycle.LifecycleOwner, kotlin.Function0((kotlin.Unit)))cz.levinzonr.studypad/androidx.lifecycle.-mutable-live-data/on-handle.html
+$dokka.location:cz.levinzonr.studypad$onQueryTextChanged(android.widget.SearchView, kotlin.Function1((kotlin.String, kotlin.Unit)))cz.levinzonr.studypad/android.widget.-search-view/on-query-text-changed.html
+$dokka.location:cz.levinzonr.studypad$onQueryTextChanged(androidx.appcompat.widget.SearchView, kotlin.Function1((kotlin.String, kotlin.Unit)))cz.levinzonr.studypad/androidx.appcompat.widget.-search-view/on-query-text-changed.html
+$dokka.location:cz.levinzonr.studypad$onTextChanged(android.widget.EditText, kotlin.Function1((kotlin.String, kotlin.Unit)))cz.levinzonr.studypad/android.widget.-edit-text/on-text-changed.html
+$dokka.location:cz.levinzonr.studypad$onTextChanged(com.google.android.material.textfield.TextInputEditText, kotlin.Function1((kotlin.String, kotlin.Unit)))cz.levinzonr.studypad/com.google.android.material.textfield.-text-input-edit-text/on-text-changed.html
+$dokka.location:cz.levinzonr.studypad$px#kotlin.Floatcz.levinzonr.studypad/kotlin.-float/px.html
+$dokka.location:cz.levinzonr.studypad$removeAllBut(android.view.ViewGroup, kotlin.Int)cz.levinzonr.studypad/android.view.-view-group/remove-all-but.html
+$dokka.location:cz.levinzonr.studypad$removeIf(android.view.ViewGroup, kotlin.Function1((android.view.View, kotlin.Boolean)))cz.levinzonr.studypad/android.view.-view-group/remove-if.html
+$dokka.location:cz.levinzonr.studypad$setSpannableText(android.widget.TextView, kotlin.String, kotlin.Array((kotlin.String)))cz.levinzonr.studypad/android.widget.-text-view/set-spannable-text.html
+$dokka.location:cz.levinzonr.studypad$setVisible(android.view.View, kotlin.Boolean, kotlin.Int)cz.levinzonr.studypad/android.view.-view/set-visible.html
+$dokka.location:cz.levinzonr.studypad$showKeyboard(android.view.View)cz.levinzonr.studypad/android.view.-view/show-keyboard.html
+$dokka.location:cz.levinzonr.studypad$shownText#android.widget.TextViewcz.levinzonr.studypad/android.widget.-text-view/shown-text.html
+$dokka.location:cz.levinzonr.studypad$toNotebookLink(kotlin.String)cz.levinzonr.studypad/kotlin.-string/to-notebook-link.html
+$dokka.location:cz.levinzonr.studypad$views#android.view.ViewGroupcz.levinzonr.studypad/android.view.-view-group/views.html
+$dokka.location:cz.levinzonr.studypad.domain.models$modType#kotlin.Stringcz.levinzonr.studypad.domain.models/kotlin.-string/mod-type.html
+$dokka.location:cz.levinzonr.studypad.notifications$notificationType(kotlin.String)cz.levinzonr.studypad.notifications/kotlin.-string/notification-type.html
+$dokka.location:cz.levinzonr.studypad.notifications$setMessage(androidx.core.app.NotificationCompat.Builder, android.content.Context, cz.levinzonr.studypad.notifications.NotificationPayload)cz.levinzonr.studypad.notifications/androidx.core.app.-notification-compat.-builder/set-message.html
+$dokka.location:cz.levinzonr.studypad.notifications$setTitle(androidx.core.app.NotificationCompat.Builder, android.content.Context, cz.levinzonr.studypad.notifications.NotificationPayload)cz.levinzonr.studypad.notifications/androidx.core.app.-notification-compat.-builder/set-title.html
+cz.levinzonr.studypad
+cz.levinzonr.studypad.data
+cz.levinzonr.studypad.domain.interactors
+cz.levinzonr.studypad.domain.interactors.comments
+cz.levinzonr.studypad.domain.interactors.keychain
+cz.levinzonr.studypad.domain.interactors.library
+cz.levinzonr.studypad.domain.interactors.sharinghub
+cz.levinzonr.studypad.domain.managers
+cz.levinzonr.studypad.domain.models
+cz.levinzonr.studypad.domain.repository
+cz.levinzonr.studypad.injection
+cz.levinzonr.studypad.notifications
+cz.levinzonr.studypad.presentation
+cz.levinzonr.studypad.presentation.adapters
+cz.levinzonr.studypad.presentation.base
+cz.levinzonr.studypad.presentation.common
+cz.levinzonr.studypad.presentation.events
+cz.levinzonr.studypad.presentation.screens
+cz.levinzonr.studypad.presentation.screens.about
+cz.levinzonr.studypad.presentation.screens.about.feedback
+cz.levinzonr.studypad.presentation.screens.challenges
+cz.levinzonr.studypad.presentation.screens.challenges.challenge
+cz.levinzonr.studypad.presentation.screens.challenges.flashcards
+cz.levinzonr.studypad.presentation.screens.challenges.learning
+cz.levinzonr.studypad.presentation.screens.challenges.setup
+cz.levinzonr.studypad.presentation.screens.challenges.write
+cz.levinzonr.studypad.presentation.screens.library.notebooks
+cz.levinzonr.studypad.presentation.screens.library.notes
+cz.levinzonr.studypad.presentation.screens.notifications
+cz.levinzonr.studypad.presentation.screens.onboarding
+cz.levinzonr.studypad.presentation.screens.onboarding.login
+cz.levinzonr.studypad.presentation.screens.onboarding.signup
+cz.levinzonr.studypad.presentation.screens.profile
+cz.levinzonr.studypad.presentation.screens.profile.edit
+cz.levinzonr.studypad.presentation.screens.publish
+cz.levinzonr.studypad.presentation.screens.publish.steps
+cz.levinzonr.studypad.presentation.screens.selectors
+cz.levinzonr.studypad.presentation.screens.selectors.language
+cz.levinzonr.studypad.presentation.screens.selectors.tag
+cz.levinzonr.studypad.presentation.screens.selectors.topic
+cz.levinzonr.studypad.presentation.screens.selectors.university
+cz.levinzonr.studypad.presentation.screens.settings
+cz.levinzonr.studypad.presentation.screens.sharinghub.comments
+cz.levinzonr.studypad.presentation.screens.sharinghub.details
+cz.levinzonr.studypad.presentation.screens.sharinghub.feed
+cz.levinzonr.studypad.presentation.screens.sharinghub.search
+cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions
+cz.levinzonr.studypad.presentation.screens.sharinghub.suggestions.review
+cz.levinzonr.studypad.presentation.screens.spash
+cz.levinzonr.studypad.rest
+cz.levinzonr.studypad.rest.repository
+cz.levinzonr.studypad.rest.utils
+cz.levinzonr.studypad.storage.database
+cz.levinzonr.studypad.storage.database.daos
+cz.levinzonr.studypad.storage.repository

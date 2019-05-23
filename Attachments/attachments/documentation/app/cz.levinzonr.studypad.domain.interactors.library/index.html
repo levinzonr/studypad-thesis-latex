@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>cz.levinzonr.studypad.domain.interactors.library - app</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">app</a>&nbsp;/&nbsp;<a href="./index.html">cz.levinzonr.studypad.domain.interactors.library</a><br/>
+<br/>
+<h2>Package cz.levinzonr.studypad.domain.interactors.library</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-delete-note-interactor/index.html">DeleteNoteInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeleteNoteInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-delete-notebook-interactor/index.html">DeleteNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeleteNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-get-notebook-version-state-interactor/index.html">GetNotebookVersionStateInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetNotebookVersionStateInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a><span class="symbol">,</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.models/-state/index.html"><span class="identifier">State</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-get-notebooks-interactor/index.html">GetNotebooksInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetNotebooksInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-get-notes-interactor/index.html">GetNotesInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">GetNotesInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-library-sync-interactor/index.html">LibrarySyncInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LibrarySyncInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Interactor to synchronize local notebook library with the remote data source</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-post-note-interactor/index.html">PostNoteInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PostNoteInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-post-notebook-interactor/index.html">PostNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PostNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-update-note-interactor/index.html">UpdateNoteInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">UpdateNoteInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-update-notebook-interactor/index.html">UpdateNotebookInteractor</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">UpdateNotebookInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../cz.levinzonr.studypad.domain.interactors/-base-interactor/index.html"><span class="identifier">BaseInteractor</span></a><span class="symbol">&lt;</span><a href="../cz.levinzonr.studypad.domain.models/-notebook/index.html"><span class="identifier">Notebook</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

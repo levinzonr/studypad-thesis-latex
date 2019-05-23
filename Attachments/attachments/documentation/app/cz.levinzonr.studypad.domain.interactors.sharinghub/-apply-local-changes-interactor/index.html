@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApplyLocalChangesInteractor - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">cz.levinzonr.studypad.domain.interactors.sharinghub</a>&nbsp;/&nbsp;<a href="./index.html">ApplyLocalChangesInteractor</a><br/>
+<br/>
+<h1>ApplyLocalChangesInteractor</h1>
+<code><span class="keyword">class </span><span class="identifier">ApplyLocalChangesInteractor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html"><span class="identifier">BaseInputInteractor</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a><span class="symbol">&gt;</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ApplyLocalChangesInteractor</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.sharinghub.ApplyLocalChangesInteractor$<init>(cz.levinzonr.studypad.rest.Api)/api">api</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.rest/-api/index.html"><span class="identifier">Api</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/background-context.html">backgroundContext</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">backgroundContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/foreground-context.html">foregroundContext</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">foregroundContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="execute-on-background.html">executeOnBackground</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">executeOnBackground</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.sharinghub.ApplyLocalChangesInteractor$executeOnBackground(kotlin.String)/input">input</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../cz.levinzonr.studypad.domain.models/-published-notebook/-detail/index.html"><span class="identifier">Detail</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/execute-with-input.html">executeWithInput</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">executeWithInput</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$executeWithInput(cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.I, kotlin.Function1((cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.O)), kotlin.Unit)))/input">input</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html#I"><span class="identifier">I</span></a><span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$executeWithInput(cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.I, kotlin.Function1((cz.levinzonr.studypad.domain.interactors.BaseInteractor.Request((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.O)), kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors/-completion-block.html"><span class="identifier">CompletionBlock</span></a><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/index.html#O"><span class="identifier">O</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes interactor with specified Input and provides the result via callback</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/run-async.html">runAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">X</span><span class="symbol">&gt;</span> <span class="identifier">runAsync</span><span class="symbol">(</span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$runAsync(kotlin.coroutines.CoroutineContext, kotlin.SuspendFunction0((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.runAsync.X)))/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a>&nbsp;<span class="symbol">=</span>&nbsp;backgroundContext<span class="symbol">, </span><span class="identifier" id="cz.levinzonr.studypad.domain.interactors.BaseInputInteractor$runAsync(kotlin.coroutines.CoroutineContext, kotlin.SuspendFunction0((cz.levinzonr.studypad.domain.interactors.BaseInputInteractor.runAsync.X)))/block">block</span><span class="symbol">:</span>&nbsp;<span class="keyword">suspend </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/run-async.html#X"><span class="identifier">X</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/run-async.html#X"><span class="identifier">X</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../cz.levinzonr.studypad.domain.interactors/-base-input-interactor/unsubscribe.html">unsubscribe</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">unsubscribe</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
